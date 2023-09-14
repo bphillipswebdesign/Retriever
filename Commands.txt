@@ -1,0 +1,7 @@
+Server: lucky7db.database.windows.net
+
+admin: lucky7db
+pw: Password23
+
+DataBase: lucky7db
+ConnectionString: Server=tcp:lucky7db.database.windows.net,1433;Initial Catalog=lucky7db;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;Authentication="Active Directory Default";

@@ -1,0 +1,3 @@
+﻿BEGIN
+	INSERT INTO dbo.tblDog VALUES
+END

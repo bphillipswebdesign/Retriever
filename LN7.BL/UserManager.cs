@@ -1,0 +1,263 @@
+﻿using System.Linq;
+using System.Threading.Tasks;
+using System.Drawing;
+using LN7.BL.Models;
+using LN7.PL;
+using System.Text;
+using System.Security.Cryptography;
+using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+
+namespace LN7.BL
+{
+
+    public class LoginFailureEx : Exception
+    {
+        public LoginFailureEx() : base("Wrong Username Or Password")
+        {
+
+        }
+
+        public LoginFailureEx(string message) : base(message)
+        {
+
+        }
+    }
+    public static class UserManager
+    {
+        public async static Task<int> Insert(User user, bool rollback = false)
+        {
+            try
+            {
+                IDbContextTransaction transaction = null;
+
+                using (LN7Entities dc = new LN7Entities())
+                {
+                    if (rollback) transaction = dc.Database.BeginTransaction();
+
+                    tblUser newrow = new tblUser();
+                    newrow.Id = Guid.NewGuid();
+                    newrow.username = user.username;
+                    newrow.first_name = user.first_name;
+                    newrow.last_name = user.last_name;
+                    newrow.is_admin = user.is_admin;
+                    newrow.date_created = DateTime.Now;
+                    newrow.email = user.email;
+                    newrow.password = user.password;
+
+                    user.Id = newrow.Id;
+
+                    dc.tblUsers.Add(newrow);
+                    int results = dc.SaveChanges();
+
+                    if (rollback) transaction.Rollback();
+
+                    return results;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async static Task<int> Delete(Guid Id, bool rollback = false)
+        {
+            try
+            {
+                IDbContextTransaction transaction = null;
+                using (LN7Entities dc = new LN7Entities())
+                {
+                    tblUser userToDelete = dc.tblUsers.FirstOrDefault(c => c.Id == Id);
+
+                    if (userToDelete != null)
+                    {
+                        if (rollback)
+                            transaction = await dc.Database.BeginTransactionAsync().ConfigureAwait(false);
+
+                        dc.tblUsers.Remove(userToDelete);
+                        int results = await dc.SaveChangesAsync().ConfigureAwait(false);
+
+                        if (rollback)
+                            await transaction.RollbackAsync().ConfigureAwait(false);
+
+                        return results;
+                    }
+                    else
+                    {
+                        throw new Exception("User not found.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async static Task<int> Update(User user, bool rollback = false)
+        {
+            try
+            {
+                IDbContextTransaction? transaction = null;
+                using (LN7Entities dc = new LN7Entities())
+                {
+                    tblUser row = await dc.tblUsers.FirstOrDefaultAsync(c => c.Id == user.Id);
+                    int results = 0;
+                    if (row != null)
+                    {
+                        if (rollback)
+                            transaction = await dc.Database.BeginTransactionAsync().ConfigureAwait(false);
+
+                        row.Id = user.Id;
+                        row.username = user.username;
+                        row.password = user.password;
+                        row.first_name = user.first_name;
+                        row.last_name = user.last_name;
+                        row.is_admin = user.is_admin;
+                        row.email = user.email;
+                        row.date_created = user.date_created;
+
+                        results = await dc.SaveChangesAsync().ConfigureAwait(false);
+                        if (transaction != null)
+                            await transaction.RollbackAsync().ConfigureAwait(false);
+
+                    }
+                    else
+                    {
+                        throw new Exception("Row was not found.");
+                    }
+                    return results;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public async static Task<User> LoadById(Guid id)
+        {
+            try
+            {
+                using (LN7Entities dc = new LN7Entities())
+                {
+                    tblUser tblUser = await dc.tblUsers.Where(c => c.Id == id).FirstOrDefaultAsync().ConfigureAwait(false);
+                    User user = new User();
+
+                    if (tblUser != null)
+                    {
+                        user.Id = tblUser.Id;
+                        user.username = tblUser.username;
+                        user.password = tblUser.password;
+                        user.first_name = tblUser.first_name;
+                        user.last_name = tblUser.last_name;
+                        user.is_admin = tblUser.is_admin;
+                        user.date_created = tblUser.date_created;
+
+                        return user;
+                    }
+                    else
+                    {
+                        throw new Exception("Could not find the row");
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+
+
+
+        public async static Task<IEnumerable<User>> Load()
+        {
+            try
+            {
+                List<User> users = new List<User>();
+                using (LN7Entities dc = new LN7Entities())
+                {
+                    (await dc.tblUsers
+                        .ToListAsync().ConfigureAwait(false))
+                        .ForEach(c => users.Add(new User
+                        {
+
+                            Id = c.Id,
+                            username = c.username,
+                            password = c.password,
+                            first_name = c.first_name,
+                            last_name = c.last_name,
+                            is_admin = c.is_admin,
+                            email = c.email,
+                            date_created = c.date_created
+
+                        }));
+                }
+                return users;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        //ALL LOGIN METHODS
+
+        public static bool Login(User user)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(user.username))
+                {
+                    if (!string.IsNullOrEmpty(user.password))
+                    {
+                        using (LN7Entities dc = new LN7Entities())
+                        {
+                            tblUser tblUser = dc.tblUsers.FirstOrDefault(u => u.username == user.username);
+
+                            if (tblUser != null)
+                            {
+                                if (tblUser.password == (user.password))
+                                {
+                                    user.Id = tblUser.Id;
+                                    user.password = tblUser.password;
+                                    user.first_name = tblUser.first_name;
+                                    user.last_name = tblUser.last_name;
+                                    return true;
+                                }
+                                else
+                                {
+                                    return false;
+                                }
+
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+    }
+}
