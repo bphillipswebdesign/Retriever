@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[tblOrigin]
+(
+	[id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY,
+	[desc] VARCHAR(20) NOT NULL
+)

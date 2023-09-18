@@ -66,6 +66,21 @@
     <Build Include="Tables\tblDog.sql" />
     <None Include="PostDeploy\DefaultData\Dogs.sql" />
     <None Include="PostDeploy\DefaultData\Users.sql" />
+    <Build Include="Tables\tblBredFor.sql" />
+    <Build Include="Tables\tblGroup.sql" />
+    <Build Include="Tables\tblCoatColor.sql" />
+    <Build Include="Tables\tblCoatType.sql" />
+    <Build Include="Tables\tblCoatLength.sql" />
+    <Build Include="Tables\tblEarType.sql" />
+    <Build Include="Tables\tblEarLength.sql" />
+    <Build Include="Tables\tblLegLength.sql" />
+    <Build Include="Tables\tblBodyType.sql" />
+    <Build Include="Tables\tblMuzzleType.sql" />
+    <Build Include="Tables\tblMuzzleLength.sql" />
+    <Build Include="Tables\tblOrigin.sql" />
+    <Build Include="Tables\tblTailType.sql" />
+    <Build Include="Tables\tblTailLength.sql" />
+    <Build Include="Tables\tblWeightClass.sql" />
   </ItemGroup>
   <ItemGroup>
     <PreDeploy Include="PreDeploy\Script.PreDeployment1.sql" />

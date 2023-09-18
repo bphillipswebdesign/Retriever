@@ -28,4 +28,137 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="date_created" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="5ab65656-e290-4a14-879c-34dcc49a07e6" ChangeDateTime="09/18/2023 23:37:24">
+    <Property Name="ElementName" Value="[dbo].[tblDog].[BreedName]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblDog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="breedname" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="cff7d627-63b0-4943-a1a5-04409c9c4c97" ChangeDateTime="09/18/2023 23:37:26">
+    <Property Name="ElementName" Value="[dbo].[tblDog].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblDog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="78e6678d-9f70-4940-a2a4-1c80eb250990" ChangeDateTime="09/18/2023 23:37:27">
+    <Property Name="ElementName" Value="[dbo].[tblDog].[Image]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblDog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="image" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3666cee2-a35d-4616-8ffc-be0f98f44267" ChangeDateTime="09/18/2023 23:37:30">
+    <Property Name="ElementName" Value="[dbo].[tblDog].[BredFor]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblDog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="bredfor" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3e0b9b81-94e0-4e75-a507-19e0d462e863" ChangeDateTime="09/18/2023 23:37:32">
+    <Property Name="ElementName" Value="[dbo].[tblDog].[BreedType]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblDog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="breedtype" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="30b9a842-b205-4852-9f82-ad2017e06f9b" ChangeDateTime="09/18/2023 23:37:33">
+    <Property Name="ElementName" Value="[dbo].[tblDog].[CoatColor]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblDog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="coatcolor" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="fcc9b708-5fa6-4341-92ad-f3d0d2f48187" ChangeDateTime="09/18/2023 23:37:34">
+    <Property Name="ElementName" Value="[dbo].[tblDog].[CoatType]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblDog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="coattype" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="611efcea-290b-4ef3-a708-ad6ff1f153db" ChangeDateTime="09/18/2023 23:37:37">
+    <Property Name="ElementName" Value="[dbo].[tblDog].[CoatLength]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblDog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="coatlength" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="15cc7f35-6c37-4974-ba95-6ef5bff86493" ChangeDateTime="09/18/2023 23:37:38">
+    <Property Name="ElementName" Value="[dbo].[tblDog].[EarType]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblDog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="eartype" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="74543c90-29ee-42a4-b5e6-c4b30b1af989" ChangeDateTime="09/18/2023 23:37:40">
+    <Property Name="ElementName" Value="[dbo].[tblDog].[EarLength]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblDog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="earlength" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6f36170e-8b4f-4dce-b294-336863134103" ChangeDateTime="09/18/2023 23:37:43">
+    <Property Name="ElementName" Value="[dbo].[tblDog].[LegLength]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblDog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="leglength" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c5f8b7a5-6b45-4bc8-ba7c-0eb1ef2f9e06" ChangeDateTime="09/18/2023 23:37:44">
+    <Property Name="ElementName" Value="[dbo].[tblDog].[BodyType]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblDog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="bodytype" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="fa2ae6bf-b735-4479-bf91-55c054bf1a6b" ChangeDateTime="09/18/2023 23:37:46">
+    <Property Name="ElementName" Value="[dbo].[tblDog].[MuzzleType]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblDog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="muzzletype" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e022a99c-3243-4275-822d-8665cb735c93" ChangeDateTime="09/18/2023 23:37:48">
+    <Property Name="ElementName" Value="[dbo].[tblDog].[MuzzleLength]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblDog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="muzzlelength" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="abd8dbe5-cb40-4420-80fb-29c43a61e1fd" ChangeDateTime="09/18/2023 23:37:49">
+    <Property Name="ElementName" Value="[dbo].[tblDog].[Origin]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblDog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="origin" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="201b0b8f-468f-493c-9e9e-528ea85d3b5c" ChangeDateTime="09/18/2023 23:37:52">
+    <Property Name="ElementName" Value="[dbo].[tblDog].[TailType]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblDog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="tailtype" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c1bb68d7-43b8-44a0-9c9e-077a8231c29c" ChangeDateTime="09/18/2023 23:37:54">
+    <Property Name="ElementName" Value="[dbo].[tblDog].[TailLength]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblDog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="taillength" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f1b89c06-e463-4d9e-bbb3-1198483257cb" ChangeDateTime="09/18/2023 23:37:58">
+    <Property Name="ElementName" Value="[dbo].[tblDog].[WeightClass]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblDog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="weightclass" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d9f9f92e-260f-43c5-ba85-8f6f5d9dea80" ChangeDateTime="09/18/2023 23:41:57">
+    <Property Name="ElementName" Value="[dbo].[tblWeightClass].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblWeightClass]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="id" />
+  </Operation>
 </Operations>
