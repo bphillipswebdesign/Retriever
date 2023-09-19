@@ -13,7 +13,6 @@ namespace LN7.BL.Models
         public string breedname { get; set; }
         public string Image { get; set; }
         public byte[] ImageFile { get; set; }
-        public int bredfor { get; set; }
         public int group { get; set; }
         public int coatcolor { get; set; }
         public int coattype { get; set; }
