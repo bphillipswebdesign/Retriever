@@ -1,6 +1,6 @@
 ﻿BEGIN
 	INSERT INTO dbo.tblBodyType (id, description) VALUES
-	(NEWID(), 'slim'),
-	(NEWID(), 'normal'),
-	(NEWID(), 'muscular')
+	(1, 'slim'),
+	(2, 'normal'),
+	(3, 'muscular')
 END

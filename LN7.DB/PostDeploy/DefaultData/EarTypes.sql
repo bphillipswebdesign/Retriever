@@ -1,6 +1,5 @@
 ﻿BEGIN
 	INSERT INTO dbo.tblEarType (id, description) VALUES
-	(NEWID(), 'upright'),
-	(NEWID(), 'droopy'),
-	(NEWID(), '')
+	(1, 'upright'),
+	(2, 'droopy')
 END

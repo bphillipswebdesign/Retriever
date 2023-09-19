@@ -92,7 +92,6 @@
     <RefactorLog Include="LN7.DB.refactorlog" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="local.publish.xml" />
     <None Include="remote.publish.xml" />
     <None Include="PostDeploy\DefaultData\BodyTypes.sql" />
     <None Include="PostDeploy\DefaultData\CoatColors.sql" />
@@ -107,5 +106,6 @@
     <None Include="PostDeploy\DefaultData\TailLengths.sql" />
     <None Include="PostDeploy\DefaultData\TailTypes.sql" />
     <None Include="PostDeploy\DefaultData\WeightClasses.sql" />
+    <None Include="boonlocal.publish.xml" />
   </ItemGroup>
 </Project>

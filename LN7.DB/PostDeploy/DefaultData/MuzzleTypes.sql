@@ -1,6 +1,6 @@
 ﻿BEGIN
 	INSERT INTO dbo.tblMuzzleType (id, description) VALUES
-	(NEWID(), 'narrow'),
-	(NEWID(), 'normal'),
-	(NEWID(), 'broad')
+	(1, 'narrow'),
+	(2, 'normal'),
+	(3, 'broad')
 END

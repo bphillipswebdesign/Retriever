@@ -1,8 +1,8 @@
 ﻿BEGIN
 	INSERT INTO dbo.tblWeightClass (id, description) VALUES
-	(NEWID(), '<12lbs'),
-	(NEWID(), '13lbs<>24lbs'),
-	(NEWID(), '25lbs<>59lbs'),
-	(NEWID(), '60lbs<>99lbs'),
-	(NEWID(), '>100lbs')
+	(1, '<12lbs'),
+	(2, '13lbs<>24lbs'),
+	(3, '25lbs<>59lbs'),
+	(4, '60lbs<>99lbs'),
+	(5, '>100lbs')
 END

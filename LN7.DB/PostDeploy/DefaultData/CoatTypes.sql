@@ -1,8 +1,8 @@
 ﻿BEGIN
 	INSERT INTO dbo.tblCoatType (id, description) VALUES
-	(NEWID(), 'curly'),
-	(NEWID(), 'flat'),
-	(NEWID(), 'wiry'),
-	(NEWID(), 'wavy'),
-	(NEWID(), 'fluffy')
+	(1, 'curly'),
+	(2, 'flat'),
+	(3, 'wiry'),
+	(4, 'wavy'),
+	(5, 'fluffy')
 END

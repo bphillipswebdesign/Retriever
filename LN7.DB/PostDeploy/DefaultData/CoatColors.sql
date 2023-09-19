@@ -1,7 +1,7 @@
 ﻿BEGIN
 	INSERT INTO dbo.tblCoatColor (id, description) VALUES
-	(NEWID(), 'solid'),
-	(NEWID(), '2 colors'),
-	(NEWID(), '3+ colors'),
-	(NEWID(), 'any pattern')
+	(1, 'solid'),
+	(2, '2 colors'),
+	(3, '3+ colors'),
+	(4, 'any pattern')
 END

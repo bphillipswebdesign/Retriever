@@ -10,7 +10,7 @@ namespace LN7.BL.Models
     public class User
     {
         public Guid Id { get; set; }
-        public DateTime Date_created { get; set; }
+        public DateTime date_created { get; set; }
         [DisplayName("Username")]
         public string username { get; set; }
         [DisplayName("Password")]

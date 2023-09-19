@@ -1,10 +1,10 @@
 ﻿BEGIN
 	INSERT INTO dbo.tblDogGroup (id, description) VALUES
-	(NEWID(), 'sporting'),
-	(NEWID(), 'non-sporting'),
-	(NEWID(), 'hound'),
-	(NEWID(), 'herding'),
-	(NEWID(), 'terrier'),
-	(NEWID(), 'toy'),
-	(NEWID(), 'working')
+	(1, 'sporting'),
+	(2, 'non-sporting'),
+	(3, 'hound'),
+	(4, 'herding'),
+	(5, 'terrier'),
+	(6, 'toy'),
+	(7, 'working')
 END

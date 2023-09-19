@@ -1,8 +1,8 @@
 ﻿BEGIN
 	INSERT INTO dbo.tblOrigin (id, description) VALUES
-	(NEWID(), 'china'),
-	(NEWID(), 'england'),
-	(NEWID(), 'german'),
-	(NEWID(), 'uk'),
-	(NEWID(), 'us')
+	(1, 'china'),
+	(2, 'england'),
+	(3, 'german'),
+	(4, 'uk'),
+	(5, 'us')
 END

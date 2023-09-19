@@ -1,6 +1,6 @@
 ﻿BEGIN
 	INSERT INTO dbo.tblTailType (id, description) VALUES
-	(NEWID(), 'curl up'),
-	(NEWID(), 'straight'),
-	(NEWID(), 'sickle')
+	(1, 'curl up'),
+	(2, 'straight'),
+	(3, 'sickle')
 END
