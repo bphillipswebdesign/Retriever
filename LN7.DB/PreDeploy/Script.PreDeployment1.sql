@@ -10,19 +10,19 @@
 --------------------------------------------------------------------------------------
 */
 
-DROP TABLE IF EXISTS dbo.tblBodyType
-DROP TABLE IF EXISTS dbo.tblCoatColor
-DROP TABLE IF EXISTS dbo.tblCoatLength
-DROP TABLE IF EXISTS dbo.tblCoatType
-DROP TABLE IF EXISTS dbo.tblDog
-DROP TABLE IF EXISTS dbo.tblDogGroup
-DROP TABLE IF EXISTS dbo.tblEarLength
-DROP TABLE IF EXISTS dbo.tblEarType
-DROP TABLE IF EXISTS dbo.tblLegLength
-DROP TABLE IF EXISTS dbo.tblMuzzleLength
-DROP TABLE IF EXISTS dbo.tblMuzzleType
-DROP TABLE IF EXISTS dbo.tblOrigin
-DROP TABLE IF EXISTS dbo.tblTailLength
-DROP TABLE IF EXISTS dbo.tblTailType
-DROP TABLE IF EXISTS dbo.tblUser
-DROP TABLE IF EXISTS dbo.tblWeightClass
+DROP TABLE IF EXISTS tblBodyType
+DROP TABLE IF EXISTS tblCoatColor
+DROP TABLE IF EXISTS tblCoatLength
+DROP TABLE IF EXISTS tblCoatType
+DROP TABLE IF EXISTS tblDog
+DROP TABLE IF EXISTS tblDogGroup
+DROP TABLE IF EXISTS tblEarLength
+DROP TABLE IF EXISTS tblEarType
+DROP TABLE IF EXISTS tblLegLength
+DROP TABLE IF EXISTS tblMuzzleLength
+DROP TABLE IF EXISTS tblMuzzleType
+DROP TABLE IF EXISTS tblOrigin
+DROP TABLE IF EXISTS tblTailLength
+DROP TABLE IF EXISTS tblTailType
+DROP TABLE IF EXISTS tblUser
+DROP TABLE IF EXISTS tblWeightClass

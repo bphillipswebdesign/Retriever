@@ -1,5 +1,5 @@
 ﻿BEGIN
-	INSERT INTO dbo.tblDog (id, breedname, imagepath, doggroup, coatcolor, coattype, coatlength,
+	INSERT INTO tblDog (id, breedname, imagepath, doggroup, coatcolor, coattype, coatlength,
 							eartype, earlength, leglength, bodytype, muzzletype, muzzlelength,
 							origin, tailtype, taillength, weightclass) 
 	VALUES

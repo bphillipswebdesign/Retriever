@@ -1,5 +1,5 @@
 ﻿BEGIN
-	INSERT INTO dbo.tblUser VALUES
+	INSERT INTO tblUser VALUES
 	(NEWID(), 'nharrison', 'pass', 'Nick', 'Harrison', GETDATE(), '500168115@fvtc.edu', 1),
 	(NEWID(), 'bxiong', 'pass', 'Boonlert', 'Xiong', GETDATE(), '300076596@fvtc.edu', 1),
 	(NEWID(), 'cneary', 'pass', 'Cael', 'Neary', GETDATE(), '300068580@fvtc.edu', 1),
