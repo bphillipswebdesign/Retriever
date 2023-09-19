@@ -10,5 +10,19 @@
 --------------------------------------------------------------------------------------
 */
 
-DROP TABLE IF EXISTS dbo.tblUser
-DROP TABLE IF EXISTS dbo.tblDog
+DROP TABLE IF EXISTS tblBodyType
+DROP TABLE IF EXISTS tblCoatColor
+DROP TABLE IF EXISTS tblCoatLength
+DROP TABLE IF EXISTS tblCoatType
+DROP TABLE IF EXISTS tblDog
+DROP TABLE IF EXISTS tblDogGroup
+DROP TABLE IF EXISTS tblEarLength
+DROP TABLE IF EXISTS tblEarType
+DROP TABLE IF EXISTS tblLegLength
+DROP TABLE IF EXISTS tblMuzzleLength
+DROP TABLE IF EXISTS tblMuzzleType
+DROP TABLE IF EXISTS tblOrigin
+DROP TABLE IF EXISTS tblTailLength
+DROP TABLE IF EXISTS tblTailType
+DROP TABLE IF EXISTS tblUser
+DROP TABLE IF EXISTS tblWeightClass

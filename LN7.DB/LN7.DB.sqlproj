@@ -66,6 +66,21 @@
     <Build Include="Tables\tblDog.sql" />
     <None Include="PostDeploy\DefaultData\Dogs.sql" />
     <None Include="PostDeploy\DefaultData\Users.sql" />
+    <Build Include="Tables\tblDogGroup.sql" />
+    <Build Include="Tables\tblCoatColor.sql" />
+    <Build Include="Tables\tblCoatType.sql" />
+    <Build Include="Tables\tblCoatLength.sql" />
+    <Build Include="Tables\tblEarType.sql" />
+    <Build Include="Tables\tblEarLength.sql" />
+    <Build Include="Tables\tblLegLength.sql" />
+    <Build Include="Tables\tblBodyType.sql" />
+    <Build Include="Tables\tblMuzzleType.sql" />
+    <Build Include="Tables\tblMuzzleLength.sql" />
+    <Build Include="Tables\tblOrigin.sql" />
+    <Build Include="Tables\tblTailType.sql" />
+    <Build Include="Tables\tblTailLength.sql" />
+    <Build Include="Tables\tblWeightClass.sql" />
+    <None Include="PostDeploy\DefaultData\Origins.sql" />
   </ItemGroup>
   <ItemGroup>
     <PreDeploy Include="PreDeploy\Script.PreDeployment1.sql" />
@@ -77,7 +92,20 @@
     <RefactorLog Include="LN7.DB.refactorlog" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="local.publish.xml" />
+    <None Include="PostDeploy\DefaultData\BodyTypes.sql" />
+    <None Include="PostDeploy\DefaultData\CoatColors.sql" />
+    <None Include="PostDeploy\DefaultData\CoatLengths.sql" />
+    <None Include="PostDeploy\DefaultData\CoatTypes.sql" />
+    <None Include="PostDeploy\DefaultData\EarLengths.sql" />
+    <None Include="PostDeploy\DefaultData\EarTypes.sql" />
+    <None Include="PostDeploy\DefaultData\DogGroups.sql" />
+    <None Include="PostDeploy\DefaultData\LegLengths.sql" />
+    <None Include="PostDeploy\DefaultData\MuzzleLengths.sql" />
+    <None Include="PostDeploy\DefaultData\MuzzleTypes.sql" />
+    <None Include="PostDeploy\DefaultData\TailLengths.sql" />
+    <None Include="PostDeploy\DefaultData\TailTypes.sql" />
+    <None Include="PostDeploy\DefaultData\WeightClasses.sql" />
+    <None Include="boonlocal.publish.xml" />
     <None Include="remote.publish.xml" />
   </ItemGroup>
 </Project>
