@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[tblLegLength]
+﻿CREATE TABLE [dbo].[tblDogGroup]
 (
 	[id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY,
 	[description] VARCHAR(20) NOT NULL

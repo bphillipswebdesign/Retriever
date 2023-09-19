@@ -2,9 +2,8 @@
 (
 	[id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY,
     [breedname] VARCHAR(20) NOT NULL,
-    [image] IMAGE NOT NULL,
-    [bredfor] INT NOT NULL,
-    [breedtype] INT NOT NULL,
+    [imagepath] VARCHAR(250) NOT NULL,
+    [doggroup] INT NOT NULL,
     [coatcolor] INT NOT NULL,
     [coattype] INT NOT NULL,
     [coatlength] INT NOT NULL, 

@@ -1,5 +1,0 @@
-﻿CREATE TABLE [dbo].[tblBredFor]
-(
-	[id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY,
-	[desc] VARCHAR(20) NOT NULL
-)

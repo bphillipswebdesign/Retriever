@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[tblMuzzleType]
 (
 	[id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY,
-	[desc] VARCHAR(20) NOT NULL
+	[description] VARCHAR(20) NOT NULL
 )

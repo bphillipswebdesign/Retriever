@@ -11,9 +11,8 @@ namespace LN7.BL.Models
     {
         public Guid dog_id { get; set; }
         public string breedname { get; set; }
-        public string Image { get; set; }
-        public byte[] ImageFile { get; set; }
-        public int group { get; set; }
+        public string imagepath { get; set; }
+        public int doggroup { get; set; }
         public int coatcolor { get; set; }
         public int coattype { get; set; }
         public int coatlength { get; set; }

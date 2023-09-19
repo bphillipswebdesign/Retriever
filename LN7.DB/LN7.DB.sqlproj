@@ -66,8 +66,7 @@
     <Build Include="Tables\tblDog.sql" />
     <None Include="PostDeploy\DefaultData\Dogs.sql" />
     <None Include="PostDeploy\DefaultData\Users.sql" />
-    <Build Include="Tables\tblBredFor.sql" />
-    <Build Include="Tables\tblGroup.sql" />
+    <Build Include="Tables\tblDogGroup.sql" />
     <Build Include="Tables\tblCoatColor.sql" />
     <Build Include="Tables\tblCoatType.sql" />
     <Build Include="Tables\tblCoatLength.sql" />
@@ -81,6 +80,7 @@
     <Build Include="Tables\tblTailType.sql" />
     <Build Include="Tables\tblTailLength.sql" />
     <Build Include="Tables\tblWeightClass.sql" />
+    <None Include="PostDeploy\DefaultData\Origins.sql" />
   </ItemGroup>
   <ItemGroup>
     <PreDeploy Include="PreDeploy\Script.PreDeployment1.sql" />
@@ -94,5 +94,18 @@
   <ItemGroup>
     <None Include="local.publish.xml" />
     <None Include="remote.publish.xml" />
+    <None Include="PostDeploy\DefaultData\BodyTypes.sql" />
+    <None Include="PostDeploy\DefaultData\CoatColors.sql" />
+    <None Include="PostDeploy\DefaultData\CoatLengths.sql" />
+    <None Include="PostDeploy\DefaultData\CoatTypes.sql" />
+    <None Include="PostDeploy\DefaultData\EarLengths.sql" />
+    <None Include="PostDeploy\DefaultData\EarTypes.sql" />
+    <None Include="PostDeploy\DefaultData\DogGroups.sql" />
+    <None Include="PostDeploy\DefaultData\LegLengths.sql" />
+    <None Include="PostDeploy\DefaultData\MuzzleLengths.sql" />
+    <None Include="PostDeploy\DefaultData\MuzzleTypes.sql" />
+    <None Include="PostDeploy\DefaultData\TailLengths.sql" />
+    <None Include="PostDeploy\DefaultData\TailTypes.sql" />
+    <None Include="PostDeploy\DefaultData\WeightClasses.sql" />
   </ItemGroup>
 </Project>

@@ -1,3 +1,30 @@
 ﻿BEGIN
-	INSERT INTO dbo.tblDog VALUES
+	INSERT INTO dbo.tblDog (id, breedname, imagepath, doggroup, coatcolor, coattype, coatlength,
+							eartype, earlength, leglength, bodytype, muzzletype, muzzlelength,
+							origin, tailtype, taillength, weightclass) 
+	VALUES
+	(NEWID(), 'Beagle', '', 3, 3, 2, 1, 2, 3, 2, 2, 2, 2, NULL, 2, 3, 2),
+	(NEWID(), 'Siberian Husky', '', 7, 3, 2, 2, 1, 2, 2, 2, 2, 2, NULL, 3, 2, 3),
+	(NEWID(), 'German Shephard', '', 4, 2, 2, 2, 1, 2, 2, 2, 1, 2, 3, 2, 3, 4),
+	(NEWID(), 'Labrador Retriever', '', 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, NULL, 2, 3, 4),
+	(NEWID(), 'Rottweiler', '', 7, 2, 2, 1, 2, 2, 2, 3, 3, 1, Null, 2, 1, 4),
+	(NEWID(), 'Pitbull Terrier', '', 5, 4, 2, 1, 2, 2, 2, 3, 3, 1, 5, 3, 2, 3),
+	(NEWID(), 'Pembroke Welsh Corgis', '', 4, 2, 2, 2, 1, 2, 1, 2, 2, 1, 4, 2, 3, 3),
+	(NEWID(), 'Great Dane', '', 7, 4, 2, 1, 2, 2, 3, 3, 3, 1, 3, 2, 2, 5),
+	(NEWID(), 'Dachshund', '', 3, 3, 2, 1, 2, 3, 1, 2, 1, 1, 3, 2, 2, 3),
+	(NEWID(), 'Yorkshire Terrier', '', 6, 2, 2, 3, 1, 1, 1, 2, 1, 1, 2, 3, 1, 1),
+	(NEWID(), 'Doberman Pinscher', '', 7, 2, 2, 1, 1, 2, 3, 3, 1, 3, 3, 3, 2, 4),
+	(NEWID(), 'Pomeranian', '', 6, 2, 5, 2, 1, 1, 1, 2, 3, 1, NULL, 1, 2, 1),
+	(NEWID(), 'Bulldog', '', 2, 2, 2, 1, 2, 1, 1, 3, 3, 1, 2, 2, 1, 3),
+	(NEWID(), 'Poodle', '', 2, 1, 1, 3, 2, 3, 3, 1, 1, 3, 3, 2, 2, 4),
+	(NEWID(), 'Australian Shepherd', '', 4, 3, 2, 2, 2, 2, 2, 2, 2, 1, 5, 2, 2, 3),
+	(NEWID(), 'Cocker Spaniel', '', 1, 4, 2, 3, 2, 3, 2, 2, 2, 1, 2, 2, 3, 3),
+	(NEWID(), 'Schnauzer', '', 7, 4, 3, 2, 1, 1, 2, 2, 3, 1, 3, 1, 2, 3),
+	(NEWID(), 'Shih Tzu', '', 6, 4, 2, 3, 2, 3, 1, 2, 3, 1, 1, 1, 2, 1),
+	(NEWID(), 'Boston Terrier', '', 5, 2, 2, 1, 1, 2, 2, 2, 3, 1, 5, 2, 1, 2),
+	(NEWID(), 'St Bernard', '', 7, 2, 2, 2, 2, 2, 2, 2, 3, 1, NULL, 2, 3, 5),
+	(NEWID(), 'German Shorthaired Pointer', '', 1, 4, 2, 2, 2, 2, 2, 2, 1, 1, 3, 2, 2, 3),
+	(NEWID(), 'Havanese', '', 6, 4, 2, 3, 2, 2, 1, 2, 3, 1, NULL, 1, 1, 1),
+	(NEWID(), 'Border Collie', '', 4, 4, 4, 2, 1, 2, 2, 2, 1, 3, 4, 2, 2, 3),
+	(NEWID(), 'Golden Retriever', '', 1, 2, 4, 3, 2, 2, 2, 2, 3, 3, NULL, 2, 3, 4)
 END
