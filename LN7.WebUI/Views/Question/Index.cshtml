@@ -1,14 +1,13 @@
 ﻿@model LN7.BL.Models.GameQuestion
 
 @{
-    ViewData["Title"] = "Question";
+    ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Question</h2>
+<h2>Welcome</h2>
 
-<form asp-action="DisplayQuestion" asp-controller="Question" method="post">
-    <h2>@Model?.Question</h2>
-    <button type="submit" name="answer" value="true" class="btn btn-success">Yes</button>
-    <button type="submit" name="answer" value="false" class="btn btn-danger">No</button>
+<!-- Modify the form to navigate to DisplayQuestion action -->
+<form asp-controller="Question" asp-action="DisplayQuestion" method="post">
+    <input type="submit" value="Play" class="signupBtn" />
 </form>
