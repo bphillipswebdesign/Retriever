@@ -9,7 +9,8 @@ using LN7.PL;
 namespace LN7.WebUI.Controllers
 {
     public class QuestionController : Controller
-    {
+    { 
+
         private readonly ILogger<HomeController> _logger;
 
         public QuestionController(ILogger<HomeController> logger)
@@ -23,7 +24,7 @@ namespace LN7.WebUI.Controllers
             return View();
         }
 
-        public async Task <IActionResult> DisplayQuestion()
+        public async Task<IActionResult> DisplayQuestion()
         {
             try
             {
@@ -45,31 +46,11 @@ namespace LN7.WebUI.Controllers
             }
         }
 
-        public async Task<IActionResult> AnswerQuestion(bool answer, int questionState)
-{
-    try
-    {
-        // Increment the questionState
-        questionState++;
-
-        // Load the next question based on the updated questionState
-        GameQuestion question = await GameManager.LoadById(questionState);
-
-        if (question != null)
+        public async Task<IActionResult> AnswerQuestion()
         {
-            return View("Index", question); // Display the next question
+            return View();
         }
-        else
-        {
-            return View("FinalResult"); // Handle the end of questions
-        }
-    }
-    catch (Exception ex)
-    {
-        // Handle exceptions here
-        return View("Error");
-    }
-}
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

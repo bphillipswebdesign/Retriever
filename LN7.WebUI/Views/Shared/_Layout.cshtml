@@ -27,17 +27,6 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        @{
-                            User user = HttpContextAccessor.HttpContext?.Session.GetObject<User>("user");
-                            if (user != null)
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link text-light" asp-area="" asp-controller="Player" asp-action="Details">Player Stats</a>
-                                </li>
-                            }
-
-
-                        }
                     </ul>
                     <ul class="navbar-nav">
                         <li class="nav-item">

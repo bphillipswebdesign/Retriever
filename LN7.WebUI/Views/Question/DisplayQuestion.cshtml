@@ -7,7 +7,7 @@
 
 <h2>Question</h2>
 
-<form asp-action="AnswerQuestion" asp-controller="Question" method="post">
+<form asp-action="DisplayQuestion" asp-controller="Question" method="post">
     <h2>@Model?.Question</h2>
     <button type="submit" name="answer" value="true" class="btn btn-success">Yes</button>
     <button type="submit" name="answer" value="false" class="btn btn-danger">No</button>
