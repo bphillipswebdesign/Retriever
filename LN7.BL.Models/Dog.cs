@@ -9,6 +9,7 @@ namespace LN7.BL.Models
 {
     public class Dog
     {
+        public List<GameQuestion> products { get; set; } = new List<GameQuestion>();
         public Guid dog_id { get; set; }
         public string breedname { get; set; }
         public string imagepath { get; set; }

@@ -47,7 +47,7 @@ namespace LN7.WebUI.Controllers
             return View();
         }
 
-        private void SetUser(User user)
+        private void SetUser(User? user)
         {
             HttpContext.Session.SetObject("user", user);
 
@@ -67,7 +67,6 @@ namespace LN7.WebUI.Controllers
             return View();
         }
 
-        // POST: UserController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(User user)
@@ -79,7 +78,7 @@ namespace LN7.WebUI.Controllers
                 if (TempData["returnurl"] != null)
                     return Redirect(TempData["returnurl"]?.ToString());
                 else
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Question");
             }
             catch (Exception ex)
             {

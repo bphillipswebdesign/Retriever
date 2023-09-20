@@ -172,9 +172,6 @@ namespace LN7.BL
             }
         }
 
-
-
-
         public async static Task<IEnumerable<User>> Load()
         {
             try
@@ -206,8 +203,6 @@ namespace LN7.BL
                 throw;
             }
         }
-
-        //ALL LOGIN METHODS
 
         public static bool Login(User user)
         {
