@@ -43,8 +43,6 @@ namespace LN7.BL
 
         public static List<GameQuestion> Load()
         {
-            // SELECT * FROM TBLSTUDENT
-
             try
             {
                 List<GameQuestion> rows = new List<GameQuestion>();

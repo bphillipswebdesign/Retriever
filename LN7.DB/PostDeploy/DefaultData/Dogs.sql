@@ -3,7 +3,7 @@
 							eartype, earlength, leglength, bodytype, muzzletype, muzzlelength,
 							origin, tailtype, taillength, weightclass) 
 	VALUES
-	(NEWID(), 'Beagle', '', 3, 3, 2, 1, 2, 3, 2, 2, 2, 2, NULL, 2, 3, 2),
+	(NEWID(), 'Beagle', '', 1, 3, 2, 1, 2, 3, 2, 2, 2, 2, NULL, 2, 3, 2),
 	(NEWID(), 'Siberian Husky', '', 7, 3, 2, 2, 1, 2, 2, 2, 2, 2, NULL, 3, 2, 3),
 	(NEWID(), 'German Shephard', '', 4, 2, 2, 2, 1, 2, 2, 2, 1, 2, 3, 2, 3, 4),
 	(NEWID(), 'Labrador Retriever', '', 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, NULL, 2, 3, 4),

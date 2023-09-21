@@ -8,8 +8,9 @@ using LN7.PL;
 
 namespace LN7.WebUI.Controllers
 {
+    
     public class QuestionController : Controller
-    { 
+    {
 
         private readonly ILogger<HomeController> _logger;
 
@@ -24,12 +25,26 @@ namespace LN7.WebUI.Controllers
             return View();
         }
 
-        public async Task<IActionResult> DisplayQuestion()
+        public async Task<IActionResult> DisplayQuestion(bool? answer)
         {
             try
             {
-                int questionState = 1;
+                int questionState = HttpContext.Session.GetInt32("QuestionState") ?? 1;
+
+                if (questionState < 0)
+                {
+                    return NotFound();
+                }
+
+                if (answer.HasValue && !answer.Value)
+                {
+                    questionState++;
+                }
+
+                HttpContext.Session.SetInt32("QuestionState", questionState); // Store the updated state
+
                 GameQuestion question = await GameManager.LoadById(questionState);
+
                 if (question != null)
                 {
                     return View(question);

@@ -1,40 +1,42 @@
 ﻿BEGIN
+
 	INSERT INTO tblQuestion(Id, Question) VALUES
 
-	(1, 'Does Your dog have Short Ears?'),
-	(2, 'Does Your dog have Med Ears?'),
-	(3, 'Does Your dog have Long Ears?'),
-	(4, 'Does Your dog have Upright Ears?'),
-	(5, 'Does Your dog have Droopy Ears?'),
+	(1, 'Does your dog have short ears?'),
+	(2, 'Does your dog have medium ears?'),
+	(3, 'Does your dog have long ears?'),
 
-	(6, 'Is Your dog slim?'),
-	(7, 'Is Your dog normal?'),
-	(8, 'Is Your dog muscular?'),
+	(4, 'Does your dog have upright ears?'),
+	(5, 'Does your dog have droopy ears?'),
 
-	(9, 'Does your dogs tail curl up'),
-	(10, 'Is your dogs tail straight?'),
-	(11, 'Does your dogs tail sickle'),
+	(6, 'Is your dog slim?'),
+	(7, 'Is your dog of normal build?'),
+	(8, 'Is your dog muscular?'),
 
-	(12, 'Is your dogs tail short?'),
-	(13, 'Is your dogs tail medium legnth?'),
-	(14, 'Is your dogs tail long?'),
+	(9, 'Does your dog''s tail curl up?'),
+	(10, 'Is your dog''s tail straight?'),
+	(11, 'Does your dog''s tail sickle-shaped?'),
 
-	(15, 'What orgin is your dog from: China?'),
-	(16, 'What orgin is your dog from: England?'),
-	(17, 'What orgin is your dog from: German?'),
-	(18, 'What orgin is your dog from: Uk?'),
-	(19, 'What orgin is your dog from: US'),
+	(12, 'Does your dog have a short tail?'),
+	(13, 'Does your dog have a medium length tail?'),
+	(14, 'Is your dog''s tail long?'),
 
-	(20, 'Is your dogs muzzle narrow?'),
-	(21, 'Is your dogs muzzle normal?'),
-	(22, 'Is your dogs muzzle broad?'),
+	(15, 'What is the origin of your dog: China?'),
+	(16, 'What is the origin of your dog: England?'),
+	(17, 'What is the origin of your dog: Germany?'),
+	(18, 'What is the origin of your dog: the UK?'),
+	(19, 'What is the origin of your dog: the US?'),
 
-	(23, 'Is your dogs muzzle short?'),
-	(24, 'Is your dogs muzzle medium legnth?'),
-	(25, 'Is your dogs muzzle long?'),
+	(20, 'Is your dog''s muzzle narrow?'),
+	(21, 'Is your dog''s muzzle of normal width?'),
+	(22, 'Is your dog''s muzzle broad?'),
+
+	(23, 'Is your dog''s muzzle short?'),
+	(24, 'Is your dog''s muzzle of medium length?'),
+	(25, 'Is your dog''s muzzle long?'),
 
 	(26, 'Does your dog have short legs?'),
-	(27, 'Does your dog have medium length legs?'),
+	(27, 'Does your dog have medium-length legs?'),
 	(28, 'Does your dog have long legs?'),
 
 	(29, 'What type of coat does your dog have: Curly?'),
@@ -43,21 +45,21 @@
 	(32, 'What type of coat does your dog have: Wavy?'),
 	(33, 'What type of coat does your dog have: Fluffy?'),
 
-	(34, 'Is your dogs hair short?'),
-	(35, 'Is your dogs hair medium?'),
-	(36, 'Is your dogs hair long?'),
+	(34, 'Is your dog''s hair short?'),
+	(35, 'Is your dog''s hair of medium length?'),
+	(36, 'Is your dog''s hair long?'),
 
-	(37, 'Is your dogs hair color: 1 color'),
-	(38, 'Is your dogs hair color: 2 colors'),
-	(39, 'Is your dogs hair color: 3+ colors'),
-	(40, 'Is your dogs hair color: any pattern'),
+	(37, 'Is your dog''s hair color: single color?'),
+	(38, 'Is your dog''s hair color: two colors?'),
+	(39, 'Is your dog''s hair color: three or more colors?'),
+	(40, 'Does your dog''s hair have any patterns?'),
 
-	(41, 'What type of dog is your dog: sporting?'),
-	(42, 'What type of dog is your dog: non-sporting?'),
-	(43, 'What type of dog is your dog: hound?'),
-	(44, 'What type of dog is your dog: herding?'),
-	(45, 'What type of dog is your dog: terrier?'),
-	(46, 'What type of dog is your dog: toy?'),
-	(47, 'What type of dog is your dog: working?')
+	(41, 'What type of dog is your dog: Sporting?'),
+	(42, 'What type of dog is your dog: Non-sporting?'),
+	(43, 'What type of dog is your dog: Hound?'),
+	(44, 'What type of dog is your dog: Herding?'),
+	(45, 'What type of dog is your dog: Terrier?'),
+	(46, 'What type of dog is your dog: Toy?'),
+	(47, 'What type of dog is your dog: Working?');
 
-END
+END;
