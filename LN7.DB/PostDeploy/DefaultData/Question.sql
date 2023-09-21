@@ -61,5 +61,4 @@
 	(45, 'What type of dog is your dog: Terrier?'),
 	(46, 'What type of dog is your dog: Toy?'),
 	(47, 'What type of dog is your dog: Working?');
-
 END;
