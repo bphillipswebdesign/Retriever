@@ -2,6 +2,7 @@
 using LN7.WebUI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Http;
 using System.Diagnostics;
 using LN7.BL;
 using LN7.PL;
@@ -29,7 +30,7 @@ namespace LN7.WebUI.Controllers
         {
             try
             {
-                int questionState = HttpContext.Session.GetInt32("QuestionState") ?? 1;
+                int questionState = HttpContext.Session.GetInt32("questionState") ?? 1;
 
                 if (questionState < 0)
                 {
@@ -41,7 +42,7 @@ namespace LN7.WebUI.Controllers
                     questionState++;
                 }
 
-                HttpContext.Session.SetInt32("QuestionState", questionState); // Store the updated state
+                HttpContext.Session.SetInt32("questionState", questionState);
 
                 GameQuestion question = await GameManager.LoadById(questionState);
 
@@ -59,6 +60,13 @@ namespace LN7.WebUI.Controllers
                 // Handle exceptions here
                 return View("Error");
             }
+        }
+
+        [HttpPost]
+        public IActionResult ResetSessionState()
+        {
+            HttpContext.Session.SetInt32("questionState", 0);
+            return Ok();
         }
 
         public async Task<IActionResult> AnswerQuestion()

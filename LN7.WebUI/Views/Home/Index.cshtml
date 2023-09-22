@@ -1,9 +1,13 @@
-﻿@model LN7.BL.Models.User
+﻿@model LN7.BL.Models.GameQuestion
 
 @{
     ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-</div>
+<h2>Welcome</h2>
+
+<!-- Modify the form to navigate to DisplayQuestion action -->
+<form asp-controller="Question" asp-action="DisplayQuestion" method="post">
+    <input type="submit" value="Play" class="signupBtn" asp-controller="Question" asp-action="DisplayQuestion" formmethod="post" />
+</form>

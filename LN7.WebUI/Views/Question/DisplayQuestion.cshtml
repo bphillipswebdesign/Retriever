@@ -8,8 +8,19 @@
 <h2>Question</h2>
 
 <form asp-action="DisplayQuestion" asp-controller="Question" method="post">
-    <input type="hidden" name="questionState" value="@Model.Question" />
     <h2>@Model?.Question</h2>
     <button type="submit" name="answer" value="true" class="btn btn-success">Yes</button>
     <button type="submit" name="answer" value="false" class="btn btn-danger">No</button>
 </form>
+
+<script>
+    if (performance.navigation.type === 1) {
+        fetch('/Question/ResetSessionState', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({})
+        });
+    }
+</script>

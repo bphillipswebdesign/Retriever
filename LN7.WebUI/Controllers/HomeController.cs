@@ -15,6 +15,7 @@ namespace LN7.WebUI.Controllers
 
         public IActionResult Index()
         {
+            HttpContext.Session.SetInt32("questionState", 1);
             if (Authenticate.IsAuthenticated(HttpContext))
             {
                 ViewBag.Error = TempData["error"];

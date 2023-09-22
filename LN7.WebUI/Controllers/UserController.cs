@@ -11,7 +11,8 @@ namespace LN7.WebUI.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            HttpContext.Session.SetInt32("questionState", 1);
+            return RedirectToAction("Index","Home");
         }
 
         public ActionResult Signup(string returnUri)
@@ -40,11 +41,6 @@ namespace LN7.WebUI.Controllers
             {
                 return View();
             }
-        }
-
-        public ActionResult Delete(int id)
-        {
-            return View();
         }
 
         private void SetUser(User? user)
@@ -78,7 +74,7 @@ namespace LN7.WebUI.Controllers
                 if (TempData["returnurl"] != null)
                     return Redirect(TempData["returnurl"]?.ToString());
                 else
-                    return RedirectToAction("Index", "Question");
+                    return RedirectToAction("Index", "Home");
             }
             catch (Exception ex)
             {

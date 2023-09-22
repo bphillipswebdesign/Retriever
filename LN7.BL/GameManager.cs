@@ -40,7 +40,6 @@ namespace LN7.BL
                 throw;
             }
         }
-
         public static List<GameQuestion> Load()
         {
             try

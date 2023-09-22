@@ -10,5 +10,6 @@ namespace LN7.BL.Models
     {
         public int Id { get; set; }
         public string Question { get; set; }
+        public string UniqueToken { get; set; }
     }
 }
