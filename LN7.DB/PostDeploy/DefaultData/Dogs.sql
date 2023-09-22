@@ -1,7 +1,7 @@
 ﻿BEGIN
-	INSERT INTO tblDog (id, breedname, imagepath, doggroup, coatcolor, coattype, coatlength,
-							eartype, earlength, leglength, bodytype, muzzletype, muzzlelength,
-							origin, tailtype, taillength, weightclass) 
+	INSERT INTO tblDog (Id, BreedName, Imagepath, DogGroup, CoatColor, CoatType, CoatLength,
+							EarType, EarLength, LegLength, BodyType, MuzzleType, MuzzleLength,
+							Origin, TailType, TailLength, WeightClass) 
 	VALUES
 	(NEWID(), 'Beagle', '', 1, 3, 2, 1, 2, 3, 2, 2, 2, 2, NULL, 2, 3, 2),
 	(NEWID(), 'Siberian Husky', '', 7, 3, 2, 2, 1, 2, 2, 2, 2, 2, NULL, 3, 2, 3),

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using LN7.PL;
 using System.Reflection.Emit;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,48 +16,264 @@ public partial class LN7Entities : DbContext
     {
     }
 
-    public virtual DbSet<tblUser> tblUsers { get; set; }
+    public virtual DbSet<tblBodyType> tblBodyTypes { get; set; }
+
+    public virtual DbSet<tblCoatColor> tblCoatColors { get; set; }
+
+    public virtual DbSet<tblCoatLength> tblCoatLengths { get; set; }
+
+    public virtual DbSet<tblCoatType> tblCoatTypes { get; set; }
+
+    public virtual DbSet<tblDog> tblDogs { get; set; }
+
+    public virtual DbSet<tblDogGroup> tblDogGroups { get; set; }
+
+    public virtual DbSet<tblEarLength> tblEarLengths { get; set; }
+
+    public virtual DbSet<tblEarType> tblEarTypes { get; set; }
+
+    public virtual DbSet<tblLegLength> tblLegLengths { get; set; }
+
+    public virtual DbSet<tblMuzzleLength> tblMuzzleLengths { get; set; }
+
+    public virtual DbSet<tblMuzzleType> tblMuzzleTypes { get; set; }
+
+    public virtual DbSet<tblOrigin> tblOrigins { get; set; }
+
     public virtual DbSet<tblQuestion> tblQuestions { get; set; }
 
+    public virtual DbSet<tblTailLength> tblTailLengths { get; set; }
+
+    public virtual DbSet<tblTailType> tblTailTypes { get; set; }
+
+    public virtual DbSet<tblUser> tblUsers { get; set; }
+
+    public virtual DbSet<tblWeightClass> tblWeightClasses { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-            => optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=LN7.DB;Integrated Security=true");
-            //FOR USE WITH REMOTE DB
-            //=> optionsBuilder.UseSqlServer("Server=tcp:lucky7db.database.windows.net,1433;Initial Catalog=lucky7db;Persist Security Info=False;User ID=lucky7db;Password=Password23;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=LN7.DB;Integrated Security=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<tblBodyType>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__tblBodyT__3214EC07E2E68788");
+
+            entity.ToTable("tblBodyType");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Description)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<tblCoatColor>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__tblCoatC__3214EC0743860644");
+
+            entity.ToTable("tblCoatColor");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Description)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<tblCoatLength>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__tblCoatL__3214EC075369B484");
+
+            entity.ToTable("tblCoatLength");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Description)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<tblCoatType>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__tblCoatT__3214EC07CD05FF47");
+
+            entity.ToTable("tblCoatType");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Description)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<tblDog>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__tblDog__3214EC07FAD9597E");
+
+            entity.ToTable("tblDog");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.BreedName)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.Imagepath)
+                .HasMaxLength(250)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<tblDogGroup>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__tblDogGr__3214EC07B892B026");
+
+            entity.ToTable("tblDogGroup");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Description)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<tblEarLength>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__tblEarLe__3214EC0750907DC2");
+
+            entity.ToTable("tblEarLength");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Description)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<tblEarType>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__tblEarTy__3214EC07278CCC61");
+
+            entity.ToTable("tblEarType");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Description)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<tblLegLength>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__tblLegLe__3214EC07A5E8DA9C");
+
+            entity.ToTable("tblLegLength");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Description)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<tblMuzzleLength>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__tblMuzzl__3214EC07455F9BD9");
+
+            entity.ToTable("tblMuzzleLength");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Description)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<tblMuzzleType>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__tblMuzzl__3214EC07DE23F0BB");
+
+            entity.ToTable("tblMuzzleType");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Description)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<tblOrigin>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__tblOrigi__3214EC0750BB06EE");
+
+            entity.ToTable("tblOrigin");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Description)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<tblQuestion>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__tblQuest__3214EC07269041E8");
+
+            entity.ToTable("tblQuestion");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Question)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<tblTailLength>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__tblTailL__3214EC07A5C92C2E");
+
+            entity.ToTable("tblTailLength");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Description)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<tblTailType>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__tblTailT__3214EC0729CB127C");
+
+            entity.ToTable("tblTailType");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Description)
+                .HasMaxLength(20)
+                .IsUnicode(false);
+        });
+
         modelBuilder.Entity<tblUser>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__tblUser__3214EC0700F40F07");
+            entity.HasKey(e => e.Id).HasName("PK__tblUser__3214EC071C72DE0F");
 
             entity.ToTable("tblUser");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
-            entity.Property(e => e.date_created).HasColumnType("datetime");
-            entity.Property(e => e.is_admin).HasColumnType("bit");
-            entity.Property(e => e.first_name)
+            entity.Property(e => e.Date_Created).HasColumnType("datetime");
+            entity.Property(e => e.Email)
                 .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.last_name)
+            entity.Property(e => e.First_Name)
                 .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.password)
+            entity.Property(e => e.Last_Name)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.Password)
                 .HasMaxLength(12)
                 .IsUnicode(false);
-            entity.Property(e => e.username)
-                .HasMaxLength(50)
-                .IsUnicode(false);
-            entity.Property(e => e.email)
+            entity.Property(e => e.Username)
                 .HasMaxLength(50)
                 .IsUnicode(false);
         });
-        modelBuilder.Entity<tblQuestion>(entity =>
+
+        modelBuilder.Entity<tblWeightClass>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__tblQuestion__3214EC0700F40F07");
-            entity.ToTable("tblQuestion");
+            entity.HasKey(e => e.Id).HasName("PK__tblWeigh__3214EC07E3488F34");
+
+            entity.ToTable("tblWeightClass");
+
             entity.Property(e => e.Id).ValueGeneratedNever();
-            entity.Property(e => e.Question).HasMaxLength(50).IsUnicode(false);
+            entity.Property(e => e.Description)
+                .HasMaxLength(20)
+                .IsUnicode(false);
         });
 
         OnModelCreatingPartial(modelBuilder);

@@ -49,7 +49,7 @@ namespace LN7.WebUI.Controllers
 
             if (user != null)
             {
-                HttpContext.Session.SetObject("fullname", "Welcome " + user.first_name + " " + user.last_name);
+                HttpContext.Session.SetObject("fullname", "Welcome " + user.First_Name + " " + user.Last_Name);
             }
             else
             {

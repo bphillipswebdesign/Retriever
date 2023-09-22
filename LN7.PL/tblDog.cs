@@ -1,0 +1,41 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace LN7.PL;
+
+public partial class tblDog
+{
+    public Guid Id { get; set; }
+
+    public string BreedName { get; set; } = null!;
+
+    public string Imagepath { get; set; } = null!;
+
+    public int DogGroup { get; set; }
+
+    public int CoatColor { get; set; }
+
+    public int CoatType { get; set; }
+
+    public int CoatLength { get; set; }
+
+    public int EarType { get; set; }
+
+    public int EarLength { get; set; }
+
+    public int LegLength { get; set; }
+
+    public int BodyType { get; set; }
+
+    public int MuzzleType { get; set; }
+
+    public int MuzzleLength { get; set; }
+
+    public int? Origin { get; set; }
+
+    public int TailType { get; set; }
+
+    public int TailLength { get; set; }
+
+    public int WeightClass { get; set; }
+}

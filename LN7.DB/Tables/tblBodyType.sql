@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[tblBodyType]
 (
-	[id] INT NOT NULL PRIMARY KEY,
-	[description] VARCHAR(20) NOT NULL
+	[Id] INT NOT NULL PRIMARY KEY,
+	[Description] VARCHAR(20) NOT NULL
 )

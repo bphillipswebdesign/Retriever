@@ -1,5 +1,5 @@
 ﻿BEGIN
-	INSERT INTO tblOrigin (id, description) VALUES
+	INSERT INTO tblOrigin (Id, Description) VALUES
 	(1, 'china'),
 	(2, 'england'),
 	(3, 'german'),

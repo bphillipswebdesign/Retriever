@@ -1,5 +1,5 @@
 ﻿BEGIN
-	INSERT INTO tblEarType (id, description) VALUES
+	INSERT INTO tblEarType (Id, Description) VALUES
 	(1, 'upright'),
 	(2, 'droopy')
 END

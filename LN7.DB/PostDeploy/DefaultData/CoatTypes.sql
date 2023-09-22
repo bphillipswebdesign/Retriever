@@ -1,5 +1,5 @@
 ﻿BEGIN
-	INSERT INTO tblCoatType (id, description) VALUES
+	INSERT INTO tblCoatType (Id, Description) VALUES
 	(1, 'curly'),
 	(2, 'flat'),
 	(3, 'wiry'),

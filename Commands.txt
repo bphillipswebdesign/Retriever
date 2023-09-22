@@ -1,4 +1,4 @@
-Scaffold-DbContext "Server=(localdb)\MSSQLLocalDB;Database=LN7DB;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -Context LN7Entities -UseDatabaseNames -force
+Scaffold-DbContext "Server=(localdb)\MSSQLLocalDB;Database=LN7.DB;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -Context LN7Entities -UseDatabaseNames -force
 
 Server: lucky7db.database.windows.net
 
