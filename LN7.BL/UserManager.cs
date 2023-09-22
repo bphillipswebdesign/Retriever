@@ -38,13 +38,13 @@ namespace LN7.BL
 
                     tblUser newrow = new tblUser();
                     newrow.Id = Guid.NewGuid();
-                    newrow.Username = user.Username;
-                    newrow.First_Name = user.First_Name;
-                    newrow.Last_Name = user.Last_Name;
-                    newrow.Is_Admin = user.Is_Admin;
-                    newrow.Date_Created = DateTime.Now;
-                    newrow.Email = user.Email;
-                    newrow.Password = user.Password;
+                    newrow.username = user.username;
+                    newrow.first_name = user.first_name;
+                    newrow.last_name = user.last_name;
+                    newrow.is_admin = user.is_admin;
+                    newrow.date_created = DateTime.Now;
+                    newrow.email = user.email;
+                    newrow.password = user.password;
 
                     user.Id = newrow.Id;
 
@@ -111,13 +111,13 @@ namespace LN7.BL
                             transaction = await dc.Database.BeginTransactionAsync().ConfigureAwait(false);
 
                         row.Id = user.Id;
-                        row.Username = user.Username;
-                        row.Password = user.Password;
-                        row.First_Name = user.First_Name;
-                        row.Last_Name = user.Last_Name;
-                        row.Is_Admin = user.Is_Admin;
-                        row.Email = user.Email;
-                        row.Date_Created = user.Date_Created;
+                        row.username = user.username;
+                        row.password = user.password;
+                        row.first_name = user.first_name;
+                        row.last_name = user.last_name;
+                        row.is_admin = user.is_admin;
+                        row.email = user.email;
+                        row.date_created = user.date_created;
 
                         results = await dc.SaveChangesAsync().ConfigureAwait(false);
                         if (transaction != null)
@@ -150,12 +150,12 @@ namespace LN7.BL
                     if (tblUser != null)
                     {
                         user.Id = tblUser.Id;
-                        user.Username = tblUser.Username;
-                        user.Password = tblUser.Password;
-                        user.First_Name = tblUser.First_Name;
-                        user.Last_Name = tblUser.Last_Name;
-                        user.Is_Admin = tblUser.Is_Admin;
-                        user.Date_Created = tblUser.Date_Created;
+                        user.username = tblUser.username;
+                        user.password = tblUser.password;
+                        user.first_name = tblUser.first_name;
+                        user.last_name = tblUser.last_name;
+                        user.is_admin = tblUser.is_admin;
+                        user.date_created = tblUser.date_created;
 
                         return user;
                     }
@@ -185,13 +185,13 @@ namespace LN7.BL
                         {
 
                             Id = c.Id,
-                            Username = c.Username,
-                            Password = c.Password,
-                            First_Name = c.First_Name,
-                            Last_Name = c.Last_Name,
-                            Is_Admin = c.Is_Admin,
-                            Email = c.Email,
-                            Date_Created = c.Date_Created
+                            username = c.username,
+                            password = c.password,
+                            first_name = c.first_name,
+                            last_name = c.last_name,
+                            is_admin = c.is_admin,
+                            email = c.email,
+                            date_created = c.date_created
 
                         }));
                 }
@@ -208,22 +208,22 @@ namespace LN7.BL
         {
             try
             {
-                if (!string.IsNullOrEmpty(user.Username))
+                if (!string.IsNullOrEmpty(user.username))
                 {
-                    if (!string.IsNullOrEmpty(user.Password))
+                    if (!string.IsNullOrEmpty(user.password))
                     {
                         using (LN7Entities dc = new LN7Entities())
                         {
-                            tblUser tblUser = dc.tblUsers.FirstOrDefault(u => u.Username == user.Username);
+                            tblUser tblUser = dc.tblUsers.FirstOrDefault(u => u.username == user.username);
 
                             if (tblUser != null)
                             {
-                                if (tblUser.Password == (user.Password))
+                                if (tblUser.password == (user.password))
                                 {
                                     user.Id = tblUser.Id;
-                                    user.Password = tblUser.Password;
-                                    user.First_Name = tblUser.First_Name;
-                                    user.Last_Name = tblUser.Last_Name;
+                                    user.password = tblUser.password;
+                                    user.first_name = tblUser.first_name;
+                                    user.last_name = tblUser.last_name;
                                     return true;
                                 }
                                 else
