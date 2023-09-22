@@ -26,23 +26,42 @@ namespace LN7.WebUI.Controllers
             return View();
         }
 
+        // Showing User Question Method
         public async Task<IActionResult> DisplayQuestion(bool? answer)
         {
             try
             {
-                int questionState = HttpContext.Session.GetInt32("questionState") ?? 1;
+                int minQuestion = 1;
+                int maxQuestion = 37;
 
-                if (questionState < 0)
+                List<int> shuffledQuestions = HttpContext.Session.Get<List<int>>("shuffledQuestions");
+
+                if (shuffledQuestions == null)
                 {
-                    return NotFound();
+                    shuffledQuestions = Enumerable.Range(minQuestion, maxQuestion).ToList();
+                    ShuffleList(shuffledQuestions);
+
+                    HttpContext.Session.Set("shuffledQuestions", shuffledQuestions);
+                }
+
+                int questionState = shuffledQuestions.FirstOrDefault();
+
+                if (questionState == 0)
+                {
+                    HttpContext.Session.Remove("shuffledQuestions");
+                    return View("AllQuestionsAsked");
                 }
 
                 if (answer.HasValue && !answer.Value)
                 {
+                    // "No" was clicked, increment questionState
                     questionState++;
                 }
 
-                HttpContext.Session.SetInt32("questionState", questionState);
+                // Remove the current question from the shuffled list
+                shuffledQuestions.RemoveAt(0);
+
+                HttpContext.Session.Set("shuffledQuestions", shuffledQuestions);
 
                 GameQuestion question = await GameManager.LoadById(questionState);
 
@@ -62,10 +81,25 @@ namespace LN7.WebUI.Controllers
             }
         }
 
+        // Method to shuffle a list
+        private static void ShuffleList<T>(List<T> list)
+        {
+            Random random = new Random();
+            int n = list.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = random.Next(n + 1);
+                T value = list[k];
+                list[k] = list[n];
+                list[n] = value;
+            }
+        }
+
+        // Resetting Question to 0
         [HttpPost]
         public IActionResult ResetSessionState()
         {
-            HttpContext.Session.SetInt32("questionState", 0);
             return Ok();
         }
 
