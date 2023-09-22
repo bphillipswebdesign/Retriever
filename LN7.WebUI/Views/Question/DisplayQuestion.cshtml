@@ -1,0 +1,26 @@
+﻿@model LN7.BL.Models.GameQuestion
+
+@{
+    ViewData["Title"] = "DisplayQuestion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Question</h2>
+
+<form method="post">
+    <h2>@Model?.Question</h2>
+    <button type="button" class="btn btn-success" id="yesButton">Yes</button>
+    <button asp-controller="Question" asp-action="DisplayQuestion" type="submit" name="answer" value="false" class="btn btn-danger">No</button>
+</form>
+
+<script>
+    if (performance.navigation.type === 1) {
+        fetch('/Question/ResetSessionState', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({})
+        });
+    }
+</script>

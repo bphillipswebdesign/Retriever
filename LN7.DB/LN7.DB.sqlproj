@@ -81,6 +81,8 @@
     <Build Include="Tables\tblTailLength.sql" />
     <Build Include="Tables\tblWeightClass.sql" />
     <None Include="PostDeploy\DefaultData\Origins.sql" />
+    <None Include="PostDeploy\DefaultData\Question.sql" />
+    <Build Include="Tables\tblQuestion.sql" />
   </ItemGroup>
   <ItemGroup>
     <PreDeploy Include="PreDeploy\Script.PreDeployment1.sql" />
@@ -107,5 +109,6 @@
     <None Include="PostDeploy\DefaultData\WeightClasses.sql" />
     <None Include="boonlocal.publish.xml" />
     <None Include="remote.publish.xml" />
+    <None Include="nicklocal.publish.xml" />
   </ItemGroup>
 </Project>

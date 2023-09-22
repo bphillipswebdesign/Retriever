@@ -1,13 +1,12 @@
 ﻿@model LN7.BL.Models.GameQuestion
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "AllQuestionsAsked";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Welcome</h2>
-
-<!-- Modify the form to navigate to DisplayQuestion action -->
+<h2>We could not identify Your Dog</h2>
+<h4>Try Again?</h4>
 <form asp-controller="Question" asp-action="DisplayQuestion" method="post">
     <input type="submit" value="Play" class="signupBtn" asp-controller="Question" asp-action="DisplayQuestion" formmethod="post" />
 </form>

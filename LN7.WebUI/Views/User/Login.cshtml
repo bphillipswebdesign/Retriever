@@ -28,7 +28,7 @@
                     <span asp-validation-for="password" class="text-danger"></span>
                 </div>
                 <div class="bottomButtons">
-                    <input type="submit" value="Login" class="loginBtn" />
+                    <input type="submit" value="Login" class="loginBtn" asp-controller="User" asp-action="Login" />
                     <input type="submit" value="Sign Up" class="signupBtn" asp-area="" asp-controller="User" asp-action="Signup" />
                 </div>
             </form>

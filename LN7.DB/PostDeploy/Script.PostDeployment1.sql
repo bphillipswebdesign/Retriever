@@ -25,3 +25,4 @@ Post-Deployment Script Template
 :r .\DefaultData\TailTypes.sql
 :r .\DefaultData\Users.sql
 :r .\DefaultData\WeightClasses.sql
+:r .\DefaultData\Question.sql

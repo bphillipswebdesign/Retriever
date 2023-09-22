@@ -11,7 +11,8 @@ namespace LN7.WebUI.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            HttpContext.Session.SetInt32("questionState", 1);
+            return RedirectToAction("Index","Home");
         }
 
         public ActionResult Signup(string returnUri)
@@ -42,12 +43,7 @@ namespace LN7.WebUI.Controllers
             }
         }
 
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        private void SetUser(User user)
+        private void SetUser(User? user)
         {
             HttpContext.Session.SetObject("user", user);
 
@@ -67,7 +63,6 @@ namespace LN7.WebUI.Controllers
             return View();
         }
 
-        // POST: UserController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(User user)
