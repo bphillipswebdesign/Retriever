@@ -10,17 +10,17 @@ namespace LN7.BL.Models
     public class User
     {
         public Guid Id { get; set; }
-        public DateTime date_created { get; set; }
+        public DateTime Date_Created { get; set; }
         [DisplayName("Username")]
-        public string username { get; set; }
+        public string Username { get; set; }
         [DisplayName("Password")]
-        public string password { get; set; }
+        public string Password { get; set; }
         [DisplayName("First Name")]
-        public string first_name { get; set; }
+        public string First_Name { get; set; }
         [DisplayName("Last Name")]
-        public string last_name { get; set; }
+        public string Last_Name { get; set; }
         [DisplayName("Email")]
-        public string email { get; set; }
-        public bool is_admin { get; set; }
+        public string Email { get; set; }
+        public bool Is_Admin { get; set; }
     }
 }

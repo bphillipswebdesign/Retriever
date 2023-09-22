@@ -8,7 +8,7 @@ namespace LN7.BL.Models
 {
     public class MuzzleType
     {
-        public Guid id { get; set; }
-        public string desc { get; set; }
+        public Guid Id { get; set; }
+        public string Desc { get; set; }
     }
 }

@@ -7,17 +7,17 @@ public partial class tblUser
 {
     public Guid Id { get; set; }
 
-    public string first_name { get; set; } = null!;
+    public string Username { get; set; } = null!;
 
-    public string last_name { get; set; } = null!;
+    public string Password { get; set; } = null!;
 
-    public string username { get; set; } = null!;
+    public string First_Name { get; set; } = null!;
 
-    public string password { get; set; } = null!;
+    public string Last_Name { get; set; } = null!;
 
-    public string email { get; set; }
+    public DateTime Date_Created { get; set; }
 
-    public DateTime date_created { get; set; }
+    public string Email { get; set; } = null!;
 
-    public bool is_admin { get; set; }
+    public bool Is_Admin { get; set; }
 }

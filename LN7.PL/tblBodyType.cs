@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace LN7.PL;
 
-public partial class tblQuestion
+public partial class tblBodyType
 {
     public int Id { get; set; }
 
-    public string Question { get; set; } = null!;
+    public string Description { get; set; } = null!;
 }

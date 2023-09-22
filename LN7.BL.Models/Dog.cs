@@ -9,23 +9,23 @@ namespace LN7.BL.Models
 {
     public class Dog
     {
-        public List<GameQuestion> questions { get; set; } = new List<GameQuestion>();
-        public Guid dog_id { get; set; }
-        public string breedname { get; set; }
-        public string imagepath { get; set; }
-        public int doggroup { get; set; }
-        public int coatcolor { get; set; }
-        public int coattype { get; set; }
-        public int coatlength { get; set; }
-        public int eartype { get; set; }
-        public int earlength { get; set; }
-        public int leglength { get; set; }
-        public int bodytype { get; set; }
-        public int muzzletype { get; set; }
-        public int muzzlelength { get; set; }
-        public int origin { get; set; }
-        public int tailtype { get; set; }
-        public int taillength { get; set; }
-        public int weightclass { get; set; }
+        public List<GameQuestion> Questions { get; set; } = new List<GameQuestion>();
+        public Guid Dog_Id { get; set; }
+        public string BreedName { get; set; }
+        public string Imagepath { get; set; }
+        public int DogGroup { get; set; }
+        public int CoatColor { get; set; }
+        public int CoatType { get; set; }
+        public int CoatLength { get; set; }
+        public int EarType { get; set; }
+        public int EarLength { get; set; }
+        public int LegLength { get; set; }
+        public int BodyType { get; set; }
+        public int MuzzleType { get; set; }
+        public int MuzzleLength { get; set; }
+        public int Origin { get; set; }
+        public int TailType { get; set; }
+        public int TailLength { get; set; }
+        public int WeightClass { get; set; }
     }
 }

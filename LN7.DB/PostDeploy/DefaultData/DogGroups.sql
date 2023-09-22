@@ -1,5 +1,5 @@
 ﻿BEGIN
-	INSERT INTO tblDogGroup (id, description) VALUES
+	INSERT INTO tblDogGroup (Id, Description) VALUES
 	(1, 'sporting'),
 	(2, 'non-sporting'),
 	(3, 'hound'),

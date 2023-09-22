@@ -1,5 +1,5 @@
 ﻿BEGIN
-	INSERT INTO tblCoatColor (id, description) VALUES
+	INSERT INTO tblCoatColor (Id, Description) VALUES
 	(1, 'solid'),
 	(2, '2 colors'),
 	(3, '3+ colors'),
