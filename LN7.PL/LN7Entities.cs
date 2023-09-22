@@ -246,20 +246,20 @@ public partial class LN7Entities : DbContext
             entity.ToTable("tblUser");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
-            entity.Property(e => e.Date_Created).HasColumnType("datetime");
-            entity.Property(e => e.Email)
+            entity.Property(e => e.date_created).HasColumnType("datetime");
+            entity.Property(e => e.email)
                 .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.First_Name)
+            entity.Property(e => e.first_name)
                 .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.Last_Name)
+            entity.Property(e => e.last_name)
                 .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.Password)
+            entity.Property(e => e.password)
                 .HasMaxLength(12)
                 .IsUnicode(false);
-            entity.Property(e => e.Username)
+            entity.Property(e => e.username)
                 .HasMaxLength(50)
                 .IsUnicode(false);
         });
