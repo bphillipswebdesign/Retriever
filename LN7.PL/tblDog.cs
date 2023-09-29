@@ -7,9 +7,9 @@ public partial class tblDog
 {
     public Guid Id { get; set; }
 
-    public string BreedName { get; set; } = null!;
+    public string BreedName { get; set; }
 
-    public string Imagepath { get; set; } = null!;
+    public string Imagepath { get; set; }
 
     public int DogGroup { get; set; }
 

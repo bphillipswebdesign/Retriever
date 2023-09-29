@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Numerics;
+using System.Reflection;
 
 namespace LN7.BL
 {
@@ -27,6 +28,9 @@ namespace LN7.BL
                         GameQuestion question = new GameQuestion();
                         question.Id = tblQuestion.Id;
                         question.Question = tblQuestion.Question;
+                        question.Answer = tblQuestion.Answer;
+                        question.Trait_Id = tblQuestion.Trait_Id;
+
                         return question;
                     }
                     else
@@ -54,6 +58,8 @@ namespace LN7.BL
                         {
                             Id = s.Id,
                             Question = s.Question,
+                            Trait_Id = s.Trait_Id,
+                            Answer = s.Answer
 
                         }));
                     return rows;
@@ -65,6 +71,83 @@ namespace LN7.BL
                 throw;
             }
 
+        }
+        public static Task<List<Dog>> LoadDog()
+        {
+            try
+            {
+                List<Dog> rows = new List<Dog>();
+
+                using (LN7Entities dc = new LN7Entities())
+                {
+                    dc.tblDogs
+                        .ToList()
+                        .ForEach(s => rows.Add(new Dog
+                        {
+                            Dog_Id = s.Id,
+                            BreedName = s.BreedName,
+                            Imagepath = s.Imagepath,
+                            DogGroup = s.DogGroup,
+                            CoatColor = s.CoatColor,
+                            CoatType = s.CoatType,
+                            CoatLength = s.CoatLength,
+                            EarType = s.EarType,
+                            EarLength = s.EarLength,
+                            LegLength = s.LegLength,
+                            BodyType = s.BodyType,
+                            MuzzleType = s.MuzzleType,
+                            MuzzleLength = s.MuzzleLength,
+                            Origin = (int)s.Origin,
+                            TailType = s.TailType,
+                            TailLength = s.TailLength,
+                            WeightClass = s.WeightClass
+                        }));
+                    return Task.FromResult(rows);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public static List<Dog> RemoveNo(GameQuestion question, List<Dog> dogs, bool answer)
+        {
+            try
+            {
+                string prop = ((QuestionTraits.TraitsMap)question.Trait_Id).ToString();
+                switch (answer)
+                {
+                    case false:
+                        foreach (Dog d in dogs.ToList())
+                        {
+                            PropertyInfo pName = typeof(Dog).GetProperty(prop);
+                            object value = pName.GetValue(d, null);
+                            if ((int)value == question.Answer)
+                            {
+                                dogs.Remove(d);
+                            }
+                        }
+                        break;
+                    case true:
+                        foreach (Dog d in dogs.ToList())
+                        {
+                            PropertyInfo pName = typeof(Dog).GetProperty(prop);
+                            object value = pName.GetValue(d, null);
+                            if ((int)value != question.Answer)
+                            {
+                                dogs.Remove(d);
+                            }
+
+                        }
+                        break;
+                }
+            }
+            catch
+            {
+                // Error in try
+            }
+            return dogs;
         }
     }
 }

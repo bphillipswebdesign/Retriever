@@ -117,6 +117,20 @@ public partial class LN7Entities : DbContext
             entity.Property(e => e.Imagepath)
                 .HasMaxLength(250)
                 .IsUnicode(false);
+            entity.Property(e => e.DogGroup);
+            entity.Property(e => e.CoatColor);
+            entity.Property(e => e.CoatType);
+            entity.Property(e => e.CoatLength);
+            entity.Property(e => e.EarType);
+            entity.Property(e => e.EarLength);
+            entity.Property(e => e.LegLength);
+            entity.Property(e => e.BodyType);
+            entity.Property(e => e.MuzzleType);
+            entity.Property(e => e.MuzzleLength);
+            entity.Property(e => e.Origin);
+            entity.Property(e => e.TailType);
+            entity.Property(e => e.TailLength);
+            entity.Property(e => e.WeightClass);
         });
 
         modelBuilder.Entity<tblDogGroup>(entity =>
@@ -213,6 +227,8 @@ public partial class LN7Entities : DbContext
             entity.Property(e => e.Question)
                 .HasMaxLength(50)
                 .IsUnicode(false);
+            entity.Property(e => e.Trait_Id);
+            entity.Property(e => e.Answer);
         });
 
         modelBuilder.Entity<tblTailLength>(entity =>
@@ -246,20 +262,20 @@ public partial class LN7Entities : DbContext
             entity.ToTable("tblUser");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
-            entity.Property(e => e.date_created).HasColumnType("datetime");
-            entity.Property(e => e.email)
+            entity.Property(e => e.Date_Created).HasColumnType("datetime");
+            entity.Property(e => e.Email)
                 .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.first_name)
+            entity.Property(e => e.First_Name)
                 .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.last_name)
+            entity.Property(e => e.Last_Name)
                 .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.password)
+            entity.Property(e => e.Password)
                 .HasMaxLength(12)
                 .IsUnicode(false);
-            entity.Property(e => e.username)
+            entity.Property(e => e.Username)
                 .HasMaxLength(50)
                 .IsUnicode(false);
         });

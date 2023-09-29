@@ -35,6 +35,12 @@ namespace LN7.WebUI.Controllers
                 int maxQuestion = 37;
 
                 List<int> shuffledQuestions = HttpContext.Session.Get<List<int>>("shuffledQuestions");
+                List<Dog> dogs = HttpContext.Session.Get<List<Dog>>("dogs");
+                if (dogs == null)
+                {
+                    dogs = await GameManager.LoadDog();
+                    HttpContext.Session.Set("dogs", dogs);
+                }
 
                 if (shuffledQuestions == null)
                 {
@@ -52,18 +58,23 @@ namespace LN7.WebUI.Controllers
                     return View("AllQuestionsAsked");
                 }
 
-                if (answer.HasValue && !answer.Value)
+                if (answer.HasValue)
                 {
-                    // "No" was clicked, increment questionState
+                    QuestionTraits questionTraits = new QuestionTraits();
+
+                    dogs = GameManager.RemoveNo(await GameManager.LoadById(questionState), dogs, answer.Value);
+                    HttpContext.Session.Set("dogs", dogs);
+
+                    // Remove the current question from the shuffled list
+                    shuffledQuestions.RemoveAt(0);
+
+                    HttpContext.Session.Set("shuffledQuestions", shuffledQuestions);
+
                     questionState++;
                 }
 
-                // Remove the current question from the shuffled list
-                shuffledQuestions.RemoveAt(0);
-
-                HttpContext.Session.Set("shuffledQuestions", shuffledQuestions);
-
                 GameQuestion question = await GameManager.LoadById(questionState);
+
 
                 if (question != null)
                 {

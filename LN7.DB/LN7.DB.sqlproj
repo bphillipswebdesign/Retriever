@@ -110,5 +110,6 @@
     <None Include="boonlocal.publish.xml" />
     <None Include="remote.publish.xml" />
     <None Include="nicklocal.publish.xml" />
+    <None Include="SK.LN7.DB.publish.xml" />
   </ItemGroup>
 </Project>

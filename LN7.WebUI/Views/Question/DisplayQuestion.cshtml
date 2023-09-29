@@ -9,7 +9,7 @@
 
 <form method="post">
     <h2>@Model?.Question</h2>
-    <button type="button" class="btn btn-success" id="yesButton">Yes</button>
+    <button asp-controller="Question" asp-action="DisplayQuestion" type="submit" name="answer" value="true" class="btn btn-success">Yes</button>
     <button asp-controller="Question" asp-action="DisplayQuestion" type="submit" name="answer" value="false" class="btn btn-danger">No</button>
 </form>
 
