@@ -63,7 +63,20 @@ namespace LN7.WebUI.Controllers
                     QuestionTraits questionTraits = new QuestionTraits();
 
                     dogs = GameManager.RemoveNo(await GameManager.LoadById(questionState), dogs, answer.Value);
-                    HttpContext.Session.Set("dogs", dogs);
+                    if (dogs.Count > 1)
+                    {
+                        HttpContext.Session.Set("dogs", dogs);
+                    }
+                    else if (dogs.Count == 1)
+                    {
+                        HttpContext.Session.Set("dogs", dogs);
+                        return View("~/Views/Question/DisplayGuess.cshtml", dogs[0].BreedName);
+                    }
+                    else
+                    {
+                        return View("~/Views/Question/AllQuestionsAsked.cshtml");
+                    }
+                    
 
                     // Remove the current question from the shuffled list
                     shuffledQuestions.RemoveAt(0);

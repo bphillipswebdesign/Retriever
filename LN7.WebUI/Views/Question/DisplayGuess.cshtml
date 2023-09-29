@@ -1,0 +1,13 @@
+﻿@model string
+
+@{
+    ViewData["Title"] = "DisplayGuess";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<h2>Your Dog Breed is @Model </h2>
+<h4>Try Again?</h4>
+<form asp-controller="Question" asp-action="DisplayQuestion" method="post">
+    <input type="submit" value="Play" class="signupBtn" asp-controller="Question" asp-action="DisplayQuestion" formmethod="post" />
+</form>
