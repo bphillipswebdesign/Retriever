@@ -121,8 +121,8 @@ namespace LN7.BL
                     case false:
                         foreach (Dog d in dogs.ToList())
                         {
-                            PropertyInfo pName = typeof(Dog).GetProperty(prop);
-                            object value = pName.GetValue(d, null);
+                            PropertyInfo? pName = typeof(Dog).GetProperty(prop);
+                            object? value = pName.GetValue(d, null);
                             if ((int)value == question.Answer)
                             {
                                 dogs.Remove(d);
@@ -132,13 +132,12 @@ namespace LN7.BL
                     case true:
                         foreach (Dog d in dogs.ToList())
                         {
-                            PropertyInfo pName = typeof(Dog).GetProperty(prop);
-                            object value = pName.GetValue(d, null);
+                            PropertyInfo? pName = typeof(Dog).GetProperty(prop);
+                            object? value = pName.GetValue(d, null);
                             if ((int)value != question.Answer)
                             {
                                 dogs.Remove(d);
                             }
-
                         }
                         break;
                 }
@@ -148,6 +147,35 @@ namespace LN7.BL
                 // Error in try
             }
             return dogs;
+        }
+        public async static Task<List<int>> ListFilter(int questionState, List<int> shuffledQuestions, bool answer)
+        {
+            //Load the question
+            GameQuestion question = await GameManager.LoadById(questionState);
+
+            //If "Yes", then remove questions with same trait_Id
+            if (answer)
+            {
+                // Loop through each remaining Question
+                foreach (int i in shuffledQuestions.ToList()) 
+                {
+
+                    // Load the question
+                    GameQuestion q = await GameManager.LoadById(i);
+                    // If Trait_Id Match, remove question
+                    if (question.Trait_Id == q.Trait_Id)
+                    {
+                        shuffledQuestions.Remove(i);
+                    }                    
+                }
+            }
+            else
+            {
+                shuffledQuestions.Remove(questionState);
+            }
+
+            // Return Remaining Questions
+            return shuffledQuestions;
         }
     }
 }

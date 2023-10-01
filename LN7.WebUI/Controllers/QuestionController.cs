@@ -32,10 +32,11 @@ namespace LN7.WebUI.Controllers
             try
             {
                 int minQuestion = 1;
-                int maxQuestion = 37;
+                int maxQuestion = 47;
 
                 List<int> shuffledQuestions = HttpContext.Session.Get<List<int>>("shuffledQuestions");
                 List<Dog> dogs = HttpContext.Session.Get<List<Dog>>("dogs");
+                
                 if (dogs == null)
                 {
                     dogs = await GameManager.LoadDog();
@@ -50,44 +51,42 @@ namespace LN7.WebUI.Controllers
                     HttpContext.Session.Set("shuffledQuestions", shuffledQuestions);
                 }
 
-                int questionState = shuffledQuestions.FirstOrDefault();
+                int qId = shuffledQuestions.FirstOrDefault();
 
-                if (questionState == 0)
+                if (qId == 0)
                 {
+                    HttpContext.Session.Remove("dogs");
                     HttpContext.Session.Remove("shuffledQuestions");
                     return View("AllQuestionsAsked");
-                }
+                }                                                     
 
                 if (answer.HasValue)
                 {
-                    QuestionTraits questionTraits = new QuestionTraits();
+                    //QuestionTraits questionTraits = new QuestionTraits();
 
-                    dogs = GameManager.RemoveNo(await GameManager.LoadById(questionState), dogs, answer.Value);
+                    dogs = GameManager.RemoveNo(await GameManager.LoadById(qId), dogs, answer.Value);
                     if (dogs.Count > 1)
                     {
                         HttpContext.Session.Set("dogs", dogs);
                     }
                     else if (dogs.Count == 1)
                     {
-                        HttpContext.Session.Set("dogs", dogs);
+                        HttpContext.Session.Remove("dogs");
                         return View("~/Views/Question/DisplayGuess.cshtml", dogs[0].BreedName);
                     }
                     else
                     {
+                        HttpContext.Session.Remove("dogs");
                         return View("~/Views/Question/AllQuestionsAsked.cshtml");
                     }
-                    
 
-                    // Remove the current question from the shuffled list
-                    shuffledQuestions.RemoveAt(0);
+                    // Remove current question and any question with same Trait Id if Yes.
+                    shuffledQuestions = await GameManager.ListFilter(qId, shuffledQuestions, answer.Value);
 
                     HttpContext.Session.Set("shuffledQuestions", shuffledQuestions);
-
-                    questionState++;
                 }
 
-                GameQuestion question = await GameManager.LoadById(questionState);
-
+                GameQuestion question = await GameManager.LoadById(qId);
 
                 if (question != null)
                 {
@@ -97,6 +96,7 @@ namespace LN7.WebUI.Controllers
                 {
                     return NotFound();
                 }
+
             }
             catch (Exception ex)
             {

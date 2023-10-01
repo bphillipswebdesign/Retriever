@@ -22,7 +22,7 @@ namespace LN7.BL.Models
             CoatType = 10,
             CoatLength = 11,
             CoatColor = 12,
-            Group = 13
+            DogGroup = 13
         }
     }
 }
