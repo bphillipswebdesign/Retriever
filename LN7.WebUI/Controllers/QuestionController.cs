@@ -9,7 +9,7 @@ using LN7.PL;
 
 namespace LN7.WebUI.Controllers
 {
-    
+
     public class QuestionController : Controller
     {
 
@@ -21,7 +21,7 @@ namespace LN7.WebUI.Controllers
         }
 
 
-        public async Task <IActionResult> Index()
+        public async Task<IActionResult> Index()
         {
             return View();
         }
@@ -36,7 +36,7 @@ namespace LN7.WebUI.Controllers
 
                 List<int> shuffledQuestions = HttpContext.Session.Get<List<int>>("shuffledQuestions");
                 List<Dog> dogs = HttpContext.Session.Get<List<Dog>>("dogs");
-                
+
                 if (dogs == null)
                 {
                     dogs = await GameManager.LoadDog();
@@ -58,11 +58,11 @@ namespace LN7.WebUI.Controllers
                     HttpContext.Session.Remove("dogs");
                     HttpContext.Session.Remove("shuffledQuestions");
                     return View("AllQuestionsAsked");
-                }                                                     
+                }
 
                 if (answer.HasValue)
                 {
-                    //QuestionTraits questionTraits = new QuestionTraits();
+                    // Handle user's answer (filter dogs, etc.)
 
                     dogs = GameManager.RemoveNo(await GameManager.LoadById(qId), dogs, answer.Value);
                     if (dogs.Count > 1)
@@ -80,13 +80,24 @@ namespace LN7.WebUI.Controllers
                         return View("~/Views/Question/AllQuestionsAsked.cshtml");
                     }
 
-                    // Remove current question and any question with same Trait Id if Yes.
+                    // Remove current question and any questions with the same Trait Id if Yes.
                     shuffledQuestions = await GameManager.ListFilter(qId, shuffledQuestions, answer.Value);
 
                     HttpContext.Session.Set("shuffledQuestions", shuffledQuestions);
                 }
 
-                GameQuestion question = await GameManager.LoadById(qId);
+                // Get the next question ID
+                int nextQuestionId = shuffledQuestions.FirstOrDefault();
+
+                if (nextQuestionId == 0)
+                {
+                    // No more questions, end the game
+                    HttpContext.Session.Remove("dogs");
+                    HttpContext.Session.Remove("shuffledQuestions");
+                    return View("AllQuestionsAsked");
+                }
+
+                GameQuestion question = await GameManager.LoadById(nextQuestionId);
 
                 if (question != null)
                 {

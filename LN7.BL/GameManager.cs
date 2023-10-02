@@ -150,23 +150,21 @@ namespace LN7.BL
         }
         public async static Task<List<int>> ListFilter(int questionState, List<int> shuffledQuestions, bool answer)
         {
-            //Load the question
             GameQuestion question = await GameManager.LoadById(questionState);
 
-            //If "Yes", then remove questions with same trait_Id
+            List<int> questionsToRemove = new List<int>();
+
             if (answer)
             {
                 // Loop through each remaining Question
-                foreach (int i in shuffledQuestions.ToList()) 
+                foreach (int i in shuffledQuestions)
                 {
-
-                    // Load the question
                     GameQuestion q = await GameManager.LoadById(i);
-                    // If Trait_Id Match, remove question
+
                     if (question.Trait_Id == q.Trait_Id)
                     {
-                        shuffledQuestions.Remove(i);
-                    }                    
+                        questionsToRemove.Add(i);
+                    }
                 }
             }
             else
@@ -174,7 +172,11 @@ namespace LN7.BL
                 shuffledQuestions.Remove(questionState);
             }
 
-            // Return Remaining Questions
+            foreach (int questionToRemove in questionsToRemove)
+            {
+                shuffledQuestions.Remove(questionToRemove);
+            }
+
             return shuffledQuestions;
         }
     }
