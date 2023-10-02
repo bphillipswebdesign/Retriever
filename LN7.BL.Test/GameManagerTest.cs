@@ -1,6 +1,5 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LN7.BL.Models;
 using LN7.BL;
+using LN7.BL.Models;
 
 namespace GameManagerTest
 {

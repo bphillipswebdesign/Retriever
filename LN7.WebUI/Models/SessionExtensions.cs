@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 
-
 namespace LN7.WebUI.Models
 {
     public static class SessionExtensions
@@ -9,11 +8,13 @@ namespace LN7.WebUI.Models
         {
             session.SetString(key, JsonConvert.SerializeObject(value));
         }
+
         public static T GetObject<T>(this ISession session, string key)
         {
             var value = session.GetString(key);
             return value == null ? default(T) : JsonConvert.DeserializeObject<T>(value);
         }
+
         public static T Get<T>(this ISession session, string key)
         {
             string json = session.GetString(key);

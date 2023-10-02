@@ -1,21 +1,13 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using System.Drawing;
-using LN7.BL.Models;
+﻿using LN7.BL.Models;
 using LN7.PL;
-using System.Text;
-using System.Security.Cryptography;
-using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using System.Numerics;
 using System.Reflection;
 
 namespace LN7.BL
 {
     public static class GameManager
     {
-        public async static Task<GameQuestion> LoadById(int id)
+        public static async Task<GameQuestion> LoadById(int id)
         {
             try
             {
@@ -44,6 +36,7 @@ namespace LN7.BL
                 throw;
             }
         }
+
         public static List<GameQuestion> Load()
         {
             try
@@ -60,18 +53,16 @@ namespace LN7.BL
                             Question = s.Question,
                             Trait_Id = s.Trait_Id,
                             Answer = s.Answer
-
                         }));
                     return rows;
                 }
             }
             catch (Exception)
             {
-
                 throw;
             }
-
         }
+
         public static Task<List<Dog>> LoadDog()
         {
             try
@@ -107,10 +98,10 @@ namespace LN7.BL
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
+
         public static List<Dog> RemoveNo(GameQuestion question, List<Dog> dogs, bool answer)
         {
             try
@@ -129,6 +120,7 @@ namespace LN7.BL
                             }
                         }
                         break;
+
                     case true:
                         foreach (Dog d in dogs.ToList())
                         {
@@ -148,7 +140,8 @@ namespace LN7.BL
             }
             return dogs;
         }
-        public async static Task<List<int>> ListFilter(int questionState, List<int> shuffledQuestions, bool answer)
+
+        public static async Task<List<int>> ListFilter(int questionState, List<int> shuffledQuestions, bool answer)
         {
             GameQuestion question = await GameManager.LoadById(questionState);
 

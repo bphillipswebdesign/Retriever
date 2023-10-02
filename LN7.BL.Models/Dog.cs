@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LN7.BL.Models
+﻿namespace LN7.BL.Models
 {
     public class Dog
     {
         //public List<GameQuestion> Questions { get; set; } = new List<GameQuestion>();
         public Guid Dog_Id { get; set; }
+
         public string BreedName { get; set; }
         public string Imagepath { get; set; }
         public int DogGroup { get; set; }

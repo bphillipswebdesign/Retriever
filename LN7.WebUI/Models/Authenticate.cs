@@ -1,5 +1,4 @@
 ﻿using LN7.BL.Models;
-using Newtonsoft.Json;
 
 namespace LN7.WebUI.Models
 {

@@ -1,32 +1,24 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using System.Drawing;
-using LN7.BL.Models;
+﻿using LN7.BL.Models;
 using LN7.PL;
-using System.Text;
-using System.Security.Cryptography;
-using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace LN7.BL
 {
-
     public class LoginFailureEx : Exception
     {
         public LoginFailureEx() : base("Wrong Username Or Password")
         {
-
         }
 
         public LoginFailureEx(string message) : base(message)
         {
-
         }
     }
+
     public static class UserManager
     {
-        public async static Task<int> Insert(User user, bool rollback = false)
+        public static async Task<int> Insert(User user, bool rollback = false)
         {
             try
             {
@@ -62,7 +54,7 @@ namespace LN7.BL
             }
         }
 
-        public async static Task<int> Delete(Guid Id, bool rollback = false)
+        public static async Task<int> Delete(Guid Id, bool rollback = false)
         {
             try
             {
@@ -96,7 +88,7 @@ namespace LN7.BL
             }
         }
 
-        public async static Task<int> Update(User user, bool rollback = false)
+        public static async Task<int> Update(User user, bool rollback = false)
         {
             try
             {
@@ -122,7 +114,6 @@ namespace LN7.BL
                         results = await dc.SaveChangesAsync().ConfigureAwait(false);
                         if (transaction != null)
                             await transaction.RollbackAsync().ConfigureAwait(false);
-
                     }
                     else
                     {
@@ -133,12 +124,11 @@ namespace LN7.BL
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
 
-        public async static Task<User> LoadById(Guid id)
+        public static async Task<User> LoadById(Guid id)
         {
             try
             {
@@ -167,12 +157,11 @@ namespace LN7.BL
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
 
-        public async static Task<IEnumerable<User>> Load()
+        public static async Task<IEnumerable<User>> Load()
         {
             try
             {
@@ -183,7 +172,6 @@ namespace LN7.BL
                         .ToListAsync().ConfigureAwait(false))
                         .ForEach(c => users.Add(new User
                         {
-
                             Id = c.Id,
                             Username = c.Username,
                             Password = c.Password,
@@ -192,14 +180,12 @@ namespace LN7.BL
                             Is_Admin = c.Is_Admin,
                             Email = c.Email,
                             Date_Created = c.Date_Created
-
                         }));
                 }
                 return users;
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -230,7 +216,6 @@ namespace LN7.BL
                                 {
                                     return false;
                                 }
-
                             }
                             else
                             {
@@ -250,7 +235,6 @@ namespace LN7.BL
             }
             catch (Exception)
             {
-
                 throw;
             }
         }

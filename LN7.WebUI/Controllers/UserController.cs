@@ -1,9 +1,8 @@
+using LN7.BL;
 using LN7.BL.Models;
 using LN7.WebUI.Models;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 using System.Diagnostics;
-using LN7.BL;
 
 namespace LN7.WebUI.Controllers
 {
@@ -12,7 +11,7 @@ namespace LN7.WebUI.Controllers
         public ActionResult Index()
         {
             HttpContext.Session.SetInt32("questionState", 1);
-            return RedirectToAction("Index","Home");
+            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult Signup(string returnUri)
@@ -26,7 +25,6 @@ namespace LN7.WebUI.Controllers
             SetUser(null);
             return View();
         }
-
 
         [HttpPost]
         [ValidateAntiForgeryToken]

@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Builder;
-using LN7.WebUI.Models;
-
-namespace LN7.WebUI
+﻿namespace LN7.WebUI
 {
     public class Startup
     {
@@ -49,5 +46,4 @@ namespace LN7.WebUI
             app.UseWebSockets();
         }
     }
-
 }

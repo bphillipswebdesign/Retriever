@@ -1,12 +1,8 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using LN7.BL;
 using Microsoft.AspNetCore.Mvc;
-using System.Numerics;
-using LN7.BL;
-using LN7.BL.Models;
 
 namespace LN7.API.Controllers
 {
-
     [Route("api/[controller]")]
     public class UserController : ControllerBase
     {
@@ -24,7 +20,6 @@ namespace LN7.API.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
-
 
         // GET: User/guid
         [HttpGet("{id}")]
@@ -48,7 +43,6 @@ namespace LN7.API.Controllers
             {
                 await UserManager.Insert(user, rollback);
                 return Ok(user.Id);
-
             }
             catch (Exception ex)
             {
@@ -66,7 +60,6 @@ namespace LN7.API.Controllers
             try
             {
                 return Ok(await UserManager.Update(user, rollback));
-
             }
             catch (Exception ex)
             {
@@ -81,7 +74,6 @@ namespace LN7.API.Controllers
             try
             {
                 return Ok(await UserManager.Delete(id, rollback));
-
             }
             catch (Exception ex)
             {
@@ -90,4 +82,3 @@ namespace LN7.API.Controllers
         }
     }
 }
-

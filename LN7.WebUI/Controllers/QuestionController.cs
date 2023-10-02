@@ -1,25 +1,19 @@
-﻿using LN7.BL.Models;
+﻿using LN7.BL;
+using LN7.BL.Models;
 using LN7.WebUI.Models;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-using Microsoft.AspNetCore.Http;
 using System.Diagnostics;
-using LN7.BL;
-using LN7.PL;
 
 namespace LN7.WebUI.Controllers
 {
-
     public class QuestionController : Controller
     {
-
         private readonly ILogger<HomeController> _logger;
 
         public QuestionController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
-
 
         public async Task<IActionResult> Index()
         {
@@ -107,7 +101,6 @@ namespace LN7.WebUI.Controllers
                 {
                     return NotFound();
                 }
-
             }
             catch (Exception ex)
             {
@@ -142,7 +135,6 @@ namespace LN7.WebUI.Controllers
         {
             return View();
         }
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

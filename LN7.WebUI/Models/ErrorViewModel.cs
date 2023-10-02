@@ -1,9 +1,3 @@
-using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc;
-using NuGet.Common;
-using System.Diagnostics;
-
 namespace LN7.WebUI.Models
 {
     public class ErrorViewModel
@@ -13,4 +7,3 @@ namespace LN7.WebUI.Models
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
     }
 }
-
