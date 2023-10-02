@@ -403,3 +403,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/LN7.DB/nicklocal.publish.xml
