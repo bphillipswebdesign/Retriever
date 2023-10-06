@@ -67,12 +67,19 @@ namespace LN7.WebUI.Controllers
         {
             try
             {
-                UserManager.Login(user);
-                SetUser(user);
-                if (TempData["returnurl"] != null)
-                    return Redirect(TempData["returnurl"]?.ToString());
+                if (UserManager.Login(user))
+                {
+                    // Successful login
+                    SetUser(user);
+                    if (TempData["returnurl"] != null)
+                        return Redirect(TempData["returnurl"]?.ToString());
+                    else
+                        return RedirectToAction("Index", "Home");
+                }
                 else
-                    return RedirectToAction("Index", "Home");
+                {
+                    return View(user);
+                }
             }
             catch (Exception ex)
             {

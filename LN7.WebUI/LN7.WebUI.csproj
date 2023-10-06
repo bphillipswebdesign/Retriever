@@ -17,4 +17,8 @@
     <ProjectReference Include="..\LN7.BL\LN7.BL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\imgs\" />
+  </ItemGroup>
+
 </Project>

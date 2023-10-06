@@ -8,42 +8,61 @@
 <head>
     <link rel="stylesheet" href="~/css/signup.css" asp-append-version="true" />
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/emp4nbz.css"> @*access Proxima Nova, Raleway from Adobe Fonts*@
+    <script src="https://kit.fontawesome.com/bf20b559de.js" crossorigin="anonymous"></script> @*for using fontawesome icons*@
 </head>
-<hr />
-<div class="signupForm">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <h1 class="signupText">Sign Up</h1>
-                <label asp-for="First_Name" class="control-label"></label>
-                <input asp-for="First_Name" class="form-control" />
-                <span asp-validation-for="First_Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Last_Name" class="control-label"></label>
-                <input asp-for="Last_Name" class="form-control" />
-                <span asp-validation-for="Last_Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Username" class="control-label"></label>
-                <input asp-for="Username" class="form-control" />
-                <span asp-validation-for="Username" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="bottomButtons">
-                <input type="submit" value="Sign Up!" class="signupBtn" />
-            </div>
-        </form>
+
+<div class="wrapper">
+
+    <div class="logo-image-container">
+        <a href="#">
+            @*links to homepage eventually?*@
+            <img class="logo-image" src="~/imgs/retriever-logo-headonly.png" alt="black dog head with purple magnifying glass over left eye">
+        </a>
+
+        @* <div class="logo-text">
+        <h2>Retriever</h2>
+        </div>*@
+    </div>
+
+    <div class="form-container">
+        <div class="signup-item">
+            <form asp-action="Create" class="form form-signup">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+
+                <div class="form-group">
+                    <h2 class="signupText">Sign Up</h2>
+                    <label @*asp-for="First_Name"*@ class="control-label fname"></label>
+                    <input asp-for="First_Name" class="form-control" placeholder="First Name" required />
+                    <span asp-validation-for="First_Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label @*asp-for="Last_Name"*@ class="control-label lname"></label>
+                    <input asp-for="Last_Name" class="form-control" placeholder="Last Name" required />
+                    <span asp-validation-for="Last_Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label @*asp-for="Email"*@ class="control-label email"></label>
+                    <input asp-for="Email" class="form-control" placeholder="E-mail" required />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label @*asp-for="Username"*@ class="control-label user"></label>
+                    <input asp-for="Username" class="form-control" placeholder="Username" required />
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label @*asp-for="Password"*@ class="control-label pass"></label>
+                    <input type="password" asp-for="Password" class="form-control" placeholder="Password" required />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group signup-button">
+                    <input type="submit" value="Sign Up!" class="signupBtn" />
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
