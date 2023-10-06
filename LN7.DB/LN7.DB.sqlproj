@@ -111,5 +111,6 @@
     <None Include="remote.publish.xml" />
     <None Include="SK.LN7.DB.publish.xml" />
     <None Include="local.publish.xml" />
+    <None Include="breelocal.publish.xml" />
   </ItemGroup>
 </Project>
