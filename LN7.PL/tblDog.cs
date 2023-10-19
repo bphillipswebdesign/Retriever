@@ -2,7 +2,7 @@
 
 public partial class tblDog
 {
-    public Guid Id { get; set; }
+    public int Id { get; set; }
 
     public string BreedName { get; set; }
 

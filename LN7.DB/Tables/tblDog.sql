@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[tblDog]
 (
-	[Id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY,
+	[Id] INT NOT NULL PRIMARY KEY,
     [BreedName] VARCHAR(50) NOT NULL,
     [Imagepath] VARCHAR(250) NOT NULL,
     [DogGroup] INT NOT NULL,

@@ -42,7 +42,6 @@ namespace LN7.BL
             try
             {
                 List<GameQuestion> rows = new List<GameQuestion>();
-
                 using (LN7Entities dc = new LN7Entities())
                 {
                     dc.tblQuestions
@@ -75,7 +74,7 @@ namespace LN7.BL
                         .ToList()
                         .ForEach(s => rows.Add(new Dog
                         {
-                            Dog_Id = s.Id,
+                            Id = s.Id,
                             BreedName = s.BreedName,
                             Imagepath = s.Imagepath,
                             DogGroup = s.DogGroup,
