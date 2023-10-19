@@ -70,6 +70,68 @@ namespace LN7.BL
             }
         }
 
+        public static Dog LoadById(int id)
+        {
+            try
+            {
+                List<Dog> rows = new List<Dog>();
+
+                using (LN7Entities dc = new LN7Entities())
+                {
+                    var dogs = (from d in dc.tblDogs
+                                where d.Id == id
+                                select new
+                                {
+                                    d.Id,
+                                    d.BreedName,
+                                    d.DogGroup,
+                                    d.CoatColor,
+                                    d.CoatType,
+                                    d.CoatLength,
+                                    d.EarType,
+                                    d.EarLength,
+                                    d.LegLength,
+                                    d.BodyType,
+                                    d.MuzzleType,
+                                    d.MuzzleLength,
+                                    d.Origin,
+                                    d.TailType,
+                                    d.TailLength,
+                                    d.WeightClass
+                                }).FirstOrDefault();
+                    if (dogs != null)
+                    {
+                        return new Dog
+                        {
+                            Id = dogs.Id,
+                            BodyType = dogs.BodyType,
+                            BreedName = dogs.BreedName,
+                            CoatColor = dogs.CoatColor,
+                            CoatType = dogs.CoatType,
+                            CoatLength = dogs.CoatLength,
+                            EarType = dogs.EarType,
+                            EarLength = dogs.EarLength,
+                            LegLength = dogs.LegLength,
+                            MuzzleType = dogs.MuzzleType,
+                            MuzzleLength = dogs.MuzzleLength,
+                            Origin = (int)dogs.Origin,
+                            TailType = dogs.TailType,
+                            TailLength = dogs.TailLength,
+                            WeightClass = dogs.WeightClass,
+                        };
+                    }
+                    else
+                    {
+                        throw new Exception();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception();
+            }
+        }
+
         public static int Insert(Dog dog, bool rollback = false)
         {
             try
@@ -119,6 +181,42 @@ namespace LN7.BL
             {
 
                 throw;
+            }
+        }
+
+        public static int Delete(int id, bool rollback = false)
+        {
+            try
+            {
+                int results = 0;
+                using (LN7Entities dc = new LN7Entities())
+                {
+
+                    IDbContextTransaction dbContextTransaction = null;
+                    if (rollback) dbContextTransaction = dc.Database.BeginTransaction();
+
+                    tblDog row = dc.tblDogs.Where(s => s.Id == id).FirstOrDefault();
+
+                    if (row != null)
+                    {
+                        dc.tblDogs.Remove(row);
+                        results = dc.SaveChanges();
+
+                        if (rollback) dbContextTransaction.Rollback();
+                    }
+                    else
+                    {
+                        throw new Exception();
+                    }
+                }
+
+                return results;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
 

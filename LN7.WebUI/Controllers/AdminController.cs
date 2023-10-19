@@ -19,7 +19,7 @@ namespace LN7.WebUI.Controllers
         public ActionResult Index()
         {
             ViewBag.Title = "Index";
-            return View();
+            return View(DogManager.Load());
         }
 
         public ActionResult DogAdded()
@@ -49,6 +49,29 @@ namespace LN7.WebUI.Controllers
                 ViewBag.Error = ex.Message;
                 ViewBag.Title = "Create Dog";
                 return View(dogVM);
+            }
+        }
+
+        public ActionResult Delete(int id)
+        {
+            ViewBag.Title = "Delete Declaration";
+            return View(DogManager.LoadById(id));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id, BL.Models.Dog dog)
+        {
+            try
+            {
+                DogManager.Delete(id);
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.Message;
+                ViewBag.Title = "Delete Declarations";
+                return View();
             }
         }
 
