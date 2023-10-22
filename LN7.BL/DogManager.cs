@@ -12,8 +12,12 @@ using Microsoft.VisualStudio.Web.CodeGeneration.Design;
 
 namespace LN7.BL
 {
+
     public static class DogManager
     {
+
+        private const string Message = "Row does not exist.";
+
         public static List<Dog> Load()
         {
             try
@@ -70,35 +74,76 @@ namespace LN7.BL
             }
         }
 
+        //public static Dog LoadById(int id)
+        //{
+        //    try
+        //    {
+        //        List<Dog> rows = new List<Dog>();
+
+        //        using (LN7Entities dc = new LN7Entities())
+        //        {
+        //            var dogs = (from d in dc.tblDogs
+        //                        where d.Id == id
+        //                        select new
+        //                        {
+        //                            d.Id,
+        //                            d.BreedName,
+        //                            d.DogGroup,
+        //                            d.CoatColor,
+        //                            d.CoatType,
+        //                            d.CoatLength,
+        //                            d.EarType,
+        //                            d.EarLength,
+        //                            d.LegLength,
+        //                            d.BodyType,
+        //                            d.MuzzleType,
+        //                            d.MuzzleLength,
+        //                            d.Origin,
+        //                            d.TailType,
+        //                            d.TailLength,
+        //                            d.WeightClass
+        //                        }).FirstOrDefault();
+        //            if (dogs != null)
+        //            {
+        //                return new Dog
+        //                {
+        //                    Id = dogs.Id,
+        //                    BodyType = dogs.BodyType,
+        //                    BreedName = dogs.BreedName,
+        //                    CoatColor = dogs.CoatColor,
+        //                    CoatType = dogs.CoatType,
+        //                    CoatLength = dogs.CoatLength,
+        //                    EarType = dogs.EarType,
+        //                    EarLength = dogs.EarLength,
+        //                    LegLength = dogs.LegLength,
+        //                    MuzzleType = dogs.MuzzleType,
+        //                    MuzzleLength = dogs.MuzzleLength,
+        //                    Origin = (int)dogs.Origin,
+        //                    TailType = dogs.TailType,
+        //                    TailLength = dogs.TailLength,
+        //                    WeightClass = dogs.WeightClass,
+        //                };
+        //            }
+        //            else
+        //            {
+        //                throw new Exception();
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new Exception();
+        //    }
+        //}
+
         public static Dog LoadById(int id)
         {
             try
             {
-                List<Dog> rows = new List<Dog>();
-
                 using (LN7Entities dc = new LN7Entities())
                 {
-                    var dogs = (from d in dc.tblDogs
-                                where d.Id == id
-                                select new
-                                {
-                                    d.Id,
-                                    d.BreedName,
-                                    d.DogGroup,
-                                    d.CoatColor,
-                                    d.CoatType,
-                                    d.CoatLength,
-                                    d.EarType,
-                                    d.EarLength,
-                                    d.LegLength,
-                                    d.BodyType,
-                                    d.MuzzleType,
-                                    d.MuzzleLength,
-                                    d.Origin,
-                                    d.TailType,
-                                    d.TailLength,
-                                    d.WeightClass
-                                }).FirstOrDefault();
+                    tblDog dogs = dc.tblDogs.FirstOrDefault(s => s.Id == id);
+
                     if (dogs != null)
                     {
                         return new Dog
@@ -118,17 +163,19 @@ namespace LN7.BL
                             TailType = dogs.TailType,
                             TailLength = dogs.TailLength,
                             WeightClass = dogs.WeightClass,
+
                         };
                     }
                     else
                     {
-                        throw new Exception();
+                        throw new Exception(Message);
                     }
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception();
+
+                throw ex;
             }
         }
 
@@ -220,6 +267,64 @@ namespace LN7.BL
             }
         }
 
+
+
+        public static int Update(Dog dog, bool rollback = false)
+        {
+            try
+            {
+                int results = 0;
+                using (LN7Entities dc = new LN7Entities())
+                {
+
+                    IDbContextTransaction dbContextTransaction = null;
+                    if (rollback) dbContextTransaction = dc.Database.BeginTransaction();
+
+                    tblDog row = dc.tblDogs.Where(s => s.Id == dog.Id).FirstOrDefault();
+
+                    if (row != null)
+                    {
+                        row.Id = dog.Id;
+                        row.BodyType = dog.BodyType;
+                        row.BreedName = dog.BreedName;
+                        row.CoatColor = dog.CoatColor;
+                        row.CoatLength = dog.CoatLength;
+                        row.CoatType = dog.CoatType;
+                        row.DogGroup = dog.DogGroup;
+                        row.EarLength = dog.EarLength;
+                        row.EarType = dog.EarType;
+                        row.Imagepath = dog.Imagepath;
+                        row.LegLength = dog.LegLength;
+                        row.MuzzleLength = dog.MuzzleLength;
+                        row.MuzzleType = dog.MuzzleType;
+                        row.Origin = dog.Origin;
+                        row.TailLength = dog.TailLength;
+                        row.TailType = dog.TailType;
+                        row.WeightClass = dog.WeightClass;
+                        results = dc.SaveChanges();
+
+                        if (rollback) dbContextTransaction.Rollback();
+                    }
+                    else
+                    {
+                        throw new Exception();
+                    }
+                }
+
+                return results;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+
+
+
+        //ALL TABLES LOAD STATMENTS *IGNORE*
         public static List<BodyType> LoadBody()
         {
             try

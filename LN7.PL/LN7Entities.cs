@@ -118,6 +118,7 @@ public partial class LN7Entities : DbContext
                 .HasMaxLength(250)
                 .IsUnicode(false);
             entity.Property(e => e.DogGroup);
+            entity.Property(e => e.BodyType);
             entity.Property(e => e.CoatColor);
             entity.Property(e => e.CoatType);
             entity.Property(e => e.CoatLength);

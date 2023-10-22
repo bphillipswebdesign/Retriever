@@ -22,10 +22,27 @@ namespace LN7.WebUI.ViewModels
         public List <TailType> TailTypes { get; set; }
         public List <WeightClass> WeightClasses { get; set; }
 
-
-
         public DogVM() 
         {
+            BodyTypes = DogManager.LoadBody();
+            CoatColors = DogManager.CoatColorLoad();
+            CoatLengths = DogManager.CoatLengthLoad();
+            CoatTypes = DogManager.CoatTypeLoad();
+            Groups = DogManager.LoadGroup();
+            EarLengths = DogManager.EarLengthLoad();
+            EarTypes = DogManager.EarTypeLoad();
+            LegLengths = DogManager.LegLengthLoad();
+            MuzzleLengths = DogManager.MuzzleLengthLoad();
+            MuzzleTypes = DogManager.MuzzleTypeLoad();
+            OriginTypes = DogManager.OriginTypeLoad();
+            TailLengths = DogManager.TailLengthLoad();
+            TailTypes = DogManager.TailTypeLoad();
+            WeightClasses = DogManager.WeightClassLoad();
+        }
+
+        public DogVM(int id)
+        {
+            Dog = DogManager.LoadById(id);
             BodyTypes = DogManager.LoadBody();
             CoatColors = DogManager.CoatColorLoad();
             CoatLengths = DogManager.CoatLengthLoad();

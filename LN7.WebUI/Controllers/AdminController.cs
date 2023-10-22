@@ -52,6 +52,31 @@ namespace LN7.WebUI.Controllers
             }
         }
 
+        public ActionResult Edit(int id)
+        {
+            ViewBag.Title = "Edit";
+            DogVM dogVM = new DogVM(id);
+            HttpContext.Session.SetObject("Id", dogVM.Dog.Id);
+            return View(dogVM);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, DogVM dogVM)
+        {
+            try
+            {
+                DogManager.Update(dogVM.Dog);
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.Message;
+                ViewBag.Title = "Edit";
+                return View(dogVM);
+            }
+        }
+
         public ActionResult Delete(int id)
         {
             ViewBag.Title = "Delete Declaration";
