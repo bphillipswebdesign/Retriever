@@ -10,8 +10,7 @@ namespace LN7.WebUI.Controllers
     {
         public ActionResult Index()
         {
-            HttpContext.Session.SetInt32("questionState", 1);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index");
         }
 
         public ActionResult Signup(string returnUri)

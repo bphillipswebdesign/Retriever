@@ -279,6 +279,7 @@ public partial class LN7Entities : DbContext
             entity.Property(e => e.Username)
                 .HasMaxLength(50)
                 .IsUnicode(false);
+            entity.Property(e => e.Is_Admin).IsRequired();
         });
 
         modelBuilder.Entity<tblWeightClass>(entity =>

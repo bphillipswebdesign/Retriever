@@ -210,6 +210,7 @@ namespace LN7.BL
                                     user.Password = tblUser.Password;
                                     user.First_Name = tblUser.First_Name;
                                     user.Last_Name = tblUser.Last_Name;
+                                    user.Is_Admin = tblUser.Is_Admin;
                                     return true;
                                 }
                                 else

@@ -77,9 +77,17 @@ namespace LN7.WebUI.Controllers
             }
         }
 
+        public ActionResult Details(int id)
+        {
+            ViewBag.Title = "Edit";
+            DogVM dogVM = new DogVM(id);
+            HttpContext.Session.SetObject("Id", dogVM.Dog.Id);
+            return View(dogVM);
+        }
+
         public ActionResult Delete(int id)
         {
-            ViewBag.Title = "Delete Declaration";
+            ViewBag.Title = "Delete";
             return View(DogManager.LoadById(id));
         }
 
@@ -95,7 +103,7 @@ namespace LN7.WebUI.Controllers
             catch (Exception ex)
             {
                 ViewBag.Error = ex.Message;
-                ViewBag.Title = "Delete Declarations";
+                ViewBag.Title = "Delete";
                 return View();
             }
         }
