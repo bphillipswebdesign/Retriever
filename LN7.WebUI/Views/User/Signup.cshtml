@@ -30,36 +30,29 @@
             <form asp-action="Create" class="form form-signup">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-
-
                 <div class="form-group">
                     <h2 class="signupText">Sign Up</h2>
-                    <label @*asp-for="First_Name"*@ class="control-label fname"></label>
                     <input asp-for="First_Name" class="form-control" placeholder="First Name" required />
                     <span asp-validation-for="First_Name" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label @*asp-for="Last_Name"*@ class="control-label lname"></label>
                     <input asp-for="Last_Name" class="form-control" placeholder="Last Name" required />
                     <span asp-validation-for="Last_Name" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label @*asp-for="Email"*@ class="control-label email"></label>
                     <input asp-for="Email" class="form-control" placeholder="E-mail" required />
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label @*asp-for="Username"*@ class="control-label user"></label>
                     <input asp-for="Username" class="form-control" placeholder="Username" required />
                     <span asp-validation-for="Username" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label @*asp-for="Password"*@ class="control-label pass"></label>
                     <input type="password" asp-for="Password" class="form-control" placeholder="Password" required />
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
                 <div class="form-group signup-button">
-                    <input type="submit" value="Sign Up!" class="signupBtn" />
+                    <input type="submit" value="Signup" class="signupBtn" />
                 </div>
             </form>
         </div>

@@ -27,7 +27,7 @@
                 }
                 <ul class="navbar-nav">
                     @{
-                        if (user.Is_Admin == true)
+                        if (user?.Is_Admin == true)
                         {
                             <li><a class="nav-link text-light" asp-area="" asp-controller="Admin" asp-action="Index">Admin Page</a></li>
                         }

@@ -32,7 +32,7 @@ namespace LN7.WebUI.Controllers
             try
             {
                 UserManager.Insert(user);
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Login));
             }
             catch
             {
