@@ -1,4 +1,5 @@
 using LN7.BL;
+using LN7.BL.Models;
 using LN7.WebUI.Models;
 using LN7.WebUI.ViewModels;
 using Microsoft.AspNetCore.Http.Extensions;
@@ -56,7 +57,6 @@ namespace LN7.WebUI.Controllers
         {
             ViewBag.Title = "Edit";
             DogVM dogVM = new DogVM(id);
-            HttpContext.Session.SetObject("Id", dogVM.Dog.Id);
             return View(dogVM);
         }
 
@@ -66,14 +66,15 @@ namespace LN7.WebUI.Controllers
         {
             try
             {
-                DogManager.Update(dogVM.Dog);
+                DogManager.Delete(id);
+                DogManager.Insert(dogVM.Dog);
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
             {
                 ViewBag.Error = ex.Message;
-                ViewBag.Title = "Edit";
-                return View(dogVM);
+                ViewBag.Title = "Delete";
+                return View();
             }
         }
 
