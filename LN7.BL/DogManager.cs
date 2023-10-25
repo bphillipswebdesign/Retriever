@@ -30,6 +30,7 @@ namespace LN7.BL
                                 select new
                                 {
                                     d.Id,
+                                    d.Imagepath,
                                     d.BreedName,
                                     d.DogGroup,
                                     d.CoatColor,
@@ -50,6 +51,7 @@ namespace LN7.BL
                     dogs.ForEach(d => rows.Add(new Models.Dog
                     {
                         Id = d.Id,
+                        Imagepath = d.Imagepath,
                         BodyType = d.BodyType,
                         BreedName = d.BreedName,
                         CoatColor = d.CoatColor,
@@ -74,68 +76,6 @@ namespace LN7.BL
             }
         }
 
-        //public static Dog LoadById(int id)
-        //{
-        //    try
-        //    {
-        //        List<Dog> rows = new List<Dog>();
-
-        //        using (LN7Entities dc = new LN7Entities())
-        //        {
-        //            var dogs = (from d in dc.tblDogs
-        //                        where d.Id == id
-        //                        select new
-        //                        {
-        //                            d.Id,
-        //                            d.BreedName,
-        //                            d.DogGroup,
-        //                            d.CoatColor,
-        //                            d.CoatType,
-        //                            d.CoatLength,
-        //                            d.EarType,
-        //                            d.EarLength,
-        //                            d.LegLength,
-        //                            d.BodyType,
-        //                            d.MuzzleType,
-        //                            d.MuzzleLength,
-        //                            d.Origin,
-        //                            d.TailType,
-        //                            d.TailLength,
-        //                            d.WeightClass
-        //                        }).FirstOrDefault();
-        //            if (dogs != null)
-        //            {
-        //                return new Dog
-        //                {
-        //                    Id = dogs.Id,
-        //                    BodyType = dogs.BodyType,
-        //                    BreedName = dogs.BreedName,
-        //                    CoatColor = dogs.CoatColor,
-        //                    CoatType = dogs.CoatType,
-        //                    CoatLength = dogs.CoatLength,
-        //                    EarType = dogs.EarType,
-        //                    EarLength = dogs.EarLength,
-        //                    LegLength = dogs.LegLength,
-        //                    MuzzleType = dogs.MuzzleType,
-        //                    MuzzleLength = dogs.MuzzleLength,
-        //                    Origin = (int)dogs.Origin,
-        //                    TailType = dogs.TailType,
-        //                    TailLength = dogs.TailLength,
-        //                    WeightClass = dogs.WeightClass,
-        //                };
-        //            }
-        //            else
-        //            {
-        //                throw new Exception();
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception();
-        //    }
-        //}
-
         public static Dog LoadById(int id)
         {
             try
@@ -149,6 +89,7 @@ namespace LN7.BL
                         return new Dog
                         {
                             Id = dogs.Id,
+                            Imagepath = dogs.Imagepath,
                             BodyType = dogs.BodyType,
                             BreedName = dogs.BreedName,
                             CoatColor = dogs.CoatColor,

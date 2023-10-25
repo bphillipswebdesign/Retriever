@@ -20,7 +20,13 @@
 
             <div class="form-group">
                 <label asp-for="Dog.Imagepath" class="control-label"></label>
-                <input asp-for="Dog.Imagepath" type="file" class="form-control" />
+                <img class="imagepropmed"
+                     alt="@Model.Dog.BreedName"
+                     id="dogimage"
+                     onclick="on('/images/@Model.Dog.Imagepath');"
+                     src="~/images/@Model.Dog.Imagepath" />
+                <input asp-for="Dog.Imagepath" class="form-control" />
+                <input type="file" name="File" id="File" action="image/" onchange="loadFile(event)" />
                 <span asp-validation-for="Dog.Imagepath" class="text-danger"></span>
             </div>
 

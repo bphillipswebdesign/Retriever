@@ -21,6 +21,7 @@ namespace LN7.WebUI.ViewModels
         public List <TailLength> TailLengths { get; set; }  
         public List <TailType> TailTypes { get; set; }
         public List <WeightClass> WeightClasses { get; set; }
+        public IFormFile File { get; set; }
 
         public DogVM() 
         {

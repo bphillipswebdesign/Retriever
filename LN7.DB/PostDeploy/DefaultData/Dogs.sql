@@ -3,7 +3,7 @@
 							EarType, EarLength, LegLength, BodyType, MuzzleType, MuzzleLength,
 							Origin, TailType, TailLength, WeightClass) 
 	VALUES
-	(1, 'Beagle', '', 1, 3, 2, 1, 2, 3, 2, 2, 2, 2, -1, 2, 3, 2),
+	(1, 'Beagle', 'Beagle.jpg', 1, 3, 2, 1, 2, 3, 2, 2, 2, 2, -1, 2, 3, 2),
 	(2, 'Siberian Husky', '', 7, 3, 2, 2, 1, 2, 2, 2, 2, 2, -1, 3, 2, 3),
 	(3, 'German Shephard', '', 4, 2, 2, 2, 1, 2, 2, 2, 1, 2, 3, 2, 3, 4),
 	(4, 'Labrador Retriever', '', 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, -1, 2, 3, 4),
@@ -17,14 +17,14 @@
 	(12, 'Pomeranian', '', 6, 2, 5, 2, 1, 1, 1, 2, 3, 1, -1, 1, 2, 1),
 	(13, 'Bulldog', '', 2, 2, 2, 1, 2, 1, 1, 3, 3, 1, 2, 2, 1, 3),
 	(14, 'Poodle', '', 2, 1, 1, 3, 2, 3, 3, 1, 1, 3, 3, 2, 2, 4),
-	(15, 'Australian Shepherd', '', 4, 3, 2, 2, 2, 2, 2, 2, 2, 1, 5, 2, 2, 3),
+	(15, 'Australian Shepherd', 'AustralianShepherd.jpg', 4, 3, 2, 2, 2, 2, 2, 2, 2, 1, 5, 2, 2, 3),
 	(16, 'Cocker Spaniel', '', 1, 4, 2, 3, 2, 3, 2, 2, 2, 1, 2, 2, 3, 3),
 	(17, 'Schnauzer', '', 7, 4, 3, 2, 1, 1, 2, 2, 3, 1, 3, 1, 2, 3),
 	(18, 'Shih Tzu', '', 6, 4, 2, 3, 2, 3, 1, 2, 3, 1, 1, 1, 2, 1),
-	(19, 'Boston Terrier', '', 5, 2, 2, 1, 1, 2, 2, 2, 3, 1, 5, 2, 1, 2),
+	(19, 'Boston Terrier', 'Boston.jpg', 5, 2, 2, 1, 1, 2, 2, 2, 3, 1, 5, 2, 1, 2),
 	(20, 'St Bernard', '', 7, 2, 2, 2, 2, 2, 2, 2, 3, 1, -1, 2, 3, 5),
 	(21, 'German Shorthaired Pointer', '', 1, 4, 2, 2, 2, 2, 2, 2, 1, 1, 3, 2, 2, 3),
 	(22, 'Havanese', '', 6, 4, 2, 3, 2, 2, 1, 2, 3, 1, -1, 1, 1, 1),
-	(23, 'Border Collie', '', 4, 4, 4, 2, 1, 2, 2, 2, 1, 3, 4, 2, 2, 3),
+	(23, 'Border Collie', 'Collie.jpg', 4, 4, 4, 2, 1, 2, 2, 2, 1, 3, 4, 2, 2, 3),
 	(24, 'Golden Retriever', '', 1, 2, 4, 3, 2, 2, 2, 2, 3, 3, -1, 2, 3, 4)
 END
