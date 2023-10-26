@@ -4,9 +4,9 @@ public partial class tblDog
 {
     public int Id { get; set; }
 
-    public string BreedName { get; set; }
+    public string? BreedName { get; set; }
 
-    public string Imagepath { get; set; }
+    public string? Imagepath { get; set; }
 
     public int DogGroup { get; set; }
 

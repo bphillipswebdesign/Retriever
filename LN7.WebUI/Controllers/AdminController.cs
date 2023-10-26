@@ -2,19 +2,22 @@ using LN7.BL;
 using LN7.BL.Models;
 using LN7.WebUI.Models;
 using LN7.WebUI.ViewModels;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Hosting;
 
 namespace LN7.WebUI.Controllers
 {
     public class AdminController : Controller
     {
         private readonly ILogger<AdminController> _logger;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public AdminController(ILogger<AdminController> logger)
+        public AdminController(IWebHostEnvironment webHostEnvironment)
         {
-            _logger = logger;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         public ActionResult Index()
@@ -38,10 +41,26 @@ namespace LN7.WebUI.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(DogVM dogVM)
+        public ActionResult Create(DogVM dogVM, IFormFile file)
         {
             try
             {
+                if (file != null && file.Length > 0)
+                {
+                    // Define the path where you want to save the file in wwwroot/images
+                    var uploadsFolder = ("../wwwroot/images");
+                    var uniqueFileName = Guid.NewGuid().ToString() + "_" + file.FileName;
+                    var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        file.CopyTo(stream);
+                    }
+
+                    // Set the Dog.Imagepath to the path of the saved image
+                    dogVM.Dog.Imagepath = "images/" + uniqueFileName;
+                }
+
                 DogManager.Insert(dogVM.Dog);
                 return RedirectToAction(nameof(DogAdded));
             }
@@ -107,6 +126,27 @@ namespace LN7.WebUI.Controllers
                 ViewBag.Title = "Delete";
                 return View();
             }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Upload(IFormFile file)
+        {
+            if (file != null && file.Length > 0)
+            {
+                // Define the path to save the file in wwwroot/images
+                var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
+                var uniqueFileName = Guid.NewGuid().ToString() + "_" + file.FileName;
+                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await file.CopyToAsync(stream);
+                }
+
+                return RedirectToAction("Index");
+            }
+
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

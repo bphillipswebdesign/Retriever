@@ -134,6 +134,7 @@ namespace LN7.BL
                     tblDog row = new tblDog();
 
                     row.Id = dc.tblDogs.Any() ? dc.tblDogs.Max(s => s.Id) + 1 : 1;
+                    row.Imagepath = dog.Imagepath;
                     row.BodyType = dog.BodyType;
                     row.BreedName = dog.BreedName;
                     row.CoatColor = dog.CoatColor;
@@ -226,6 +227,7 @@ namespace LN7.BL
                     if (row != null)
                     {
                         row.Id = dog.Id;
+                        row.Imagepath = dog.Imagepath;
                         row.BodyType = dog.BodyType;
                         row.BreedName = dog.BreedName;
                         row.CoatColor = dog.CoatColor;
@@ -601,5 +603,6 @@ namespace LN7.BL
                 throw;
             }
         }
+
     }
 }
