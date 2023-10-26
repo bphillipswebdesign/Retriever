@@ -1,0 +1,4 @@
+﻿BEGIN
+	INSERT INTO tblPlayerStat VALUES
+	(1,1,'01/02/2023',1)
+END

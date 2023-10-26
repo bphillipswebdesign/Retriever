@@ -84,6 +84,8 @@
     <None Include="PostDeploy\DefaultData\Origins.sql" />
     <None Include="PostDeploy\DefaultData\Question.sql" />
     <Build Include="Tables\tblQuestion.sql" />
+    <Build Include="Tables\tblPlayerStat.sql" />
+    <None Include="PostDeploy\DefaultData\PlayerStat.sql" />
   </ItemGroup>
   <ItemGroup>
     <PreDeploy Include="PreDeploy\Script.PreDeployment1.sql" />
