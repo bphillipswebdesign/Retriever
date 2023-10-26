@@ -26,3 +26,4 @@ Post-Deployment Script Template
 :r .\DefaultData\Users.sql
 :r .\DefaultData\WeightClasses.sql
 :r .\DefaultData\Question.sql
+:r .\DefaultData\PlayerStat.sql

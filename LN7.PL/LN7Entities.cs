@@ -49,6 +49,7 @@ public partial class LN7Entities : DbContext
     public virtual DbSet<tblUser> tblUsers { get; set; }
 
     public virtual DbSet<tblWeightClass> tblWeightClasses { get; set; }
+    public virtual DbSet<tblPlayerStat> tblPlayerStats { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         // To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
@@ -292,6 +293,18 @@ public partial class LN7Entities : DbContext
             entity.Property(e => e.Description)
                 .HasMaxLength(20)
                 .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<tblPlayerStat>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PPK__tblPlaye__3214EC07414367A5");
+
+            entity.ToTable("tblPlayerStat");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.UserId);
+            entity.Property(e => e.PlayDate).HasColumnType("datetime");
+            entity.Property(e => e.Result).IsRequired();
         });
 
         OnModelCreatingPartial(modelBuilder);
