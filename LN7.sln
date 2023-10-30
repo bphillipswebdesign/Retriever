@@ -20,7 +20,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LN7.BL", "LN7.BL\LN7.BL.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LN7.PL", "LN7.PL\LN7.PL.csproj", "{22822205-6522-4C5F-B5F5-F191AF14C633}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LN7.BL.Test", "LN7.BL.Test\LN7.BL.Test.csproj", "{7BE6459E-F563-4C1D-99FC-C3C8C72954D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LN7.BL.Test", "LN7.BL.Test\LN7.BL.Test.csproj", "{7BE6459E-F563-4C1D-99FC-C3C8C72954D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LN7.API.Test", "LN7.API.Test\LN7.API.Test.csproj", "{C7C094C7-B0DF-439C-A599-E02D7E7B3ABC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,6 +60,10 @@ Global
 		{7BE6459E-F563-4C1D-99FC-C3C8C72954D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BE6459E-F563-4C1D-99FC-C3C8C72954D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BE6459E-F563-4C1D-99FC-C3C8C72954D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7C094C7-B0DF-439C-A599-E02D7E7B3ABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7C094C7-B0DF-439C-A599-E02D7E7B3ABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7C094C7-B0DF-439C-A599-E02D7E7B3ABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7C094C7-B0DF-439C-A599-E02D7E7B3ABC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
