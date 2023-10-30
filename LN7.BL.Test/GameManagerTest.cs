@@ -1,10 +1,10 @@
 using LN7.BL;
 using LN7.BL.Models;
 
-namespace GameManagerTest
+namespace LN7.BL.Test
 {
     [TestClass]
-    public class GameManagerTests
+    public class GameManagerTest : BaseTest
     {
         [TestMethod]
         public async Task LoadByIdTest()
