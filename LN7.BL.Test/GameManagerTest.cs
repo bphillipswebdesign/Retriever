@@ -1,11 +1,30 @@
 using LN7.BL;
 using LN7.BL.Models;
+using LN7.PL;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace LN7.BL.Test
 {
     [TestClass]
-    public class GameManagerTest : BaseTest
+    public class GameManagerTest
     {
+        protected LN7Entities ln;
+        protected IDbContextTransaction tx;
+
+        [TestInitialize]
+        public void TestInitialize()
+        {
+            ln = new LN7Entities();
+            tx = ln.Database.BeginTransaction();
+        }
+
+        [TestCleanup]
+        public void TestCleanup()
+        {
+            tx.Rollback();
+            tx.Dispose();
+        }
+
         [TestMethod]
         public async Task LoadByIdTest()
         {

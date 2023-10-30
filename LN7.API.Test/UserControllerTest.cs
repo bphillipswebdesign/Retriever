@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LN7.API.Test
+﻿namespace LN7.API.Test
 {
     [TestClass]
     public class UserControllerTest : BaseTest
