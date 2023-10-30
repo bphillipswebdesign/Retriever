@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LN7.BL;
-using LN7.BL.Models;
+﻿using LN7.BL.Models;
 using LN7.PL;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
-using Microsoft.VisualStudio.Web.CodeGeneration.Design;
 
 namespace LN7.BL
 {
