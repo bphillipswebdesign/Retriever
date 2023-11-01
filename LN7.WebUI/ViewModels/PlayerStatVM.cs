@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
-namespace LN7.BL.Models
+namespace LN7.WebUI.ViewModels
 {
-    public class PlayerStat
+    public class PlayerStatVM
     {
         public int Id { get; set; }
         [DisplayName("User Name")]

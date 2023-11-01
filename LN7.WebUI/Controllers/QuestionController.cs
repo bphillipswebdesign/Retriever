@@ -2,6 +2,7 @@
 using LN7.BL.Models;
 using LN7.WebUI.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace LN7.WebUI.Controllers
@@ -66,11 +67,23 @@ namespace LN7.WebUI.Controllers
                     else if (dogs.Count == 1)
                     {
                         HttpContext.Session.Remove("dogs");
+                        HttpContext.Session.Remove("shuffledQuestions");
+                        PlayerStat playerStat = new PlayerStat();
+                        playerStat.UserId = HttpContext.Session.Get<User>("user").Id;
+                        playerStat.PlayDate = DateTime.Now;
+                        playerStat.Result = true;
+                        PlayerStatManager.Insert(playerStat);
                         return View("~/Views/Question/DisplayGuess.cshtml", dogs[0].BreedName);
                     }
                     else
                     {
                         HttpContext.Session.Remove("dogs");
+                        HttpContext.Session.Remove("shuffledQuestions");
+                        PlayerStat playerStat = new PlayerStat();
+                        playerStat.UserId = HttpContext.Session.Get<User>("user").Id;
+                        playerStat.PlayDate = DateTime.Now;
+                        playerStat.Result = false;
+                        PlayerStatManager.Insert(playerStat);
                         return View("~/Views/Question/AllQuestionsAsked.cshtml");
                     }
 

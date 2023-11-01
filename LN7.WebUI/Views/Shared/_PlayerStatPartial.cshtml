@@ -1,0 +1,42 @@
+﻿@model IEnumerable<LN7.WebUI.ViewModels.PlayerStatVM>
+
+
+    <table class="table data-table">
+        <thead class="header text-dark">
+            <tr>
+                @*<th>
+                @Html.DisplayNameFor(model => model.Id)
+                </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.Username)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PlayDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Result)
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @*<td>
+                @Html.DisplayFor(modelItem => item.Id)
+                </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Username)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PlayDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Result)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

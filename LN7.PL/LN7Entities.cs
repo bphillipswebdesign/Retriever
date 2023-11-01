@@ -302,7 +302,7 @@ public partial class LN7Entities : DbContext
             entity.ToTable("tblPlayerStat");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
-            entity.Property(e => e.UserId);
+            entity.Property(e => e.UserId).ValueGeneratedNever();
             entity.Property(e => e.PlayDate).HasColumnType("datetime");
             entity.Property(e => e.Result).IsRequired();
         });

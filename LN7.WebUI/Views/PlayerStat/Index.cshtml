@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LN7.BL.Models.PlayerStat>
+﻿@model IEnumerable<LN7.WebUI.ViewModels.PlayerStatVM>
 
 
 @{
@@ -6,43 +6,48 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<div>
+    <input class="btn btn-primary btn-dark" name="btnFilter" id="btnMine" type="button" value="My History"/>
+    <input class="btn btn-primary" id="btnToday" name="btnFilter" type="button" value="All Games Today" />
+    <input class="btn btn-primary" id="btnAll" name="btnFilter" type="button" value="All Games" />
+</div>
 
-<table class="table data-table">
-    <thead class="header text-dark">
-        <tr>
-            @*<th>
-            @Html.DisplayNameFor(model => model.Id)
-            </th>*@
-            <th>
-                @Html.DisplayNameFor(model => model.UserId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PlayDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Result)
-            </th>
-            
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                @*<td>
-            @Html.DisplayFor(modelItem => item.Id)
-            </td>*@
-                <td>
-                    @Html.DisplayFor(modelItem => item.UserId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PlayDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Result)
-                </td>               
-            </tr>
-        }
-    </tbody>
-</table>
+<div id="dvPartial">
+    <partial name="_PlayerStatPartial" model="Model" />
+</div>
+
+
+
+<script>
+  
+    let firstBtn = document.getElementById('btnMine');
+    let secondBtn = document.getElementById('btnToday');
+    let thirdBtn = document.getElementById('btnAll');
+    let view = document.getElementById('dvPartial');
+
+    firstBtn.addEventListener('click', () => {
+        firstBtn.classList.add('btn-dark');
+        secondBtn.classList.remove('btn-dark');
+        thirdBtn.classList.remove('btn-dark');
+        var answer = firstBtn.defaultValue;
+        $("#dvPartial").load('@(Url.Action("GetPlayerStats", "PlayerStat"))?btnFilter=' + encodeURIComponent(answer));
+    });
+
+    secondBtn.addEventListener('click', () => {
+        secondBtn.classList.add('btn-dark');
+        firstBtn.classList.remove('btn-dark');
+        thirdBtn.classList.remove('btn-dark');
+        var answer = secondBtn.defaultValue;
+    $("#dvPartial").load('@(Url.Action("GetPlayerStats", "PlayerStat"))?btnFilter='+ encodeURIComponent(answer));
+    });
+
+    thirdBtn.addEventListener('click', () => {
+        thirdBtn.classList.add('btn-dark');
+        firstBtn.classList.remove('btn-dark');
+        secondBtn.classList.remove('btn-dark');
+        var answer = thirdBtn.defaultValue;
+        $("#dvPartial").load('@(Url.Action("GetPlayerStats", "PlayerStat"))?btnFilter='+encodeURIComponent(answer));
+    });
+</script>
+
+
