@@ -1,6 +1,10 @@
 ﻿/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+.bg-color-override {
+  background-image: linear-gradient(to right, #CE8AFF, #9A96FF, #8AC4FF);
+}
+
 a.navbar-brand {
     white-space: normal;
     text-align: center;
