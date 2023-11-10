@@ -5,43 +5,38 @@
   background: linear-gradient(to top, #8AC4FF, #9A96FF, #CE8AFF);
 }
 
-.row {
+.body-section {
+  background-color: rgba(224,224,255,0.2);
+  min-height: 40vh;
+  margin-top: 8%;
   display: flex;
 }
 
-.edit-form {
-  display: block;
-  
-  margin: 0 auto;
-}
-
-.form-group {
-  margin: 0.5rem 0 0.5rem 0;
-}
-
-.control-label {
-  display: none;
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .dog-img {
   max-width: 100%;
   max-height: 200px;
   border-radius: 4px;
+  margin-bottom: 1.5rem;
 }
 
-.dog-name {
-  margin: 0.5rem 0 0.5rem 0;
-}
-
-.fc-width {
-  width: 50%;
+h3 {
+  color: #000000;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-bottom: 1rem;
 }
 
 .btn-styles {
   background-color: #3f9eff;
   color: #eee;
   font-weight: bold;
-  width: 33.33%;
+  width: 10rem;
   text-transform: uppercase;
   border-radius: 0.25rem;
   padding: 0.5rem;
