@@ -24,7 +24,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LN7.BL.Test", "LN7.BL.Test\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LN7.API.Test", "LN7.API.Test\LN7.API.Test.csproj", "{C7C094C7-B0DF-439C-A599-E02D7E7B3ABC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LN7.PL.Test", "LN7.PL.Test\LN7.PL.Test.csproj", "{3E56DA35-D456-4723-BB8B-BA09BB9F2209}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LN7.PL.Test", "LN7.PL.Test\LN7.PL.Test.csproj", "{3E56DA35-D456-4723-BB8B-BA09BB9F2209}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
