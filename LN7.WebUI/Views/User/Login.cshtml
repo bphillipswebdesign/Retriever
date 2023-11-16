@@ -41,8 +41,6 @@
                     <input type="Password" asp-for="Password" class="form-control" placeholder="Password" required />
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
-
-                <div class="form-container">
                     <div class="login-item">
                         <form asp-action="Login" class="form form-login">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -52,13 +50,13 @@
                         </form>
                     </div>
 
-                    <div class="signup-item">
-                        <form asp-action="Signup" class="form form-signup">
-                            <div class="form-field buttons">
-                                <input type="submit" value="Sign Up" class="signupBtn" />
-                            </div>
-                        </form>
-                    </div>
+                <div class="login-item">
+                    <form asp-action="Signup" class="form form-login">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-field buttons">
+                            <input type="submit" value="Sign Up" class="loginBtn" />
+                        </div>
+                    </form>
                 </div>
             </form>
         </div>
