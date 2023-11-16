@@ -1,4 +1,5 @@
 ﻿@model LN7.WebUI.ViewModels.DogVM
+LN7.BL.Models.Dog
 
 @{
     ViewData["Title"] = "Create";
@@ -26,7 +27,7 @@
 
             <div class="form-group">
                 <label asp-for="Dog.Imagepath" class="control-label"></label>
-                @*<img class="imagepropmed dog-img"
+               @* <img class="imagepropmed dog-img"
                      alt="@Model.Dog.BreedName"
                      id="dogimage"
                      onclick="on('/images/@Model.Dog.Imagepath');"
@@ -140,7 +141,7 @@
                 <a class="btn btn-sm btn-styles" asp-action="Index">Back to Dogs</a>
             </div>
         </form>
-    </div>
+  </div>
 </div>
 
 <div>

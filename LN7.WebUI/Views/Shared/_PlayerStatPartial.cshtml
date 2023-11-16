@@ -3,9 +3,9 @@
 
 
 
-  <div class="row table-responsive">
-    <table class="table table-dark table-striped table-hover border-dark">
-      <thead>
+  <div class="justify-content-center table-responsive">
+  <table class="table table-dark table-striped table-hover border-dark">
+      <thead class="text-center">
         <tr>
           @*<th>
           @Html.DisplayNameFor(model => model.Id)
@@ -17,13 +17,12 @@
             @Html.DisplayNameFor(model => model.PlayDate)
           </th>
           <th>
-            @Html.DisplayNameFor(model => model.Result)
+          @Html.DisplayNameFor(model => model.Result)
           </th>
-
           <th></th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="text-center">
         @foreach (var item in Model)
         {
           <tr>
