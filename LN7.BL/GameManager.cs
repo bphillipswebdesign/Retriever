@@ -108,6 +108,8 @@ namespace LN7.BL
                 string prop = ((QuestionTraits.TraitsMap)question.Trait_Id).ToString();
                 switch (answer)
                 {
+
+
                     case false:
                         foreach (Dog d in dogs.ToList())
                         {
@@ -142,7 +144,7 @@ namespace LN7.BL
 
         public static async Task<List<int>> ListFilter(int questionState, List<int> shuffledQuestions, bool answer)
         {
-            GameQuestion question = await GameManager.LoadById(questionState);
+            GameQuestion question = await LoadById(questionState);
 
             List<int> questionsToRemove = new List<int>();
 
@@ -151,7 +153,7 @@ namespace LN7.BL
                 // Loop through each remaining Question
                 foreach (int i in shuffledQuestions)
                 {
-                    GameQuestion q = await GameManager.LoadById(i);
+                    GameQuestion q = await LoadById(i);
 
                     if (question.Trait_Id == q.Trait_Id)
                     {

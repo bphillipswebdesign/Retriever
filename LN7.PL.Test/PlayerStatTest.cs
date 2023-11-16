@@ -13,8 +13,9 @@ namespace LN7.PL.Test
         [TestMethod]
         public void InsertTest()
         {
+            Guid newG = Guid.NewGuid();
             tblPlayerStat playerstat = new tblPlayerStat();
-            playerstat.UserId = 1;
+            playerstat.UserId = newG;
             playerstat.PlayDate = DateTime.Now;
             playerstat.Result = true;
 
