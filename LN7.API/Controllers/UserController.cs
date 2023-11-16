@@ -1,4 +1,5 @@
 ﻿using LN7.BL;
+using LN7.BL.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LN7.API.Controllers
@@ -7,9 +8,8 @@ namespace LN7.API.Controllers
     public class UserController : ControllerBase
     {
         // GET: User/
-
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<BL.Models.User>>> Get()
+        public async Task<ActionResult<IEnumerable<User>>> Get()
         {
             try
             {
@@ -23,7 +23,7 @@ namespace LN7.API.Controllers
 
         // GET: User/guid
         [HttpGet("{id}")]
-        public async Task<ActionResult<BL.Models.User>> Get(Guid id)
+        public async Task<ActionResult<User>> Get(Guid id)
         {
             try
             {
@@ -37,7 +37,7 @@ namespace LN7.API.Controllers
 
         // POST: User/false
         [HttpPost("{rollback}")]
-        public async Task<ActionResult> Post([FromBody] BL.Models.User user, bool rollback)
+        public async Task<ActionResult> Post([FromBody] User user, bool rollback)
         {
             try
             {
@@ -51,11 +51,30 @@ namespace LN7.API.Controllers
         }
 
         // POST: User/
-        [HttpPost("")]
+        [HttpPost("Login")]
+        public ActionResult Login([FromBody] User user)
+        {
+            try
+            {
+                if (UserManager.Login(user))
+                {
+                    // Successful login
+                    return Ok(new { Message = "Login successful" });
+                }
+                else
+                {
+                    return BadRequest(new { Message = "Invalid credentials" });
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Message = $"Error: {ex.Message}" });
+            }
+        }
 
         // PUT: User/guid/false
         [HttpPut("{id}/{rollback}")]
-        public async Task<IActionResult> Put(Guid id, [FromBody] BL.Models.User user, bool rollback)
+        public async Task<IActionResult> Put(Guid id, [FromBody] User user, bool rollback)
         {
             try
             {
