@@ -73,7 +73,8 @@ namespace LN7.WebUI.Controllers
                     if (TempData["returnurl"] != null)
                         return Redirect(TempData["returnurl"]?.ToString());
                     else
-                        return RedirectToAction("Index", "Home");
+                        //("Index", "Home") origional. changed for video
+                        return RedirectToAction("DisplayQuestion", "Question");
                 }
                 else
                 {
