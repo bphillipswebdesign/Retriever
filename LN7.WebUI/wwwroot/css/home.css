@@ -29,13 +29,13 @@
 
 @media (min-width: 1200px) {
     .container-margin {
-        margin-top: 10%;
+        margin-top: 8%;
     }
 }
 
 @media (min-width: 1400px) {
     .container-margin {
-        margin-top: 10%;
+        margin-top: 8%;
     }
 }
 
@@ -54,7 +54,7 @@ body {
 .body-section {
     background-color: rgba(224,224,255,0.2);
     min-height: 60vh;
-    margin-top: 7%;
+    margin-top: 5%;
 }
 
 .guess {
