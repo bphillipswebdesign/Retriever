@@ -1,11 +1,38 @@
-﻿@model LN7.WebUI.ViewModels.DogVM
+﻿@*@model LN7.WebUI.ViewModels.DogVM*@ @*keep or not???*@
+@model LN7.BL.Models.Dog 
+
 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Dog Added!</h1>
+<head>
+  <link rel="stylesheet" href="~/css/adminDogAdded.css" asp-append-version="true" />
+  <link rel="stylesheet" href="https://use.typekit.net/emp4nbz.css"> @*access Proxima Nova, Raleway from Adobe Fonts*@
+</head>
+
+<div class="body-section align-items-center justify-content-center">
+  <div class="p-2 text-center container-fluid">
+    <div class="card-img">
+      @*<img class="imagepropmed dog-img"
+           alt="@Model.BreedName"
+           id="dogimage"
+           onclick="on('/images/@Model.Imagepath');"
+           src="~/images/@Model.Imagepath" />*@
+    </div>
+
+    <h3>
+     @* Html.DisplayFor(model => model.BreedName) Added*@ @*not working*@
+     Dog Added!
+    </h3>
+
+    <form asp-action="Submit">
+      <a class="btn btn-sm btn-styles" asp-action="Index">Back to Dogs</a>
+    </form>
+  </div>
+</div>
+
 
 @section Scripts {
     @{

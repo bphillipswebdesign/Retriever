@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://use.typekit.net/emp4nbz.css"> @*access Proxima Nova, Raleway from Adobe Fonts*@
 </head>
 
-<div class="row justify-content-center">
+<div class="row align-items-center justify-content-center">
   <div class="col-4">
     <h3>Edit Dog Traits</h3>
 
@@ -23,7 +23,7 @@
                 <span asp-validation-for="Dog.BreedName" class="text-danger"></span>
             </div>
 
-            <div class="form-group">
+      <div class="form-group">
                 <label asp-for="Dog.Imagepath" class="control-label"></label>
                 <img class="imagepropmed dog-img"
                      alt="@Model.Dog.BreedName"

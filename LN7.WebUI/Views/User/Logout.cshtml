@@ -3,3 +3,22 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<head>
+  <link rel="stylesheet" href="~/css/logout.css" asp-append-version="true" />
+  <link rel="stylesheet" href="https://use.typekit.net/emp4nbz.css"> @*access Proxima Nova, Raleway from Adobe Fonts*@
+</head>
+
+<div class="body-section align-items-center justify-content-center">
+  <div class="p-2 text-center container-fluid">
+
+    <img class="textLogo img-fluid mx-auto" src="~/images/retrieverLogo.svg" />
+
+    <h3 @*class="text-uppercase"*@>
+      You have been logged out.
+    </h3>
+    <h3 @*class="text-uppercase"*@>
+      <a class="text-decoration-none" asp-controller="User" asp-action="Login">Login</a> to play.
+    </h3>
+
+  </div>
+</div>
