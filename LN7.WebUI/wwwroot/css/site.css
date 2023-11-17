@@ -18,5 +18,9 @@ html {
 }
 
 body {
-    margin-bottom: 60px;
+    margin-bottom: 0;
+}
+
+.navbar {
+    background: linear-gradient(to top, #CE8AFF, #9A96FF, #8AC4FF);
 }

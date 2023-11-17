@@ -1,8 +1,76 @@
-﻿body {
-  min-height: 100%;
-  font-family: raleway, sans-serif;
-  color: #000000;
-  background: linear-gradient(to top, #8AC4FF, #9A96FF, #CE8AFF);
+﻿
+body {
+    background: linear-gradient(to top, #CE8AFF, #9A96FF, #8AC4FF);
+    background: linear-gradient(to top, #8AC4FF, #9A96FF, #CE8AFF);
+    font-family: raleway, sans-serif;
+    margin: 0;
+}
+
+.body-section {
+    background-color: rgba(224,224,255,0.2);
+    min-height: 60vh;
+    margin-top: 7%;
+}
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 
+.speech-bubble {
+    position: relative;
+    background-color: rgba(224,224,255,0.2);
+    border-radius: .4rem;
+    padding: 1rem;
+    margin-top: 15rem;
+    text-align: center;
+}
+
+    .speech-bubble:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-left-color: rgba(224,224,255,0.2);
+        border-right: 0;
+        border-bottom: 0;
+        margin-top: -10px;
+        margin-right: -20px;
+    }
+
+.buttons-selector {
+    margin-top: 2rem;
+}
+
+.btnNo {
+    margin-left: 2rem;
+}
+
+.btnYesNo {
+    position: relative;
+    display: inline-block;
+    background: #7d96e8;
+    color: #fff;
+    text-align: center;
+    border-radius: .25rem;
+    text-decoration: none;
+    padding: 0.65rem 3rem 0.65rem 3rem;
+    margin-top: .5rem;
+    border: 0;
+    cursor: pointer;
+    outline: 0;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-style: normal;
+    margin-bottom: 16%;
+}
+
+    .btnYesNo:hover {
+        color: #fff;
+        background: #9e7de8;
+    }
