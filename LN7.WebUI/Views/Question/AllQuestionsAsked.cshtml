@@ -5,8 +5,38 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>We could not identify Your Dog</h2>
-<h4>Try Again?</h4>
-<form asp-controller="Question" asp-action="DisplayQuestion" method="post">
-    <input type="submit" value="Play" class="signupBtn" asp-controller="Question" asp-action="DisplayQuestion" formmethod="post" />
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retriever Home</title>
+    <link rel="stylesheet" type="text/css" href="~/css/displayQuestion.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/emp4nbz.css"> @*access Proxima Nova, Raleway from Adobe Fonts*@
+    <script src="https://kit.fontawesome.com/bf20b559de.js" crossorigin="anonymous"></script> @*for using fontawesome icons*@
+</head>
+<body>
+    <section class="body-section d-flex align-items-center">
+        <div class="container-fluid row row-main justify-content-center">
+            <div class="col-md-4">
+                <div class="speech-bubble">
+                    <div class="speech-text">
+                        <h2>We could not identify Your Dog</</h2>
+                    </div>
+                </div>
+
+                <div class="buttons-selector d-flex justify-content-center">
+                    <form asp-controller="Question" asp-action="DisplayQuestion" method="post">
+                        <input type="submit" value="Try Again" class="signupBtn" asp-controller="Question" asp-action="DisplayQuestion" formmethod="post" />
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="retriever">
+                    <img class="img-fluid mx-auto" src="~/images/dogCharacter.svg" />
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
