@@ -108,8 +108,6 @@ namespace LN7.BL
                 string prop = ((QuestionTraits.TraitsMap)question.Trait_Id).ToString();
                 switch (answer)
                 {
-
-
                     case false:
                         foreach (Dog d in dogs.ToList())
                         {
@@ -142,36 +140,36 @@ namespace LN7.BL
             return dogs;
         }
 
-        public static async Task<List<int>> ListFilter(int questionState, List<int> shuffledQuestions, bool answer)
-        {
-            GameQuestion question = await LoadById(questionState);
-
-            List<int> questionsToRemove = new List<int>();
-
-            if (answer)
+            public static async Task<List<int>> ListFilter(int questionState, List<int> shuffledQuestions, bool answer)
             {
-                // Loop through each remaining Question
-                foreach (int i in shuffledQuestions)
-                {
-                    GameQuestion q = await LoadById(i);
+                GameQuestion question = await LoadById(questionState);
 
-                    if (question.Trait_Id == q.Trait_Id)
+                List<int> questionsToRemove = new List<int>();
+
+                if (answer)
+                {
+                    // Loop through each remaining Question
+                    foreach (int i in shuffledQuestions)
                     {
-                        questionsToRemove.Add(i);
+                        GameQuestion q = await LoadById(i);
+
+                        if (question.Trait_Id == q.Trait_Id)
+                        {
+                            questionsToRemove.Add(i);
+                        }
                     }
                 }
-            }
-            else
-            {
-                shuffledQuestions.Remove(questionState);
-            }
+                else
+                {
+                    shuffledQuestions.Remove(questionState);
+                }
 
-            foreach (int questionToRemove in questionsToRemove)
-            {
-                shuffledQuestions.Remove(questionToRemove);
-            }
+                foreach (int questionToRemove in questionsToRemove)
+                {
+                    shuffledQuestions.Remove(questionToRemove);
+                }
 
-            return shuffledQuestions;
-        }
+                return shuffledQuestions;
+            }
     }
 }

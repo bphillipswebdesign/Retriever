@@ -6,4 +6,4 @@ admin: lucky7db
 pw: Password23
 
 DataBase: lucky7db
-ConnectionString: => ("Server=tcp:lucky7db.database.windows.net,1433;Initial Catalog=cardsale;Persist Security Info=False;User ID=lucky7db;Password=Password23;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+ConnectionString: => ("Server=tcp:lucky7db.database.windows.net,1433;Initial Catalog=lucky7db;Persist Security Info=False;User ID=luckydb;Password=Password23;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
