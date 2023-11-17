@@ -88,8 +88,8 @@ body {
 .btnLogin {
     position: relative;
     display: inline-block;
-    background: #7d96e8;
-    color: #fff;
+    background-color: #3f9eff;
+    color: #eee;
     text-align: center;
     border-radius: .25rem;
     text-decoration: none;
@@ -106,8 +106,9 @@ body {
 }
 
     .btnLogin:hover {
-        color: #fff;
-        background: #9e7de8;
+        color: #eee;
+        background-color: #3170af;
+        
     }
 
 .form-container {
