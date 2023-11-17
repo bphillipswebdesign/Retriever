@@ -38,7 +38,7 @@ namespace LN7.BL.Test
             {
                 User user = new User { First_Name = "Boon", Last_Name = "Xiong", Username = "bxiong", Password = "1234", Email = "", Is_Admin = true };
                 bool result = UserManager.Login(user);
-                Assert.Fail();
+                Assert.IsFalse(result);
             }
             catch (LoginFailureEx)
             {
