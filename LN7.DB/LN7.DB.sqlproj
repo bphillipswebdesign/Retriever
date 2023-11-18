@@ -93,12 +93,9 @@
     <PostDeploy Include="PostDeploy\Script.PostDeployment1.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="SK.LN7.DB.publish.xml" />
     <None Include="remote.publish.xml" />
-    <None Include="local.publish.xml" />
     <None Include="local.publish.publish.xml" />
     <None Include="breelocal.publish.xml" />
-    <None Include="LN7.DB.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PostDeploy\DefaultData\BodyTypes.sql" />
