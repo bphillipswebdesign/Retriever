@@ -65,69 +65,22 @@ namespace LN7.WebUI.Controllers
         //LOCAL LOGIN
 
         [HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Login(User user)
-        //{
-        //    try
-        //    {
-        //        if (UserManager.Login(user))
-        //        {
-        //            // Successful login
-        //            SetUser(user);
-        //            if (TempData["returnurl"] != null)
-        //                return Redirect(TempData["returnurl"]?.ToString());
-        //            else
-        //                return RedirectToAction("Index", "Home");
-        //        }
-        //        else
-        //        {
-        //            return View(user);
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        ViewBag.Error = ex.Message;
-        //        return View(user);
-        //    }
-        //}
-
-        //REMOTE LOGIN
-
-        [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(User user)
         {
             try
             {
-                HttpClient client = new HttpClient();
-                client.BaseAddress = new Uri("https://ln7.azurewebsites.net/api/");
-                string serializedObject = JsonConvert.SerializeObject(user);
-                var content = new StringContent(serializedObject);
-                content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
-                HttpResponseMessage response = client.PostAsync("User" + "/", content).Result;
-                if (response.IsSuccessStatusCode)
+                if (UserManager.Login(user))
                 {
-                    // set up var from response
-                    var body = response.Content.ReadAsStringAsync().Result;
-                    User player = JsonConvert.DeserializeObject<User>(body);
-                    Guid userId = player.Id;
-                    //set up client to get full user
-
-                    //get user through second request
-                    string userString = client.GetStringAsync("User/" + userId).Result;
-                    user = JsonConvert.DeserializeObject<User>(userString);
-
-                    //set user
+                    // Successful login
                     SetUser(user);
-
-                    if (TempData["returnuri"] != null)
-                        return Redirect(TempData["returnuri"]?.ToString());
+                    if (TempData["returnurl"] != null)
+                        return Redirect(TempData["returnurl"]?.ToString());
                     else
                         return RedirectToAction("Index", "Home");
                 }
                 else
                 {
-                    ViewBag.Error = "Login Failed";
                     return View(user);
                 }
             }
@@ -137,6 +90,55 @@ namespace LN7.WebUI.Controllers
                 return View(user);
             }
         }
+
+        //REMOTE LOGIN
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Login(User user)
+        //{
+        //    try
+        //    {
+        //        HttpClient client = new HttpClient();
+        //        client.BaseAddress = new Uri("https://ln7api.azurewebsites.net/api/");
+        //        string serializedObject = JsonConvert.SerializeObject(user);
+        //        var content = new StringContent(serializedObject);
+        //        content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+        //        HttpResponseMessage response = client.PostAsync("User" + "/", content).Result;
+        //        if (response.IsSuccessStatusCode)
+        //        {
+        //            // set up var from response
+        //            var body = response.Content.ReadAsStringAsync().Result;
+        //            User player = JsonConvert.DeserializeObject<User>(body);
+        //            Guid userId = player.Id;
+        //            //set up client to get full user
+
+        //            //get user through second request
+        //            string userString = client.GetStringAsync("User/" + userId).Result;
+        //            user = JsonConvert.DeserializeObject<User>(userString);
+
+        //            //set user
+        //            SetUser(user);
+
+        //            if (TempData["returnuri"] != null)
+        //                return Redirect(TempData["returnuri"]?.ToString());
+        //            else
+        //                return RedirectToAction("Index", "Home");
+        //        }
+        //        else
+        //        {
+        //            var errorContent = response.Content.ReadAsStringAsync().Result;
+        //            Console.WriteLine($"Error: {errorContent}");
+        //            ViewBag.Error = "Login Failed";
+        //            return View(user);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        ViewBag.Error = ex.Message;
+        //        return View(user);
+        //    }
+        //}
 
         [HttpPost]
         [ValidateAntiForgeryToken]
