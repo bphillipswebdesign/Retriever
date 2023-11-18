@@ -13,74 +13,74 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <div class="form-group">
-                Breed Name: 
-                    @Html.DisplayFor(model => model.Dog.BreedName)
+                Breed Name:
+                @Html.DisplayFor(model => model.Dog.BreedName)
             </div>
             <div class="form-group">
                 Body:
                 <span class="form-control-static">@Model.BodyTypes.FirstOrDefault(bt => bt.Id == Model.Dog.BodyType)?.Description</span>
             </div>
             <div class="form-group">
-                Coat Color: 
+                Coat Color:
                 <span class="form-control-static">@Model.CoatColors.FirstOrDefault(bt => bt.Id == Model.Dog.CoatColor)?.Description</span>
             </div>
             <div class="form-group">
-                Coat Length: 
+                Coat Length:
                 <span class="form-control-static">@Model.CoatLengths.FirstOrDefault(bt => bt.Id == Model.Dog.CoatLength)?.Description</span>
             </div>
 
             <div class="form-group">
-                Coat Type: 
+                Coat Type:
                 <span class="form-control-static">@Model.CoatTypes.FirstOrDefault(bt => bt.Id == Model.Dog.CoatType)?.Description</span>
             </div>
 
             <div class="form-group">
-                Dog Group: 
+                Dog Group:
                 <span class="form-control-static">@Model.Groups.FirstOrDefault(bt => bt.Id == Model.Dog.DogGroup)?.Description</span>
             </div>
 
             <div class="form-group">
-                Ear Length: 
+                Ear Length:
                 <span class="form-control-static">@Model.EarLengths.FirstOrDefault(bt => bt.Id == Model.Dog.EarLength)?.Description</span>
             </div>
 
             <div class="form-group">
-                Ear Type: 
+                Ear Type:
                 <span class="form-control-static">@Model.EarTypes.FirstOrDefault(bt => bt.Id == Model.Dog.EarType)?.Description</span>
             </div>
 
             <div class="form-group">
-                Leg Length: 
+                Leg Length:
                 <span class="form-control-static">@Model.LegLengths.FirstOrDefault(bt => bt.Id == Model.Dog.LegLength)?.Description</span>
             </div>
 
             <div class="form-group">
-                Muzzle Length: 
+                Muzzle Length:
                 <span class="form-control-static">@Model.MuzzleLengths.FirstOrDefault(bt => bt.Id == Model.Dog.MuzzleLength)?.Description</span>
             </div>
 
             <div class="form-group">
-                Muzzle Type: 
+                Muzzle Type:
                 <span class="form-control-static">@Model.MuzzleTypes.FirstOrDefault(bt => bt.Id == Model.Dog.MuzzleType)?.Description</span>
             </div>
 
             <div class="form-group">
-                Origin: 
+                Origin:
                 <span class="form-control-static">@Model.OriginTypes.FirstOrDefault(bt => bt.Id == Model.Dog.Origin)?.Description</span>
             </div>
 
             <div class="form-group">
-                Tail Length: 
+                Tail Length:
                 <span class="form-control-static">@Model.TailLengths.FirstOrDefault(bt => bt.Id == Model.Dog.TailLength)?.Description</span>
             </div>
 
             <div class="form-group">
-                Tail Type: 
+                Tail Type:
                 <span class="form-control-static">@Model.TailTypes.FirstOrDefault(bt => bt.Id == Model.Dog.TailType)?.Description</span>
             </div>
 
             <div class="form-group">
-                Weight Class: 
+                Weight Class:
                 <span class="form-control-static">@Model.WeightClasses.FirstOrDefault(bt => bt.Id == Model.Dog.WeightClass)?.Description</span>
             </div>
         </form>

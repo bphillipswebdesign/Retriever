@@ -2,7 +2,7 @@
 
 @{
     ViewData["Title"] = "Login";
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <head>
@@ -12,56 +12,43 @@
     <script src="https://kit.fontawesome.com/bf20b559de.js" crossorigin="anonymous"></script> @*for using fontawesome icons*@
 </head>
 
-<div class="wrapper">
+<body class="container-fluid">
+    <div class="wrapper row d-flex justify-content-center">
+        <div class="col-12 col-xxs-10 col-sm-10 col-md-8 col-lg-7 col-xl-6 col-xxl-4 mx-auto">
+            <div class="container-fluid flex-column justify-content-center">
 
-    <div class="logo-image-container">
-        <a href="#">
-            @*links to homepage eventually?*@
-            <img class="logo-image" src="~/images/retriever-logo-headonly.png" alt="black dog head with purple magnifying glass over left eye">
-        </a>
+                <img class="logo-image-login img-fluid mx-auto d-block" src="~/images/retrieverTextandDogSmall.svg" onclick="location.href='@Url.Action("Index", "Home")'" alt="black dog head with white magnifying glass over left eye">
 
-        <div class="logo-text">
-            <h2>Retriever</h2>
-        </div>
-    </div>
-
-    <div class="form-container">
-        <div class="login-item">
-            <form asp-action="Login" class="form form-login">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-                <div class="form-field">
-                    <label @*asp-for="Username" *@ class="control-label user"></label>
-                    <input asp-for="Username" class="form-control" placeholder="Username" required />
-                    <span asp-validation-for="Username" class="text-danger"></span>
-                </div>
-
-                <div class="form-field">
-                    <label @*asp-for="Password"*@ class="control-label pass"></label>
-                    <input type="Password" asp-for="Password" class="form-control" placeholder="Password" required />
-                    <span asp-validation-for="Password" class="text-danger"></span>
-                </div>
+                <div class="formMargins form-container mx-auto justify-content-center">
                     <div class="login-item">
                         <form asp-action="Login" class="form form-login">
-                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div asp-validation-summary="ModelOnly" class="text-danger small"></div>
+
+                            <div class="form-field mx-auto justify-content-center">
+
+
+                                <label @*asp-for="Username" *@ class="control-label user"></label>
+                                <input asp-for="Username" class="form-control" placeholder="Username" required />
+                                <span asp-validation-for="Username" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-field mx-auto justify-content-center">
+                                <label @*asp-for="Password"*@ class="control-label pass"></label>
+                                <input type="Password" asp-for="Password" class="form-control" placeholder="Password" required />
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+
                             <div class="form-field buttons">
-                                <input type="submit" value="Login" class="loginBtn" />
+                                <input type="submit" value="Login" class="btnLogin" asp-controller="User" asp-action="Login" />
+                                <button type="button" value="Sign Up" class="btnLogin" onclick="location.href=' @Url.Action("Signup", "User")'">SignUp</button>
                             </div>
                         </form>
                     </div>
-
-                <div class="login-item">
-                    <form asp-action="Signup" class="form form-login">
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                        <div class="form-field buttons">
-                            <input type="submit" value="Sign Up" class="loginBtn" />
-                        </div>
-                    </form>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
-</div>
+</body>
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
