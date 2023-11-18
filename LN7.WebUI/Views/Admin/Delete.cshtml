@@ -5,14 +5,28 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<head>
+    <link rel="stylesheet" href="~/css/adminDelete.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://use.typekit.net/emp4nbz.css"> @*access Proxima Nova, Raleway from Adobe Fonts*@
+</head>
 
+<div class="body-section align-items-center justify-content-center">
+    <div class="p-2 text-center container-fluid">
+        <div class="card-img">
+            <img class="imagepropmed dog-img"
+                 alt="@Model.BreedName"
+                 id="dogimage"
+                 onclick="on('/images/@Model.Imagepath');"
+                 src="~/images/@Model.Imagepath" />
+        </div>
 
-<h3 class="ps-2">
-    Are you sure you want to delete the dog: @Html.DisplayFor(model => model.BreedName)?
-</h3>
-<div class="p-2">
-    <form asp-action="Delete">
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+        <h3>
+            Are you sure you want to delete the dog: @Html.DisplayFor(model => model.BreedName)?
+        </h3>
+
+        <form asp-action="Delete">
+            <input type="submit" value="Delete" class="btn btn-sm btn-styles" />
+            <a class="btn btn-sm btn-styles" asp-action="Index">Back to Dogs</a>
+        </form>
+    </div>
 </div>

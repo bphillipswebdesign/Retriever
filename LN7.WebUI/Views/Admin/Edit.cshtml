@@ -5,139 +5,143 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Edit Dog</h1>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<head>
+    <link rel="stylesheet" href="~/css/adminEdit.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://use.typekit.net/emp4nbz.css"> @*access Proxima Nova, Raleway from Adobe Fonts*@
+</head>
+
+<div class="row align-items-center justify-content-center">
+    <div class="col-4">
+        <h3>Edit Dog Traits</h3>
+
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <div class="form-group">
                 <label>Breed</label>
-                <input asp-for="Dog.BreedName" class="form-control" />
+                <input asp-for="Dog.BreedName" class="form-control fc-width" />
                 <span asp-validation-for="Dog.BreedName" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="Dog.Imagepath" class="control-label"></label>
-                <img class="imagepropmed"
+                <img class="imagepropmed dog-img"
                      alt="@Model.Dog.BreedName"
                      id="dogimage"
                      onclick="on('/images/@Model.Dog.Imagepath');"
                      src="~/images/@Model.Dog.Imagepath" />
-                <input asp-for="Dog.Imagepath" class="form-control" />
+                <input asp-for="Dog.Imagepath" class="form-control fc-width dog-name" />
                 <input type="file" name="File" id="File" action="image/" onchange="loadFile(event)" />
                 <span asp-validation-for="Dog.Imagepath" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label>Body type</label>
-                <select asp-for="Dog.BodyType" class="form-control"
+                <select asp-for="Dog.BodyType" class="form-control fc-width"
                         asp-items="@(new SelectList(Model.BodyTypes, "Id", "Description"))"></select>
                 <span asp-validation-for="Dog.BodyType" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label>Coat color</label>
-                <select asp-for="Dog.CoatColor" class="form-control"
+                <select asp-for="Dog.CoatColor" class="form-control fc-width"
                         asp-items="@(new SelectList(Model.CoatColors, "Id", "Description"))"></select>
                 <span asp-validation-for="Dog.CoatColor" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label>Coat length</label>
-                <select asp-for="Dog.CoatLength" class="form-control"
+                <select asp-for="Dog.CoatLength" class="form-control fc-width"
                         asp-items="@(new SelectList(Model.CoatLengths, "Id", "Description"))"></select>
                 <span asp-validation-for="Dog.CoatLength" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label>Coat type</label>
-                <select asp-for="Dog.CoatType" class="form-control"
+                <select asp-for="Dog.CoatType" class="form-control fc-width"
                         asp-items="@(new SelectList(Model.CoatTypes, "Id", "Description"))"></select>
                 <span asp-validation-for="Dog.CoatType" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label>Dog group</label>
-                <select asp-for="Dog.DogGroup" class="form-control"
+                <select asp-for="Dog.DogGroup" class="form-control fc-width"
                         asp-items="@(new SelectList(Model.Groups, "Id", "Description"))"></select>
                 <span asp-validation-for="Dog.DogGroup" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label>Ear length</label>
-                <select asp-for="Dog.EarLength" class="form-control"
+                <select asp-for="Dog.EarLength" class="form-control fc-width"
                         asp-items="@(new SelectList(Model.EarLengths, "Id", "Description"))"></select>
                 <span asp-validation-for="Dog.EarLength" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label>Ear type</label>
-                <select asp-for="Dog.EarType" class="form-control"
+                <select asp-for="Dog.EarType" class="form-control fc-width"
                         asp-items="@(new SelectList(Model.EarTypes, "Id", "Description"))"></select>
                 <span asp-validation-for="Dog.EarType" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label>Leg length</label>
-                <select asp-for="Dog.LegLength" class="form-control"
+                <select asp-for="Dog.LegLength" class="form-control fc-width"
                         asp-items="@(new SelectList(Model.LegLengths, "Id", "Description"))"></select>
                 <span asp-validation-for="Dog.LegLength" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label>Muzzle length</label>
-                <select asp-for="Dog.MuzzleLength" class="form-control"
+                <select asp-for="Dog.MuzzleLength" class="form-control fc-width"
                         asp-items="@(new SelectList(Model.MuzzleLengths, "Id", "Description"))"></select>
                 <span asp-validation-for="Dog.MuzzleLength" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label>Muzzle type</label>
-                <select asp-for="Dog.MuzzleType" class="form-control"
+                <select asp-for="Dog.MuzzleType" class="form-control fc-width"
                         asp-items="@(new SelectList(Model.MuzzleTypes, "Id", "Description"))"></select>
                 <span asp-validation-for="Dog.MuzzleType" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label>Origin</label>
-                <select asp-for="Dog.Origin" class="form-control"
+                <select asp-for="Dog.Origin" class="form-control fc-width"
                         asp-items="@(new SelectList(Model.OriginTypes, "Id", "Description"))"></select>
                 <span asp-validation-for="Dog.Origin" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label>Tail length</label>
-                <select asp-for="Dog.TailLength" class="form-control"
+                <select asp-for="Dog.TailLength" class="form-control fc-width"
                         asp-items="@(new SelectList(Model.TailLengths, "Id", "Description"))"></select>
                 <span asp-validation-for="Dog.TailLength" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label>Tail type</label>
-                <select asp-for="Dog.TailType" class="form-control"
+                <select asp-for="Dog.TailType" class="form-control fc-width"
                         asp-items="@(new SelectList(Model.TailTypes, "Id", "Description"))"></select>
                 <span asp-validation-for="Dog.TailType" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label>Weight class</label>
-                <select asp-for="Dog.WeightClass" class="form-control"
+                <select asp-for="Dog.WeightClass" class="form-control fc-width"
                         asp-items="@(new SelectList(Model.WeightClasses, "Id", "Description"))"></select>
                 <span asp-validation-for="Dog.WeightClass" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-sm btn-styles" />
+                <a class="btn btn-sm btn-styles" asp-action="Index">Back to Dogs</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{

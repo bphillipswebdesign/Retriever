@@ -1,0 +1,74 @@
+﻿
+body {
+    background: linear-gradient(to top, #CE8AFF, #9A96FF, #8AC4FF);
+    background: linear-gradient(to top, #8AC4FF, #9A96FF, #CE8AFF);
+    font-family: raleway, sans-serif;
+    margin: 0;
+}
+
+.body-section {
+    background-color: rgba(224,224,255,0.2);
+    min-height: 60vh;
+    margin-top: 7%;
+}
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+.speech-bubble {
+    position: relative;
+    background-color: rgba(224,224,255,0.2);
+    border-radius: .4rem;
+    padding: 1rem;
+    margin-top: 15rem;
+    text-align: center;
+}
+
+    .speech-bubble:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-left-color: rgba(224,224,255,0.2);
+        border-right: 0;
+        border-bottom: 0;
+        margin-top: -10px;
+        margin-right: -20px;
+    }
+
+.buttons-selector {
+    margin-top: 2rem;
+}
+
+
+
+.btnYesNo {
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    display: inline-block;
+    background-color: #3f9eff;
+    color: #eee;
+    text-align: center;
+    border-radius: .25rem;
+    text-decoration: none;
+    padding: 0.65rem 3rem 0.65rem 3rem;
+    border: 0;
+    cursor: pointer;
+    outline: 0;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-style: normal;
+}
+
+    .btnYesNo:hover {
+        color: #eee;
+        background-color: #3170af;
+    }
