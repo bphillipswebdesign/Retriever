@@ -1,9 +1,7 @@
 ﻿
 
 @media (max-width: 576px) {
-    .col-xxs-6 {
-        width: 90%;
-    }
+
 }
 
 @media (min-width: 576px) {
@@ -21,6 +19,7 @@
 @media (min-width: 1400px) {
 }
 
+/*Page Styles*/
 
 html {
     position: relative;
@@ -43,16 +42,14 @@ body {
     padding: 0;
 }
 
-.containerAll {
-    max-width: 70%;
-}
-
 .wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
+
+/*Logo image Styles*/
 
 .logo-image-login {
     margin: auto;
@@ -62,28 +59,7 @@ body {
     cursor: pointer;
 }
 
-.logo-image-signup {
-    margin: auto;
-    margin-top: 15%;
-    max-width: 100%;
-    filter: drop-shadow(5px 5px 5px #9a9a9a);
-    cursor: pointer;
-}
-
-.form.form-signup {
-    width: 100%;
-}
-
-.signup-text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: variex, sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    padding-top: 1rem;
-    padding-bottom: 0.5rem;
-}
+/*Button Styles*/
 
 .btnLogin {
     position: relative;
@@ -111,6 +87,14 @@ body {
         
     }
 
+.form-field.buttons {
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/*form Styles*/
+
 .form-container {
     margin-top: 2%;
     margin-bottom: 10%;
@@ -127,23 +111,6 @@ body {
 .login-item {
     margin-top: 20px;
     margin-bottom: 10px;
-}
-
-.signup-item {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 90%;
-    margin: auto;
-    text-align: center;
-}
-
-.form-signup-item {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.signupBtn-signup {
-    margin-bottom: 1.5rem;
 }
 
 .form-field {
@@ -198,34 +165,14 @@ input {
     width: 70%;
 }
 
-.form.form-signup input[type="password"], .form.form-signup input[type="text"] {
-    width: 70%;
-}
-
 .form-login label {
     background-color: #222222;
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-}
-
-.form-signup label {
-    background-color: #222222;
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-    float: left;
+    color: #3A3F44;
+    border-radius: 0.2rem;
+    padding: 0.5rem 1.25rem;
 }
 
 .form-login input[type="text"], .form-login input[type="password"] {
-    background-color: #ffffff;
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-}
-
-.form-signup input[type="text"], .form-login input[type="password"] {
     background-color: #ffffff;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
@@ -237,12 +184,6 @@ input {
     display: -ms-flexbox;
     display: flex;
 }
-
-    .form-field.buttons {
-        justify-content: space-around;
-        align-items: center;
-        margin-bottom: 20px;
-    }
 
 .text-danger {
     font-size: small;

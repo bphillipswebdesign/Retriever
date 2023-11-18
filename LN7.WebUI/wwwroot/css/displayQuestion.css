@@ -46,11 +46,11 @@ body {
     margin-top: 2rem;
 }
 
-.btnNo {
-    margin-left: 2rem;
-}
+
 
 .btnYesNo {
+    justify-content: space-evenly;
+    align-items: center;
     position: relative;
     display: inline-block;
     background-color: #3f9eff;
@@ -59,7 +59,6 @@ body {
     border-radius: .25rem;
     text-decoration: none;
     padding: 0.65rem 3rem 0.65rem 3rem;
-    margin-top: .5rem;
     border: 0;
     cursor: pointer;
     outline: 0;
@@ -67,7 +66,6 @@ body {
     text-transform: uppercase;
     font-weight: bold;
     font-style: normal;
-    margin-bottom: 16%;
 }
 
     .btnYesNo:hover {

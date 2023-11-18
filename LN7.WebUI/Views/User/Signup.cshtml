@@ -14,18 +14,11 @@
 
 <body class="container-fluid">
     <div class="wrapper row d-flex justify-content-center">
-        <div class="col-12 col-xxs-6 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8 mx-auto">
-            <div class="containerAll container-fluid flex-column justify-content-center">
+        <div class="col-12 col-xxs-12 col-sm-12 col-md-10 col-lg-10 col-xl-8 col-xxl-8 mx-auto">
+            <div class="container-fluid flex-column justify-content-center">
 
                 <div class="logo-image-container">
-
-                    @*links to homepage eventually?*@
                     <img class="logo-image-signup img-fluid mx-auto d-block" src="~/images/retrieverTextandDogSmall.svg" onclick="location.href='@Url.Action("Index", "Home")'" alt="black dog head with white magnifying glass over left eye">
-
-
-                    @* <div class="logo-text">
-                    <h2>Retriever</h2>
-                    </div>*@
                 </div>
 
                 <div class="form-container mx-auto justify-content-center">
@@ -33,7 +26,7 @@
                         <form asp-action="Create" class="form form-signup">
                             <div asp-validation-summary="ModelOnly" class="text-danger small"></div>
 
-                            <h2 class="signup-text">Sign Up</h2>
+                            <h2 class="signup-text">Create Account</h2>
 
                             <div class="form-group form-signup-item d-flex justify-content-center">
                                 <label @*asp-for="First_Name"*@ class="control-label fname"></label>
@@ -61,7 +54,7 @@
                                 <span asp-validation-for="Password" class="text-danger"></span>
                             </div>
                             <div class="form-group signup-button">
-                                <input type="submit" value="Sign Up" class="signupBtn-signup btnLogin" />
+                                <input type="submit" value="Sign Up" class="btnSignup" />
                             </div>
                         </form>
                     </div>

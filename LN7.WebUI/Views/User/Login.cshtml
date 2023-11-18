@@ -14,16 +14,10 @@
 
 <body class="container-fluid">
     <div class="wrapper row d-flex justify-content-center">
-        <div class="col-12 col-xxs-6 col-sm-8 col-md-8 col-lg-8 col-xl-4 col-xxl-4 mx-auto">
+        <div class="col-12 col-xxs-10 col-sm-10 col-md-8 col-lg-7 col-xl-6 col-xxl-4 mx-auto">
             <div class="container-fluid flex-column justify-content-center">
-                @* <div class="logo-image-container col-12 col-xxs-6 col-sm-8 col-md-8 col-lg-8 col-xl-4 col-xxl-4 mx-auto"> *@
+               
                 <img class="logo-image-login img-fluid mx-auto d-block" src="~/images/retrieverTextandDogSmall.svg" onclick="location.href='@Url.Action("Index", "Home")'" alt="black dog head with white magnifying glass over left eye">
-
-                @* <div class="logo-text">
-                <h2>Retriever</h2>
-                </div> *@
-
-                @* </div> *@
 
                 <div class="formMargins form-container mx-auto justify-content-center">
                     <div class="login-item">
@@ -46,11 +40,7 @@
 
                             <div class="form-field buttons">
                                 <input type="submit" value="Login" class="btnLogin" asp-controller="User" asp-action="Login"/>
-                                @* <input type="submit" value="Sign Up" class="signupBtn" asp-area="" asp-controller="User" asp-action="Signup" /> *@
                                 <button type="button" value="Sign Up" class="btnLogin" onclick="location.href=' @Url.Action("Signup", "User")'">SignUp</button>
-                                @* Future code fix? Redirect to signup page? *@
-                                @* <button class="signupBtn" type="button" onclick="location.href=' @Url.Action("Signup", "User")'">Sign Up</button> *@
-                                @* <button class="signupBtn" type="button" onclick="location.href=' @Url.Action("DisplayQuestion", "QuestionController")'">Sign Up</button> *@
                             </div>
                         </form>
                     </div>
