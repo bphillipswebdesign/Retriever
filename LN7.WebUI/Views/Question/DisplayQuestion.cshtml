@@ -15,25 +15,25 @@
     <script src="https://kit.fontawesome.com/bf20b559de.js" crossorigin="anonymous"></script> @*for using fontawesome icons*@
 </head>
 <body>
-    <section class="body-section d-flex align-items-center">
+    <section class="body-section">
         <div class="container-fluid row row-main justify-content-center">
-            <div class="col-12 col-xxs-5 col-sm-8 col-md-6 col-lg-6 col-xl-4 col-xxl-4">
+            <div class="col-6">
                 <div class="speech-bubble">
-                    <div class="speech-text d-flex justify-content-center">
+                    <div class="speech-text d-flex align-items-center justify-content-center">
                         <h2>@Model?.Question</h2>
                     </div>
                 </div>
 
-                <div class="buttons-selector d-flex justify-content-center">
-                    <form method="post">
-                        <button asp-controller="Question" asp-action="DisplayQuestion" type="submit" name="answer" value="true" class="btnYesNo">Yes</button>
-                        <button asp-controller="Question" asp-action="DisplayQuestion" type="submit" name="answer" value="false" class="btnYesNo">No</button>
+                <div class="d-flex justify-content-center">
+                    <form method="post" class="buttons-selector btn-selector-sm btnDivider d-flex justify-content-center">
+                        <button asp-controller="Question" asp-action="DisplayQuestion" type="submit" name="answer" value="true" class="btnYesNo btnDisplay btnYes">Yes</button>
+                        <button asp-controller="Question" asp-action="DisplayQuestion" type="submit" name="answer" value="false" class="btnYesNo btnDisplay btnNo">No</button>
                     </form>
                 </div>
             </div>
-            <div class="col-md-3 d-flex align-items-center">
-                <div class="retriever d-flex align-items-center">
-                    <img class="img-fluid mx-auto" src="~/images/dogCharacter.svg" />
+            <div class="col-5 d-flex align-items-center">
+                <div class="retriever retriever-sm d-flex align-items-center">
+                    <img class="img-fluid mx-auto imgDog" src="~/images/dogCharacter.svg" />
                 </div>
             </div>
         </div>
