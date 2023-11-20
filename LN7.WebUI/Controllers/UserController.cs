@@ -62,37 +62,6 @@ namespace LN7.WebUI.Controllers
             return View();
         }
 
-        //LOCAL LOGIN
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Login(User user)
-        //{
-        //    try
-        //    {
-        //        if (UserManager.Login(user))
-        //        {
-        //            // Successful login
-        //            SetUser(user);
-        //            if (TempData["returnurl"] != null)
-        //                return Redirect(TempData["returnurl"]?.ToString());
-        //            else
-        //                return RedirectToAction("Index", "Home");
-        //        }
-        //        else
-        //        {
-        //            return View(user);
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        ViewBag.Error = ex.Message;
-        //        return View(user);
-        //    }
-        //}
-
-        //REMOTE LOGIN
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> LoginAsync(User user)
