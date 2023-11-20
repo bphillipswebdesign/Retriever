@@ -53,7 +53,7 @@ namespace LN7.API.Controllers
 
         // POST: User/
         [HttpPost("")]
-        public async Task<ActionResult<User>> Login([FromBody] BL.Models.User user)
+        public async Task<ActionResult<User>> Login([FromBody] User user)
         {
             try
             {
