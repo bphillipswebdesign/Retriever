@@ -1,5 +1,7 @@
 using Serilog;
-using Serilog.Events;
+using Microsoft.Identity.Web;
+using LN7.PL;
+using Microsoft.EntityFrameworkCore;
 using Serilog.Ui.MsSqlServerProvider;
 using Serilog.Ui.Web;
 
@@ -12,7 +14,14 @@ public class Program
         builder.Services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
+        builder.Services.AddSwaggerGen(setup =>
+        {
+            setup.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+            {
+                Title = "LN7 - Retriever",
+                Version = "v1"
+            });
+        });
 
         builder.Services.AddCors(o => o.AddPolicy(name: "CorsPolicy", builder => {
             builder
@@ -22,6 +31,11 @@ public class Program
         }));
 
         builder.Services.AddSignalR();
+
+        builder.Services.AddDbContextPool<LN7Entities>(options =>
+        {
+            options.UseSqlServer(builder.Configuration.GetConnectionString("Database"));
+        });
 
         //FOR SERILOG PLUMBING
         //Get connection string from appsettings/json ConnectionsStrings object, Database key
@@ -49,6 +63,7 @@ public class Program
         }
 
         app.UseHttpsRedirection();
+        app.UseRouting();
 
         //necessary to use wwwroot as source of images for webUI
         app.UseStaticFiles();

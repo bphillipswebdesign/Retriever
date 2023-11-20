@@ -14,16 +14,27 @@
     <PackageReference Include="Serilog.UI.MsSqlServerProvider" Version="2.2.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
 	<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="7.0.12" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.12" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.12" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Core" Version="1.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.12">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Identity.Web" Version="2.15.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Properties\ServiceDependencies\" />
+    <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="wwwroot\imgs\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\LN7.BL.Models\LN7.BL.Models.csproj" />
     <ProjectReference Include="..\LN7.BL\LN7.BL.csproj" />
+    <ProjectReference Include="..\LN7.PL\LN7.PL.csproj" />
   </ItemGroup>
 
 </Project>
