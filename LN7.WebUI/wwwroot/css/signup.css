@@ -1,9 +1,6 @@
 ﻿
 
 @media (max-width: 576px) {
-    .col-xxs-6 {
-        width: 90%;
-    }
 }
 
 @media (min-width: 576px) {
@@ -49,13 +46,13 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 5%;
 }
 
 /*Logo image Styles*/
 
 .logo-image-signup {
     margin: auto;
-    margin-top: 15%;
     max-width: 100%;
     filter: drop-shadow(5px 5px 5px #9a9a9a);
     cursor: pointer;

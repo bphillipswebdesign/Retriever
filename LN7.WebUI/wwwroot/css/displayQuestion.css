@@ -1,4 +1,6 @@
 ﻿
+/*body Styles*/
+
 body {
     background: linear-gradient(to top, #CE8AFF, #9A96FF, #8AC4FF);
     background: linear-gradient(to top, #8AC4FF, #9A96FF, #CE8AFF);
@@ -10,6 +12,7 @@ body {
     background-color: rgba(224,224,255,0.2);
     min-height: 60vh;
     margin-top: 7%;
+    vertical-align:central;
 }
 
 .container-fluid {
@@ -17,13 +20,16 @@ body {
     padding-right: 0;
 }
 
+/*Speech Bubble Styles*/
 
 .speech-bubble {
     position: relative;
+    width: 80%;
     background-color: rgba(224,224,255,0.2);
     border-radius: .4rem;
     padding: 1rem;
     margin-top: 15rem;
+    margin-left:10%;
     text-align: center;
 }
 
@@ -42,11 +48,31 @@ body {
         margin-right: -20px;
     }
 
+.speech-text {
+    text-align: center;
+}
+
+/*Button Styles*/
+
 .buttons-selector {
     margin-top: 2rem;
 }
 
+.btnDisplay{
+    max-width: 80%;
+}
 
+.btnDivider {
+    display: inline-block;
+}
+
+    .btnDivider > .btnYes:not(last-child) {
+        margin-right: 1rem;
+    }
+
+    .btnDivider > .btnNo:not(last-child) {
+        margin-left: 1rem;
+    }
 
 .btnYesNo {
     justify-content: space-evenly;
@@ -72,3 +98,89 @@ body {
         color: #eee;
         background-color: #3170af;
     }
+
+/*Dog image Styles*/
+
+.imgDog{
+    margin-top: 8%;
+}
+
+/*Breakpoint Specific Styles*/
+
+@media all and (max-width: 800px) {
+    .retriever {
+        margin-top: 10%;
+    }
+}
+
+@media all and (max-width: 650px) {
+
+    .btnDisplay {
+        max-width: 70%;
+    }
+
+    .btnDivider > .btnYes:not(last-child) {
+        margin-right: .5rem;
+    }
+
+
+    .btnDivider > .btnNo:not(last-child) {
+        margin-left: .5rem;
+    }
+
+    .retriever {
+        margin-top: 30%;
+    }
+}
+
+@media all and (max-width: 500px) {
+
+    .btn-small {
+        padding: 0.65rem 1rem;
+    }
+
+    .btnDisplay {
+        padding: 0.65rem 2rem;
+    }
+
+    .btnYes {
+        margin-right: .25rem;
+    }
+
+    .btnNo {
+        margin-left: .25rem;
+    }
+
+    .retriever {
+        margin-top: 50%;
+    }
+}
+
+@media all and (max-width: 379px) {
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .btn-small{
+        padding: 0.65rem 1rem;
+    }
+
+    .btn-selector-sm {
+        margin-top: .5rem;
+    }
+
+    .btnDisplay {
+        padding: 0.65rem 1rem;
+        margin: .5rem 0rem .75rem;
+    }
+
+    .retriever {
+        margin-top: 80%;
+    }
+}
+
+
+
+
+

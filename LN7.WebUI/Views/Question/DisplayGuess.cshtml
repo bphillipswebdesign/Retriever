@@ -19,20 +19,20 @@
 <body>
     <section class="body-section d-flex align-items-center">
         <div class="container-fluid row row-main justify-content-center">
-            <div class="col-md-4">
+            <div class="col-6">
                 <div class="speech-bubble">
-                    <div class="speech-text">
+                    <div class="speech-text d-flex align-items-center justify-content-center">
                         <h2>Your Dog Breed is @Model</h2>
                     </div>
                 </div>
 
                 <div class="buttons-selector d-flex justify-content-center">
                     <form asp-controller="Question" asp-action="DisplayQuestion" method="post">
-                        <input type="submit" value="Try Again" class="signupBtn btnYesNo" asp-controller="Question" asp-action="DisplayQuestion" formmethod="post" />
+                        <input type="submit" value="Try Again" class="btnYesNo btn-small" asp-controller="Question" asp-action="DisplayQuestion" formmethod="post" />
                     </form>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-5 d-flex align-items-center">
                 <div class="retriever">
                     <img class="img-fluid mx-auto" src="~/images/dogCharacter.svg" />
                 </div>

@@ -97,9 +97,9 @@
     <None Include="remote.publish.xml" />
     <None Include="local.publish.xml" />
     <None Include="local.publish.publish.xml" />
-    <None Include="breelocal.publish.xml" />
     <None Include="LN7.DB.publish.xml" />
     <None Include="caellocal.publish.xml" />
+    <None Include="breelocal.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PostDeploy\DefaultData\BodyTypes.sql" />

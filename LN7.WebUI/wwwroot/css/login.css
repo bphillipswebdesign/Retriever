@@ -47,13 +47,13 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top:5%;
 }
 
 /*Logo image Styles*/
 
 .logo-image-login {
     margin: auto;
-    margin-top: 20%;
     max-width: 100%;
     filter: drop-shadow(5px 5px 5px #9a9a9a);
     cursor: pointer;
