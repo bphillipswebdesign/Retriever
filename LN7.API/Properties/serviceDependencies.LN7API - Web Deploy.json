@@ -1,16 +1,8 @@
 {
   "dependencies": {
     "apis1": {
-      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/LN7/apis/ln7-retriever",
+      "ignored": "true",
       "type": "apis.azure"
-    },
-    "mssql1": {
-      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Web/sites/LN7API/providers/Microsoft.ServiceLinker/linkers/ConnectionStringsDatabase_0DB5407ADF",
-      "secretStore": "AzureAppSettings",
-      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/lucky7db/databases/lucky7db",
-      "type": "mssql.azure",
-      "connectionId": "ConnectionStrings:Database",
-      "dynamicId": null
     }
   }
 }
