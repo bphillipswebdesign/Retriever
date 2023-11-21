@@ -2,6 +2,7 @@ using LN7.BL;
 using LN7.BL.Models;
 using LN7.WebUI.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Numerics;
 using System.Text.Json;
@@ -64,27 +65,27 @@ namespace LN7.WebUI.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> LoginAsync(User user)
+        public ActionResult Login(User user)
         {
             try
             {
                 HttpClient client = new HttpClient();
-                client.BaseAddress = new Uri("https://localhost:7295/");
-                string serializedObject = JsonSerializer.Serialize(user);
+                client.BaseAddress = new Uri("https://ln7api.azurewebsites.net/api/");
+                string serializedObject = JsonConvert.SerializeObject(user);
                 var content = new StringContent(serializedObject);
                 content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
-                HttpResponseMessage response = client.PostAsync("api/User/", content).Result;
+                HttpResponseMessage response = client.PostAsync("User" + "/", content).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     // set up var from response
                     var body = response.Content.ReadAsStringAsync().Result;
-                    User player = JsonSerializer.Deserialize<User>(body);
-                    Guid userId = player.Id;
+                    User newUser = JsonConvert.DeserializeObject<User>(body);
+                    Guid Id = newUser.Id;
                     //set up client to get full user
 
                     //get user through second request
-                    string userString = client.GetStringAsync("api/User/" + userId).Result;
-                    user = JsonSerializer.Deserialize<User>(userString);
+                    string userString = client.GetStringAsync("User/" + Id).Result;
+                    user = JsonConvert.DeserializeObject<User>(userString);
 
                     //set user
                     SetUser(user);
@@ -92,12 +93,10 @@ namespace LN7.WebUI.Controllers
                     if (TempData["returnuri"] != null)
                         return Redirect(TempData["returnuri"]?.ToString());
                     else
-                        return RedirectToAction("DisplayQuestion", "Question");
+                        return RedirectToAction("Index", "Home");
                 }
                 else
                 {
-                    var errorContent = response.Content.ReadAsStringAsync().Result;
-                    Console.WriteLine($"Error: {errorContent}");
                     ViewBag.Error = "Login Failed";
                     return View(user);
                 }
