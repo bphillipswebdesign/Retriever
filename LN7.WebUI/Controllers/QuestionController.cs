@@ -27,7 +27,7 @@ namespace LN7.WebUI.Controllers
             try
             {
                 int minQuestion = 1;
-                int maxQuestion = 47;
+                int maxQuestion = 42;
 
                 List<int> shuffledQuestions = HttpContext.Session.Get<List<int>>("shuffledQuestions");
                 List<Dog> dogs = HttpContext.Session.Get<List<Dog>>("dogs");
