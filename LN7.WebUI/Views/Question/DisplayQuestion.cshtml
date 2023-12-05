@@ -17,22 +17,22 @@
 <body>
     <section class="body-section">
         <div class="container-fluid row row-main justify-content-center">
-            <div class="col-6">
+            <div class="col-6 mh-100 align-items-center">
                 <div class="speech-bubble">
                     <div class="speech-text d-flex align-items-center justify-content-center">
                         <h2>@Model?.Question</h2>
                     </div>
                 </div>
 
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center mh-100">
                     <form method="post" class="buttons-selector btn-selector-sm btnDivider d-flex justify-content-center">
                         <button asp-controller="Question" asp-action="DisplayQuestion" type="submit" name="answer" value="true" class="btnYesNo btnDisplay btnYes">Yes</button>
                         <button asp-controller="Question" asp-action="DisplayQuestion" type="submit" name="answer" value="false" class="btnYesNo btnDisplay btnNo">No</button>
                     </form>
                 </div>
             </div>
-            <div class="col-5 d-flex align-items-center">
-                <div class="retriever retriever-sm d-flex align-items-center">
+            <div class="col-5 d-flex align-items-center mh-100">
+                <div class="retriever d-flex align-items-center">
                     <img class="img-fluid mx-auto imgDog" src="~/images/dogCharacter.svg" />
                 </div>
             </div>
