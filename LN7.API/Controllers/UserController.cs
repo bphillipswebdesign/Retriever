@@ -1,6 +1,7 @@
 ﻿using LN7.BL;
 using LN7.BL.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Numerics;
 
 namespace LN7.API.Controllers
 {
@@ -51,24 +52,25 @@ namespace LN7.API.Controllers
         }
 
         // POST: User/
-        [HttpPost("Login")]
-        public ActionResult Login([FromBody] User user)
+        [HttpPost("")]
+        public async Task<ActionResult<User>> Login([FromBody] User user)
         {
             try
             {
                 if (UserManager.Login(user))
                 {
-                    // Successful login
-                    return Ok(new { Message = "Login successful" });
+                    User player = await UserManager.LoadById(user.Id);
+                    return Ok(player);
                 }
                 else
                 {
-                    return BadRequest(new { Message = "Invalid credentials" });
+                    return StatusCode(StatusCodes.Status401Unauthorized);
                 }
+
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { Message = $"Error: {ex.Message}" });
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 

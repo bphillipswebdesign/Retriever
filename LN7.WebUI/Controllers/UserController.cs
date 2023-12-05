@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Numerics;
+using System.Text.Json;
 
 namespace LN7.WebUI.Controllers
 {
@@ -62,25 +63,41 @@ namespace LN7.WebUI.Controllers
             return View();
         }
 
-        //LOCAL LOGIN
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(User user)
         {
             try
             {
-                if (UserManager.Login(user))
+                HttpClient client = new HttpClient();
+                client.BaseAddress = new Uri("https://ln7api.azurewebsites.net/api/");
+                string serializedObject = JsonConvert.SerializeObject(user);
+                var content = new StringContent(serializedObject);
+                content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+                HttpResponseMessage response = client.PostAsync("User" + "/", content).Result;
+                if (response.IsSuccessStatusCode)
                 {
-                    // Successful login
+                    // set up var from response
+                    var body = response.Content.ReadAsStringAsync().Result;
+                    User newUser = JsonConvert.DeserializeObject<User>(body);
+                    Guid Id = newUser.Id;
+                    //set up client to get full user
+
+                    //get user through second request
+                    string userString = client.GetStringAsync("User/" + Id).Result;
+                    user = JsonConvert.DeserializeObject<User>(userString);
+
+                    //set user
                     SetUser(user);
-                    if (TempData["returnurl"] != null)
-                        return Redirect(TempData["returnurl"]?.ToString());
+
+                    if (TempData["returnuri"] != null)
+                        return Redirect(TempData["returnuri"]?.ToString());
                     else
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("DisplayQuestion", "Question");
                 }
                 else
                 {
+                    ViewBag.Error = "Login Failed";
                     return View(user);
                 }
             }
@@ -90,55 +107,6 @@ namespace LN7.WebUI.Controllers
                 return View(user);
             }
         }
-
-        //REMOTE LOGIN
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Login(User user)
-        //{
-        //    try
-        //    {
-        //        HttpClient client = new HttpClient();
-        //        client.BaseAddress = new Uri("https://ln7api.azurewebsites.net/api/");
-        //        string serializedObject = JsonConvert.SerializeObject(user);
-        //        var content = new StringContent(serializedObject);
-        //        content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
-        //        HttpResponseMessage response = client.PostAsync("User" + "/", content).Result;
-        //        if (response.IsSuccessStatusCode)
-        //        {
-        //            // set up var from response
-        //            var body = response.Content.ReadAsStringAsync().Result;
-        //            User player = JsonConvert.DeserializeObject<User>(body);
-        //            Guid userId = player.Id;
-        //            //set up client to get full user
-
-        //            //get user through second request
-        //            string userString = client.GetStringAsync("User/" + userId).Result;
-        //            user = JsonConvert.DeserializeObject<User>(userString);
-
-        //            //set user
-        //            SetUser(user);
-
-        //            if (TempData["returnuri"] != null)
-        //                return Redirect(TempData["returnuri"]?.ToString());
-        //            else
-        //                return RedirectToAction("Index", "Home");
-        //        }
-        //        else
-        //        {
-        //            var errorContent = response.Content.ReadAsStringAsync().Result;
-        //            Console.WriteLine($"Error: {errorContent}");
-        //            ViewBag.Error = "Login Failed";
-        //            return View(user);
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        ViewBag.Error = ex.Message;
-        //        return View(user);
-        //    }
-        //}
 
         [HttpPost]
         [ValidateAntiForgeryToken]

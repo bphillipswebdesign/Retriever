@@ -7,3 +7,7 @@ pw: Password23
 
 DataBase: lucky7db
 ConnectionString: => ("Server=tcp:lucky7db.database.windows.net,1433;Initial Catalog=lucky7db;Persist Security Info=False;User ID=luckydb;Password=Password23;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+
+--API--
+userName="LN7API\$LN7API"
+userPWD="7tiJQysoH95omvSBybazy96fpp5YmJC4p4u8tJ3YYzWpkBdpEfc8cEQPmSMu"
