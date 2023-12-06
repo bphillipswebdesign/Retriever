@@ -13,8 +13,6 @@
 <div class="row align-items-center justify-content-center">
     <div class="col-md-4 d-flex justify-content-center">
 
-    
-
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
@@ -28,7 +26,7 @@
 
             <div class="form-group">
                 <label>Image</label>
-                <label asp-for="Dog.Imagepath" class="control-label"></label>
+                <label asp-for="Dog.Imagepath" class="control-label file-btn"></label>
                @* <img class="imagepropmed dog-img"
                      alt="@Model.Dog.BreedName"
                      id="dogimage"
@@ -145,10 +143,6 @@
         </form>
   </div>
 </div>
-
-@* <div>
-    <a asp-action="Index">Back to List</a>
-</div> *@
 
 @section Scripts {
     @{

@@ -6,35 +6,39 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-<div class="text-center">
-  <a class="btn btn-sm btn-styles" id="btn-create" asp-action="Create">Add New Dog</a>
-  <a class="btn btn-sm btn-styles" id="btn-create" onclick="location.href='@Url.Action("DisplayQuestion", "Question")'">Back to Game</a>
-</div>
-
-<head>
-  <link rel="stylesheet" href="~/css/adminIndex.css" asp-append-version="true" />
-  <link rel="stylesheet" href="https://use.typekit.net/emp4nbz.css"> @*access Proxima Nova, Raleway from Adobe Fonts*@
-</head>
-
-
-<div class="row">
-    @foreach (var item in Model.OrderBy(dog => dog.BreedName))
-    {
-        <div class="col-sm-3">
-            <div class="card mb-2 dog-card">
-                <div class="card-header header card-bkg-h text-center">
-                    <h3 class="dog-name-text">@item.BreedName</h3>
-                </div>
-                <div class="card-img card-bkg text-center">
-                  <img class="dog-img" src="~/images/@item.Imagepath" />
-                </div>
-                <div class="card-footer card-bkg-f text-center">
-                    <a class="btn btn-sm btn-styles" asp-route-id="@item.Id" asp-action="Edit">Edit</a>
-                    @*<a class="btn btn-sm btn-styles" asp-route-id="@item.Id" asp-action="Details">Details</a>*@
-                    <a class="btn btn-sm btn-styles" asp-route-id="@item.Id" asp-action="Delete">Delete</a>
-                </div>
-            </div>
+<html id="top">
+    <head>
+        <link rel="stylesheet" href="~/css/adminIndex.css" asp-append-version="true" />
+        <link rel="stylesheet" href="https://use.typekit.net/emp4nbz.css"> @*access Proxima Nova, Raleway from Adobe Fonts*@
+    </head>
+    <body>
+        <div class="text-center">
+          <a class="btn btn-sm btn-styles" id="btn-create" asp-action="Create">Add New Dog</a>
+          <a class="btn btn-sm btn-styles" id="btn-create" onclick="location.href='@Url.Action("DisplayQuestion", "Question")'">Back to Game</a>
         </div>
-    }
-</div>
+
+        <div class="row">
+            @foreach (var item in Model.OrderBy(dog => dog.BreedName))
+            {
+                <div class="col-sm-3">
+                    <div class="card mb-2 dog-card">
+                        <div class="card-header header card-bkg-h text-center">
+                            <h3 class="dog-name-text">@item.BreedName</h3>
+                        </div>
+                        <div class="card-img card-bkg text-center">
+                          <img class="dog-img" src="~/images/@item.Imagepath" />
+                        </div>
+                        <div class="card-footer card-bkg-f text-center">
+                            <a class="btn btn-sm btn-styles" asp-route-id="@item.Id" asp-action="Edit">Edit</a>
+                            @*<a class="btn btn-sm btn-styles" asp-route-id="@item.Id" asp-action="Details">Details</a>*@
+                            <a class="btn btn-sm btn-styles" asp-route-id="@item.Id" asp-action="Delete">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="text-center">
+            <a href="#top" class="btn btn-sm btn-styles top">Top of Page</a>
+        </div>
+    </body>
+</html>

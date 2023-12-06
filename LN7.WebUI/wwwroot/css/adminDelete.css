@@ -22,27 +22,35 @@
   max-height: 200px;
   border-radius: 4px;
   margin-bottom: 1.5rem;
+  margin-top: .5rem;
+}
+
+.question-prompt{
+    max-width: 70%;
+    text-align: center;
 }
 
 h3 {
-  color: #000000;
-  font-size: 1.25rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  padding-bottom: 1rem;
+    color: #000000;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: .5rem;
+    line-height: 1.75rem;
 }
 
 .btn-styles {
-  background-color: #3f9eff;
-  color: #eee;
-  font-weight: bold;
-  width: 10rem;
-  text-transform: uppercase;
-  border-radius: 0.25rem;
-  padding: 0.5rem;
+    background-color: #3f9eff;
+    color: #eee;
+    font-weight: bold;
+    width: 33.33%;
+    text-transform: uppercase;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    margin: .5rem .75rem;
 }
 
-  .btn-styles:hover {
-    color: #eee;
-    background-color: #3170af;
-  }
+    .btn-styles:hover {
+        color: #eee;
+        background-color: #3170af;
+    }

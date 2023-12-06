@@ -14,7 +14,7 @@ h3 {
 }
 
 .form-group {
-  margin: 0.5rem 0 0.5rem 0;
+  margin: 1rem 0;
 }
 
 .control-label {
@@ -27,25 +27,40 @@ h3 {
   border-radius: 4px;
 }
 
-.dog-name {
-  margin: 0.5rem 0 0.5rem 0;
-}
-
 .fc-width {
-  width: 50%;
+    width: 100%;
+    filter: drop-shadow(4px 4px 4px #1c1c1c);
 }
 
 .btn-styles {
-  background-color: #3f9eff;
-  color: #eee;
-  font-weight: bold;
-  width: 33.33%;
-  text-transform: uppercase;
-  border-radius: 0.25rem;
-  padding: 0.5rem;
+    background-color: #3f9eff;
+    color: #eee;
+    font-weight: bold;
+    width: 33.33%;
+    text-transform: uppercase;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    margin: .5rem .75rem
 }
 
   .btn-styles:hover {
     color: #eee;
     background-color: #3170af;
   }
+
+input::file-selector-button {
+    background-color: #3f9eff;
+    color: #eee;
+    font-weight: bold;
+    width: 40%;
+    letter-spacing: .1rem;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    margin-top: .75rem;
+    height: 2.5rem;
+}
+
+    input::file-selector-button:hover {
+        color: #eee;
+        background-color: #3170af;
+    }
