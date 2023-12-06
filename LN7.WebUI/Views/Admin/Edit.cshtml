@@ -106,13 +106,6 @@
             </div>
 
             <div class="form-group">
-                <label>Origin</label>
-                <select asp-for="Dog.Origin" class="form-control fc-width"
-                        asp-items="@(new SelectList(Model.OriginTypes, "Id", "Description"))"></select>
-                <span asp-validation-for="Dog.Origin" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
                 <label>Tail length</label>
                 <select asp-for="Dog.TailLength" class="form-control fc-width"
                         asp-items="@(new SelectList(Model.TailLengths, "Id", "Description"))"></select>

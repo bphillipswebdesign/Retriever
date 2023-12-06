@@ -21,12 +21,6 @@
 	(13, 'Does the dog you''re thinking of have a medium length tail?',5,2),
 	(14, 'Does the dog you''re thinking of have a longer tail?',5,3),
 
-	--(15, 'What is the origin of your dog: China?',6,1),
-	--(16, 'What is the origin of your dog: England?',6,2),
-	--(17, 'What is the origin of your dog: Germany?',6,3),
-	--(18, 'What is the origin of your dog: the UK?',6,4),
-	--(19, 'What is the origin of your dog: the US?',6,5),
-
 	(15, 'Is your mystery dog''s muzzle narrow?',6,1),
 	(16, 'Is your mystery dog''s muzzle standard width?',6,2),
 	(17, 'Is your mystery dog''s muzzle broad?',6,3),

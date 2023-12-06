@@ -17,7 +17,6 @@ namespace LN7.WebUI.ViewModels
         public List <LegLength> LegLengths { get; set; }    
         public List <MuzzleLength> MuzzleLengths { get; set; }
         public List <MuzzleType> MuzzleTypes { get; set; }
-        public List <Origin> OriginTypes { get; set; }
         public List <TailLength> TailLengths { get; set; }  
         public List <TailType> TailTypes { get; set; }
         public List <WeightClass> WeightClasses { get; set; }
@@ -35,7 +34,6 @@ namespace LN7.WebUI.ViewModels
             LegLengths = DogManager.LegLengthLoad();
             MuzzleLengths = DogManager.MuzzleLengthLoad();
             MuzzleTypes = DogManager.MuzzleTypeLoad();
-            OriginTypes = DogManager.OriginTypeLoad();
             TailLengths = DogManager.TailLengthLoad();
             TailTypes = DogManager.TailTypeLoad();
             WeightClasses = DogManager.WeightClassLoad();
@@ -54,7 +52,6 @@ namespace LN7.WebUI.ViewModels
             LegLengths = DogManager.LegLengthLoad();
             MuzzleLengths = DogManager.MuzzleLengthLoad();
             MuzzleTypes = DogManager.MuzzleTypeLoad();
-            OriginTypes = DogManager.OriginTypeLoad();
             TailLengths = DogManager.TailLengthLoad();
             TailTypes = DogManager.TailTypeLoad();
             WeightClasses = DogManager.WeightClassLoad();
