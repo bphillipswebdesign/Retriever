@@ -9,7 +9,7 @@
   background-color: #3f9eff;
   color: #eee;
   font-weight: bold;
-  width: 10%;
+  width: 10%; 
   text-transform: uppercase;
   border-radius: 0.25rem 0.25rem 0rem 0rem;
   padding: 0.5rem;
@@ -18,7 +18,7 @@
 .btn-styles-no-bkgcolor {
   color: #eee;
   font-weight: bold;
-  width: 10%;
+  width: 10%;  
   text-transform: uppercase;
   border-radius: 0.25rem 0.25rem 0rem 0rem;
   padding: 0.5rem;
@@ -33,15 +33,23 @@
 }
 
 @media (min-width: 992px) {
+ 
 }
 
 @media (min-width: 768px) {
+ 
+  
 }
 
 @media (min-width: 576px) {
+  
 }
 
 @media (max-width: 576px) {
+  .btn-responsive {
+    min-width: 30%;
+    max-width: 50%;
+  }
 }
 
 
