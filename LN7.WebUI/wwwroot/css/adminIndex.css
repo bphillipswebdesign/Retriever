@@ -61,8 +61,15 @@ h3 {
   margin: 2rem 1rem;
 }
 
-.top{
-    width:15%;
+.btn-top {
+    width: 20%;
+    margin-top: 1rem;
+    background-color: #3f9eff;
+    color: #eee;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
 }
 
 
@@ -72,6 +79,15 @@ h3 {
         width: 30%;
         margin: 2rem .5rem;
 
+    }
+    .btn-top {
+        width: 30%;
+        background-color: #3f9eff;
+        color: #eee;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-radius: 0.25rem;
+        padding: 0.5rem;
     }
 }
 

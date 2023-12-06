@@ -109,7 +109,7 @@ body {
 .form-container {
     margin-top: 2%;
     margin-bottom: 10%;
-    width: 50%;
+    width: 60%;
     height: auto;
     background-color: rgba(138,196,255,0.35);
     border-radius: 5px;
@@ -208,3 +208,10 @@ input {
     font-size: small;
     text-align: center;
 }
+
+@media all and (max-width: 1030px) {
+    .form-container {
+        width: 70%;
+    }
+}
+
