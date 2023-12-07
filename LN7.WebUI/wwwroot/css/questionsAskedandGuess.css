@@ -6,19 +6,23 @@ body {
     background: linear-gradient(to top, #8AC4FF, #9A96FF, #CE8AFF);
     font-family: raleway, sans-serif;
     margin: 0;
-    max-height: 100vh
+    max-height: 100vh;
 }
 
 .body-section {
     background-color: rgba(224,224,255,0.2);
     min-height: 60vh;
-    margin-top: 10vh;
     width: 100vw;
+    margin-top: 10vh;
 }
 
 .container-fluid {
     padding-left: 0;
     padding-right: 0;
+}
+
+.row-main{
+    max-height: 100vh;
 }
 
 /*Speech Bubble Styles*/
@@ -29,7 +33,7 @@ body {
     background-color: rgba(224,224,255,0.2);
     border-radius: .4rem;
     padding: 1rem;
-    margin-left:10%;
+    margin-left: 10%;
     text-align: center;
 }
 
@@ -54,23 +58,10 @@ body {
 
 /*Button Styles*/
 
-.btnDisplay{
-    max-width: 80%;
-}
-
-.btnDivider {
-    display: inline-block;
-    max-width: 80%;
+.buttons-selector {
     margin-top: 2rem;
+    width:100%;
 }
-
-    .btnDivider > .btnYes:not(last-child) {
-        margin-right: 1rem;
-    }
-
-    .btnDivider > .btnNo:not(last-child) {
-        margin-left: 1rem;
-    }
 
 .btnYesNo {
     background-color: #3f9eff;
@@ -78,7 +69,7 @@ body {
     text-align: center;
     border-radius: .25rem;
     text-decoration: none;
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 1rem;
     border: 0;
     cursor: pointer;
     outline: 0;
@@ -95,7 +86,8 @@ body {
     }
 
 /*Dog image Styles*/
-.retirever-margin {
+
+.retriever {
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
@@ -110,19 +102,20 @@ body {
     h2 {
         font-size: 1.2rem;
     }
-
-    .retriever {
-        margin-top: -3rem;
-    }
 }
-@media all and (max-width: 500px){
+
+@media all and (max-width: 500px) {
 
     body-section {
-        max-height: 45vh;
+        min-height: 45vh;
     }
 
     .row {
         --bs-gutter-x: .5rem;
+    }
+
+    .speech-bubble {
+        padding: .5rem;
     }
 
     h2 {
@@ -130,30 +123,11 @@ body {
     }
 
     .btnYesNo {
-        padding: 0.25rem 1rem;
-        font-size: 1rem;
+        padding: 0.2rem .75rem;
+        font-size: .85rem;
     }
 
-    .btnDivider {
+    .buttons-selector {
         margin-top: 1rem;
     }
-
-    .btnDivider > .btnYes:not(last-child) {
-        margin-right: .25rem;
-    }
-
-    .btnDivider > .btnNo:not(last-child) {
-        margin-left: .25rem;
-    }
-
-    .retriever {
-        margin-top: -3rem;
-    }
-
 }
-
-
-
-
-
-
