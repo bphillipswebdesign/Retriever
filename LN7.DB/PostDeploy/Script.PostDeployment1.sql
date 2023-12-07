@@ -20,7 +20,6 @@ Post-Deployment Script Template
 :r .\DefaultData\LegLengths.sql
 :r .\DefaultData\MuzzleLengths.sql
 :r .\DefaultData\MuzzleTypes.sql
-:r .\DefaultData\Origins.sql
 :r .\DefaultData\TailLengths.sql
 :r .\DefaultData\TailTypes.sql
 :r .\DefaultData\Users.sql

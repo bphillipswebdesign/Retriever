@@ -38,8 +38,6 @@ public partial class LN7Entities : DbContext
 
     public virtual DbSet<tblMuzzleType> tblMuzzleTypes { get; set; }
 
-    public virtual DbSet<tblOrigin> tblOrigins { get; set; }
-
     public virtual DbSet<tblQuestion> tblQuestions { get; set; }
 
     public virtual DbSet<tblTailLength> tblTailLengths { get; set; }
@@ -202,18 +200,6 @@ public partial class LN7Entities : DbContext
             entity.HasKey(e => e.Id).HasName("PK__tblMuzzl__3214EC07DE23F0BB");
 
             entity.ToTable("tblMuzzleType");
-
-            entity.Property(e => e.Id).ValueGeneratedNever();
-            entity.Property(e => e.Description)
-                .HasMaxLength(20)
-                .IsUnicode(false);
-        });
-
-        modelBuilder.Entity<tblOrigin>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PK__tblOrigi__3214EC0750BB06EE");
-
-            entity.ToTable("tblOrigin");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.Description)

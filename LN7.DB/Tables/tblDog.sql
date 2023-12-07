@@ -13,7 +13,6 @@
     [BodyType] INT NOT NULL, 
     [MuzzleType] INT NOT NULL,
     [MuzzleLength] INT NOT NULL,
-    [Origin] INT NOT NULL,
     [TailType] INT NOT NULL,
     [TailLength] INT NOT NULL,
     [WeightClass] INT NOT NULL
