@@ -1,25 +1,4 @@
-﻿
-
-@media (max-width: 576px) {
-
-}
-
-@media (min-width: 576px) {
-}
-
-@media (min-width: 768px) {
-}
-
-@media (min-width: 992px) {
-}
-
-@media (min-width: 1200px) {
-}
-
-@media (min-width: 1400px) {
-}
-
-/*Page Styles*/
+﻿/*Page Styles*/
 
 html {
     position: relative;
@@ -47,7 +26,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top:5%;
+    margin-top:10vh;
 }
 
 /*Logo image Styles*/

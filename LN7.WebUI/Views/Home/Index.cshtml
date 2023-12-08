@@ -14,22 +14,28 @@
 </head>
 <body>
     <section class="body-section d-flex align-items-center justify-content-center">
-        <div class="container-fluid row justify-content-center">
-            <div class="col-12 col-xxs-6 col-sm-8 col-md-6 col-lg-6 col-xl-4 col-xxl-3 mx-auto">
-                <div class="d-flex flex-column justify-content-center">
-                    <img class="dogLogo card-img-top img-fluid mx-auto" src="~/images/dogDetective.svg" />
-                    <img class="textLogo img-fluid mx-auto" src="~/images/retrieverTextLogo.svg" />
-                </div>
-                <div id="welcomeText">
-                    <p class="text-center text-white welcome">Welcome to the Dog Guessing Game</p>
-                    <p class="text-center text-white guess">Retriever Guesses <br />What Dog You're Thinking Of</p>
-                    <p class="text-center text-white signinPlay">Sign In to Play</p>
-                </div>
-                <div class="text-center text-white">
-                    <button class="btnLogin" type="button" onclick="location.href=' @Url.Action("Login", "User")'">Login</button>
+            <div class="container-fluid row justify-content-center"> 
+                <div class="col-12 col-xxs-6 col-sm-8 col-md-6 col-lg-6 col-xl-4 col-xxl-3 mx-auto">
+                    <div class="bubble">
+                        <div class="thought-bubble">
+                            <p class="text-center d-flex align-items-center" id="guess">Retriever Guesses What Dog You're Thinking Of</p>
+                        </div>
+                    </div>
+                    <div class="logo-img d-flex flex-column justify-content-center">
+                        <img class="dogLogo img-fluid mx-auto" src="~/images/dogDetective.svg" />
+                    </div>
+                    <div class="text-img d-flex flex-column justify-content-center">
+                        <img class="textLogo img-fluid mx-auto" src="~/images/retrieverTextLogo.svg" />
+                    </div>
+                    <div class="welcomeText">
+                        <p class="text-center text-white" id="welcome"> Welcome to the Dog Guessing Game</p>
+                        <p class="text-center text-white" id="signinPlay">Sign In to Play</p>
+                    </div>
+                    <div class="text-center text-white">
+                        <button class="btnLogin" type="button" onclick="location.href=' @Url.Action("Login", "User")'">Login</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 </body>
 </html>

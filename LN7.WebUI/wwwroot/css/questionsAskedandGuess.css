@@ -14,6 +14,7 @@ body {
     min-height: 60vh;
     width: 100vw;
     margin-top: 10vh;
+    display: flex;
 }
 
 .container-fluid {
