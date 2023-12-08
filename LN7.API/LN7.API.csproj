@@ -26,9 +26,9 @@
     <PackageReference Include="Microsoft.Identity.Web" Version="2.15.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\imgs\" />
-  </ItemGroup>
+	<ItemGroup>
+		<Folder Include="wwwroot\imgs\" />
+	</ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\LN7.BL.Models\LN7.BL.Models.csproj" />

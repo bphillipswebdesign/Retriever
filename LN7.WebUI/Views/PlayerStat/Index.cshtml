@@ -7,14 +7,14 @@
 }
 
 <head>
-    <link rel="stylesheet" href="~/css/playerStat.css" asp-append-version="true" />
-    <link rel="stylesheet" href="https://use.typekit.net/emp4nbz.css"> @*access Proxima Nova, Raleway from Adobe Fonts*@
+  <link rel="stylesheet" href="~/css/playerStat.css" asp-append-version="true" />
+  <link rel="stylesheet" href="https://use.typekit.net/emp4nbz.css"> @*access Proxima Nova, Raleway from Adobe Fonts*@
 </head>
 
 <div>
-    <input class="btn btn-dark btn-styles-no-bkgcolor shadow-none" name="btnFilter" id="btnMine" type="button" value="My History" />
-    <input class="btn btn-styles  shadow-none" id="btnToday" name="btnFilter" type="button" value="All Games Today" />
-    <input class="btn btn-styles  shadow-none" id="btnAll" name="btnFilter" type="button" value="All Games" />
+  <input class="btn btn-dark btn-styles-no-bkgcolor shadow-none mx-auto btn-responsive" name="btnFilter" id="btnMine" type="button" value="My History"/>
+  <input class="btn btn-styles  shadow-none mx-auto btn-responsive" id="btnToday" name="btnFilter" type="button" value="Games Today" />
+  <input class="btn btn-styles  shadow-none mx-auto btn-responsive" id="btnAll" name="btnFilter" type="button" value="All Games" />
 </div>
 
 <div id="dvPartial">
@@ -50,7 +50,7 @@
     thirdBtn.addEventListener('click', () => {
         thirdBtn.classList.add('btn-dark');
         firstBtn.classList.remove('btn-dark');
-        firstBtn.classList.add('btn-styles');
+    firstBtn.classList.add('btn-styles');
         secondBtn.classList.remove('btn-dark');
         var answer = thirdBtn.defaultValue;
         $("#dvPartial").load('@(Url.Action("GetPlayerStats", "PlayerStat"))?btnFilter=' + encodeURIComponent(answer));

@@ -1,5 +1,4 @@
-﻿
-/*Page Styles*/
+﻿/*Page Styles*/
 
 html {
     position: relative;
@@ -27,7 +26,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 5%
+    margin-top: 10vh;
 }
 
 /*Logo image Styles*/
@@ -61,10 +60,10 @@ body {
     margin-bottom: 1.5rem;
 }
 
-    .btnSignup:hover {
-        color: #eee;
-        background-color: #3170af;
-    }
+.btnSignup:hover {
+    color: #eee;
+    background-color: #3170af;
+}
 
 
 /*Form Styles*/
@@ -190,20 +189,9 @@ input {
     text-align: center;
 }
 
-@media (max-width: 576px) {
+@media all and (max-width: 1030px) {
+    .form-container {
+        width: 70%;
+    }
 }
 
-@media (min-width: 576px) {
-}
-
-@media (min-width: 768px) {
-}
-
-@media (min-width: 992px) {
-}
-
-@media (min-width: 1200px) {
-}
-
-@media (min-width: 1400px) {
-}

@@ -20,7 +20,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light navbar-toggleable-sm">
-
+            
             <div class="container-fluid">
                 <a class="navbar-brand text-light" asp-controller="Home" asp-action="Index">Retriever</a>
 
@@ -34,16 +34,16 @@
 
                 <div class="collapse navbar-collapse" id="navbarToggler">
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="PlayerStat" asp-action="Index">Player Stats</a>
-                        </li>
                         @{
                             if (user?.Is_Admin == true)
                             {
                                 <li class="nav-item"><a class="nav-link text-light" asp-area="" asp-controller="Admin" asp-action="Index">Admin Page</a></li>
                                 <li class="nav-item"><a class="nav-link text-light" asp-area="" asp-controller="Question" asp-action="DisplayQuestion">Game</a></li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light" asp-area="" asp-controller="PlayerStat" asp-action="Index">Player Stats</a>
+                                </li>
                             }
-
+                            
                         }
                     </ul>
                     <ul class="navbar-nav">

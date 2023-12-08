@@ -22,7 +22,7 @@ namespace LN7.WebUI.ViewModels
         public List <WeightClass> WeightClasses { get; set; }
         public IFormFile File { get; set; }
 
-        public DogVM() 
+        public DogVM()
         {
             BodyTypes = DogManager.LoadBody();
             CoatColors = DogManager.CoatColorLoad();

@@ -6,14 +6,12 @@
 }
 
 <head>
-    <link rel="stylesheet" href="~/css/adminCreate.css" asp-append-version="true" />
-    <link rel="stylesheet" href="https://use.typekit.net/emp4nbz.css"> @*access Proxima Nova, Raleway from Adobe Fonts*@
+  <link rel="stylesheet" href="~/css/adminCreate.css" asp-append-version="true" />
+  <link rel="stylesheet" href="https://use.typekit.net/emp4nbz.css"> @*access Proxima Nova, Raleway from Adobe Fonts*@
 </head>
 
 <div class="row align-items-center justify-content-center">
     <div class="col-md-4 d-flex justify-content-center">
-
-
 
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -28,12 +26,12 @@
 
             <div class="form-group">
                 <label>Image</label>
-                <label asp-for="Dog.Imagepath" class="control-label"></label>
-                @* <img class="imagepropmed dog-img"
-                alt="@Model.Dog.BreedName"
-                id="dogimage"
-                onclick="on('/images/@Model.Dog.Imagepath');"
-                src="~/images/@Model.Dog.Imagepath" />*@
+                <label asp-for="Dog.Imagepath" class="control-label file-btn"></label>
+               @* <img class="imagepropmed dog-img"
+                     alt="@Model.Dog.BreedName"
+                     id="dogimage"
+                     onclick="on('/images/@Model.Dog.Imagepath');"
+                     src="~/images/@Model.Dog.Imagepath" />*@
                 <input asp-for="Dog.Imagepath" class="form-control fc-width dog-name mx-auto" />
                 <input class="form-control-file" type="file" name="File" id="File" action="image/" onchange="loadFile(event)" />
                 <span asp-validation-for="Dog.Imagepath" class="text-danger"></span>
@@ -136,12 +134,8 @@
                 <a class="btn btn-sm btn-styles" asp-action="Index">Back</a>
             </div>
         </form>
-    </div>
+  </div>
 </div>
-
-@* <div>
-    <a asp-action="Index">Back to List</a>
-</div> *@
 
 @section Scripts {
     @{

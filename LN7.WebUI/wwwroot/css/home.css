@@ -1,4 +1,5 @@
-﻿
+﻿/*Body Styles*/
+
 /*body Styles*/
 
 .container-fluid {
@@ -7,9 +8,16 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
     background: linear-gradient(to top, #CE8AFF, #9A96FF, #8AC4FF);
     background: linear-gradient(to top, #8AC4FF, #9A96FF, #CE8AFF);
     font-family: raleway, sans-serif;
+    height: 100vh;
+}
+
+.container-fluid {
+    padding: 0;
     margin: 0;
 }
 
@@ -18,23 +26,55 @@ body {
 .body-section {
     background-color: rgba(224,224,255,0.2);
     min-height: 60vh;
-    margin-top: 2%;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    width: 100vw;
 }
 
-.guess {
+#guess {
     line-height: 1.5rem;
+    margin-bottom: 0;
 }
 
-.welcome {
-    font-size: 1rem;
+.bubble {
+    margin: 3rem;
 }
 
-#welcomeText {
-    font: .75rem fontawesome;
-    font-style: normal;
-    letter-spacing: .1rem;
-    margin-top: 1.5rem;
+.thought-bubble {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 30px;
+    min-width: 30%;
+    max-width: 50%;
+    margin: 1rem;
+    position: relative;
 }
+
+    .thought-bubble:before,
+    .thought-bubble:after {
+        content: "";
+        background-color: #fff;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .thought-bubble:before {
+        width: 44px;
+        height: 44px;
+        top: -12px;
+        left: 28px;
+        box-shadow: -50px 30px 0 -12px #fff;
+    }
+
+    .thought-bubble:after {
+        bottom: -10px;
+        right: 26px;
+        width: 30px;
+        height: 30px;
+        box-shadow: 40px -34px 0 0 #fff, -28px -6px 0 -2px #fff, -24px 17px 0 -6px #fff, -5px 25px 0 -10px #fff;
+    }
 
 /*Logo image Styles*/
 
@@ -47,10 +87,18 @@ body {
 
 .textLogo {
     margin-top: 2%;
-    max-width: 80%;
+    max-width: 50%;
     height: auto;
     padding: .25rem 0rem;
     filter: drop-shadow(2px 2px 2px #9a9a9a)
+}
+
+.welcomeText {
+    font: 1.5rem;
+    letter-spacing: .1rem;
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: bold;
 }
 
 /*Button Styles*/
@@ -72,7 +120,7 @@ body {
     text-transform: uppercase;
     font-weight: bold;
     font-style: normal;
-    margin-bottom: 16%;
+    margin-bottom: 2rem;
 }
 
     .btnLogin:hover {
