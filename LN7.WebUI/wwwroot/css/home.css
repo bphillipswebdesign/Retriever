@@ -37,7 +37,8 @@ body {
 }
 
 .bubble {
-    margin: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
 .thought-bubble {
@@ -79,7 +80,6 @@ body {
 /*Logo image Styles*/
 
 .dogLogo {
-    margin-top: 16%;
     max-width: 50%;
     height: auto;
     filter: drop-shadow(4px 4px 4px #9a9a9a)
