@@ -22,7 +22,7 @@ body {
     padding-right: 0;
 }
 
-.row-main{
+.row-main {
     max-height: 100vh;
 }
 
@@ -61,7 +61,7 @@ body {
 
 .buttons-selector {
     margin-top: 2rem;
-    width:100%;
+    width: 100%;
 }
 
 .btnYesNo {

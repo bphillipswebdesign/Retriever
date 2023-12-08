@@ -26,7 +26,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top:10vh;
+    margin-top: 10vh;
 }
 
 /*Logo image Styles*/
@@ -63,7 +63,6 @@ body {
     .btnLogin:hover {
         color: #eee;
         background-color: #3170af;
-        
     }
 
 .form-field.buttons {
@@ -168,4 +167,3 @@ input {
     font-size: small;
     text-align: center;
 }
-

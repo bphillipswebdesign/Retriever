@@ -60,10 +60,10 @@ body {
     margin-bottom: 1.5rem;
 }
 
-.btnSignup:hover {
-    color: #eee;
-    background-color: #3170af;
-}
+    .btnSignup:hover {
+        color: #eee;
+        background-color: #3170af;
+    }
 
 
 /*Form Styles*/
@@ -194,4 +194,3 @@ input {
         width: 70%;
     }
 }
-
