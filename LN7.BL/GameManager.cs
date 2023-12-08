@@ -87,7 +87,6 @@ namespace LN7.BL
                             BodyType = s.BodyType,
                             MuzzleType = s.MuzzleType,
                             MuzzleLength = s.MuzzleLength,
-                            Origin = (int)s.Origin,
                             TailType = s.TailType,
                             TailLength = s.TailLength,
                             WeightClass = s.WeightClass
@@ -142,7 +141,7 @@ namespace LN7.BL
 
         public static async Task<List<int>> ListFilter(int questionState, List<int> shuffledQuestions, bool answer)
         {
-            GameQuestion question = await GameManager.LoadById(questionState);
+            GameQuestion question = await LoadById(questionState);
 
             List<int> questionsToRemove = new List<int>();
 
@@ -151,7 +150,7 @@ namespace LN7.BL
                 // Loop through each remaining Question
                 foreach (int i in shuffledQuestions)
                 {
-                    GameQuestion q = await GameManager.LoadById(i);
+                    GameQuestion q = await LoadById(i);
 
                     if (question.Trait_Id == q.Trait_Id)
                     {

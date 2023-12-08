@@ -2,6 +2,7 @@ using LN7.BL;
 using LN7.BL.Models;
 using LN7.WebUI.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System.Diagnostics;
 
 namespace LN7.WebUI.Controllers
@@ -27,7 +28,7 @@ namespace LN7.WebUI.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(LN7.BL.Models.User user)
+        public ActionResult Create(User user)
         {
             try
             {
@@ -66,18 +67,35 @@ namespace LN7.WebUI.Controllers
         {
             try
             {
-                if (UserManager.Login(user))
+                HttpClient client = new HttpClient();
+                client.BaseAddress = new Uri("https://ln7api.azurewebsites.net/api/");
+                string serializedObject = JsonConvert.SerializeObject(user);
+                var content = new StringContent(serializedObject);
+                content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+                HttpResponseMessage response = client.PostAsync("User" + "/", content).Result;
+                if (response.IsSuccessStatusCode)
                 {
-                    // Successful login
+                    // set up var from response
+                    var body = response.Content.ReadAsStringAsync().Result;
+                    User newUser = JsonConvert.DeserializeObject<User>(body);
+                    Guid Id = newUser.Id;
+                    //set up client to get full user
+
+                    //get user through second request
+                    string userString = client.GetStringAsync("User/" + Id).Result;
+                    user = JsonConvert.DeserializeObject<User>(userString);
+
+                    //set user
                     SetUser(user);
-                    if (TempData["returnurl"] != null)
-                        return Redirect(TempData["returnurl"]?.ToString());
+
+                    if (TempData["returnuri"] != null)
+                        return Redirect(TempData["returnuri"]?.ToString());
                     else
-                        //("Index", "Home") origional. changed for video
                         return RedirectToAction("DisplayQuestion", "Question");
                 }
                 else
                 {
+                    ViewBag.Error = "Login Failed";
                     return View(user);
                 }
             }

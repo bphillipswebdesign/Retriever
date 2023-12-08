@@ -38,8 +38,6 @@ public partial class LN7Entities : DbContext
 
     public virtual DbSet<tblMuzzleType> tblMuzzleTypes { get; set; }
 
-    public virtual DbSet<tblOrigin> tblOrigins { get; set; }
-
     public virtual DbSet<tblQuestion> tblQuestions { get; set; }
 
     public virtual DbSet<tblTailLength> tblTailLengths { get; set; }
@@ -52,9 +50,11 @@ public partial class LN7Entities : DbContext
     public virtual DbSet<tblPlayerStat> tblPlayerStats { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        // To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=LN7.DB;Integrated Security=True");
-
+                 // To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                 //FOR USE WITH LOCAL DB
+                 //=> optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=LN7.DB;Integrated Security=True");
+                 //FOR USE WITH REMOTE DB
+                 => optionsBuilder.UseSqlServer("Server=tcp:lucky7db.database.windows.net,1433;Initial Catalog=lucky7db;Persist Security Info=False;User ID=luckydb;Password=Password23;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<tblBodyType>(entity =>
@@ -129,7 +129,6 @@ public partial class LN7Entities : DbContext
             entity.Property(e => e.BodyType);
             entity.Property(e => e.MuzzleType);
             entity.Property(e => e.MuzzleLength);
-            entity.Property(e => e.Origin);
             entity.Property(e => e.TailType);
             entity.Property(e => e.TailLength);
             entity.Property(e => e.WeightClass);
@@ -200,18 +199,6 @@ public partial class LN7Entities : DbContext
             entity.HasKey(e => e.Id).HasName("PK__tblMuzzl__3214EC07DE23F0BB");
 
             entity.ToTable("tblMuzzleType");
-
-            entity.Property(e => e.Id).ValueGeneratedNever();
-            entity.Property(e => e.Description)
-                .HasMaxLength(20)
-                .IsUnicode(false);
-        });
-
-        modelBuilder.Entity<tblOrigin>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PK__tblOrigi__3214EC0750BB06EE");
-
-            entity.ToTable("tblOrigin");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.Description)

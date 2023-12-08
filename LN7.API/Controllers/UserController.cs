@@ -1,5 +1,7 @@
 ﻿using LN7.BL;
+using LN7.BL.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Numerics;
 
 namespace LN7.API.Controllers
 {
@@ -7,9 +9,8 @@ namespace LN7.API.Controllers
     public class UserController : ControllerBase
     {
         // GET: User/
-
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<BL.Models.User>>> Get()
+        public async Task<ActionResult<IEnumerable<User>>> Get()
         {
             try
             {
@@ -23,7 +24,7 @@ namespace LN7.API.Controllers
 
         // GET: User/guid
         [HttpGet("{id}")]
-        public async Task<ActionResult<BL.Models.User>> Get(Guid id)
+        public async Task<ActionResult<User>> Get(Guid id)
         {
             try
             {
@@ -37,7 +38,7 @@ namespace LN7.API.Controllers
 
         // POST: User/false
         [HttpPost("{rollback}")]
-        public async Task<ActionResult> Post([FromBody] BL.Models.User user, bool rollback)
+        public async Task<ActionResult> Post([FromBody] User user, bool rollback)
         {
             try
             {
@@ -52,10 +53,30 @@ namespace LN7.API.Controllers
 
         // POST: User/
         [HttpPost("")]
+        public async Task<ActionResult<User>> Login([FromBody] User user)
+        {
+            try
+            {
+                if (UserManager.Login(user))
+                {
+                    User player = await UserManager.LoadById(user.Id);
+                    return Ok(player);
+                }
+                else
+                {
+                    return StatusCode(StatusCodes.Status401Unauthorized);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
 
         // PUT: User/guid/false
         [HttpPut("{id}/{rollback}")]
-        public async Task<IActionResult> Put(Guid id, [FromBody] BL.Models.User user, bool rollback)
+        public async Task<IActionResult> Put(Guid id, [FromBody] User user, bool rollback)
         {
             try
             {

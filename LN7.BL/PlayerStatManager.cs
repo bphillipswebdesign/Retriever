@@ -22,21 +22,21 @@ namespace LN7.BL
                 {
                     var playerStats = (from d in dc.tblPlayerStats
                                        join n in dc.tblUsers on d.UserId equals n.Id
-                                select new
-                                {
-                                    d.Id,
-                                    n.Username,
-                                    d.UserId,
-                                    d.PlayDate,
-                                    d.Result
-                                }).ToList();
+                                       select new
+                                       {
+                                           d.Id,
+                                           n.Username,
+                                           d.UserId,
+                                           d.PlayDate,
+                                           d.Result
+                                       }).ToList();
                     playerStats.ForEach(d => rows.Add(new Models.PlayerStat
                     {
                         Id = d.Id,
                         Username = d.Username,
                         UserId = d.UserId,
                         PlayDate = d.PlayDate,
-                        Result = d.Result                       
+                        Result = d.Result
                     }));
                 }
                 return rows;
@@ -118,14 +118,14 @@ namespace LN7.BL
                 throw;
             }
         }
-            public static int Insert(PlayerStat playerStat)
+        public static int Insert(PlayerStat playerStat)
         {
             try
             {
                 int results = 0;
                 using (LN7Entities dc = new LN7Entities())
                 {
-                    
+
                     tblPlayerStat row = new tblPlayerStat();
 
                     // Ternary operator

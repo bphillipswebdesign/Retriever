@@ -34,7 +34,6 @@ namespace LN7.BL
                                     d.BodyType,
                                     d.MuzzleType,
                                     d.MuzzleLength,
-                                    d.Origin,
                                     d.TailType,
                                     d.TailLength,
                                     d.WeightClass
@@ -54,7 +53,6 @@ namespace LN7.BL
                         LegLength = d.LegLength,
                         MuzzleType = d.MuzzleType,
                         MuzzleLength = d.MuzzleLength,
-                        Origin = (int)d.Origin,
                         TailType = d.TailType,
                         TailLength = d.TailLength,
                         WeightClass = d.WeightClass,
@@ -92,7 +90,6 @@ namespace LN7.BL
                             LegLength = dogs.LegLength,
                             MuzzleType = dogs.MuzzleType,
                             MuzzleLength = dogs.MuzzleLength,
-                            Origin = (int)dogs.Origin,
                             TailType = dogs.TailType,
                             TailLength = dogs.TailLength,
                             WeightClass = dogs.WeightClass,
@@ -141,7 +138,6 @@ namespace LN7.BL
                     row.LegLength = dog.LegLength;
                     row.MuzzleLength = dog.MuzzleLength;
                     row.MuzzleType = dog.MuzzleType;
-                    row.Origin = dog.Origin;
                     row.TailLength = dog.TailLength;
                     row.TailType = dog.TailType;
                     row.WeightClass = dog.WeightClass;
@@ -232,7 +228,6 @@ namespace LN7.BL
                         row.LegLength = dog.LegLength;
                         row.MuzzleLength = dog.MuzzleLength;
                         row.MuzzleType = dog.MuzzleType;
-                        row.Origin = dog.Origin;
                         row.TailLength = dog.TailLength;
                         row.TailType = dog.TailType;
                         row.WeightClass = dog.WeightClass;
@@ -487,30 +482,6 @@ namespace LN7.BL
                     dc.tblMuzzleTypes
                         .ToList()
                         .ForEach(s => rows.Add(new MuzzleType
-                        {
-                            Id = s.Id,
-                            Description = s.Description,
-                        }));
-                    return rows;
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-        public static List<Origin> OriginTypeLoad()
-        {
-            try
-            {
-                List<Origin> rows = new List<Origin>();
-
-                using (LN7Entities dc = new LN7Entities())
-                {
-                    dc.tblOrigins
-                        .ToList()
-                        .ForEach(s => rows.Add(new Origin
                         {
                             Id = s.Id,
                             Description = s.Description,

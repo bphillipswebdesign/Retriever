@@ -12,10 +12,11 @@
         [TestMethod]
         public async Task InsertTestAsync()
         {
-            User user = new User { First_Name = "Test" };
-            await base.InsertTestAsync<User>(user);
+            User user = new() { First_Name = "test", Last_Name = "test", Username = "test", Date_Created = DateTime.Now, Password = "test" };
 
+            await base.InsertTestAsync<User>(user);
         }
+
 
         [TestMethod]
         public async Task DeleteTestAsync()

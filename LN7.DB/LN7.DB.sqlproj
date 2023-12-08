@@ -76,11 +76,9 @@
     <Build Include="Tables\tblBodyType.sql" />
     <Build Include="Tables\tblMuzzleType.sql" />
     <Build Include="Tables\tblMuzzleLength.sql" />
-    <Build Include="Tables\tblOrigin.sql" />
     <Build Include="Tables\tblTailType.sql" />
     <Build Include="Tables\tblTailLength.sql" />
     <Build Include="Tables\tblWeightClass.sql" />
-    <None Include="PostDeploy\DefaultData\Origins.sql" />
     <None Include="PostDeploy\DefaultData\Question.sql" />
     <Build Include="Tables\tblQuestion.sql" />
     <Build Include="Tables\tblPlayerStat.sql" />

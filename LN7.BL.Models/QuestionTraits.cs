@@ -9,14 +9,13 @@
             BodyType = 3,
             TailType = 4,
             TailLength = 5,
-            Origin = 6,
-            MuzzleType = 7,
-            MuzzleLength = 8,
-            LegLength = 9,
-            CoatType = 10,
-            CoatLength = 11,
-            CoatColor = 12,
-            DogGroup = 13
+            MuzzleType = 6,
+            MuzzleLength = 7,
+            LegLength = 8,
+            CoatType = 9,
+            CoatLength = 10,
+            CoatColor = 11,
+            DogGroup = 12
         }
     }
 }
