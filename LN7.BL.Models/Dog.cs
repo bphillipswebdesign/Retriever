@@ -15,7 +15,6 @@
         public int BodyType { get; set; }
         public int MuzzleType { get; set; }
         public int MuzzleLength { get; set; }
-        public int Origin { get; set; }
         public int TailType { get; set; }
         public int TailLength { get; set; }
         public int WeightClass { get; set; }

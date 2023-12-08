@@ -28,8 +28,6 @@ public partial class tblDog
 
     public int MuzzleLength { get; set; }
 
-    public int? Origin { get; set; }
-
     public int TailType { get; set; }
 
     public int TailLength { get; set; }

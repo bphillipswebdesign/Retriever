@@ -129,7 +129,6 @@ public partial class LN7Entities : DbContext
             entity.Property(e => e.BodyType);
             entity.Property(e => e.MuzzleType);
             entity.Property(e => e.MuzzleLength);
-            entity.Property(e => e.Origin);
             entity.Property(e => e.TailType);
             entity.Property(e => e.TailLength);
             entity.Property(e => e.WeightClass);
