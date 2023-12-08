@@ -87,7 +87,6 @@ namespace LN7.BL
                             BodyType = s.BodyType,
                             MuzzleType = s.MuzzleType,
                             MuzzleLength = s.MuzzleLength,
-                            Origin = (int)s.Origin,
                             TailType = s.TailType,
                             TailLength = s.TailLength,
                             WeightClass = s.WeightClass

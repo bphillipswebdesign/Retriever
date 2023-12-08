@@ -28,7 +28,6 @@ namespace LN7.PL.Test
             newRow.BodyType = 1;
             newRow.MuzzleType = 1;
             newRow.MuzzleLength = 1;
-            newRow.Origin = 1;
             newRow.TailType = 1;
             newRow.TailLength = 1;
             newRow.WeightClass = 1;
@@ -59,7 +58,6 @@ namespace LN7.PL.Test
                 row.BodyType = 2;
                 row.MuzzleType = 2;
                 row.MuzzleLength = 2;
-                row.Origin = 2;
                 row.TailType = 2;
                 row.TailLength = 2;
                 row.WeightClass = 2;
