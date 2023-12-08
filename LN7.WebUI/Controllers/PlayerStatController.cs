@@ -70,7 +70,7 @@ namespace LN7.WebUI.Controllers
                 playerStat1.Result = p.Result;
                 playerStat1.PlayDate = p.PlayDate;
                 playerStat1.Username = p.Username;
-                vm.Add(playerStat1 );
+                vm.Add(playerStat1);
             }
             return vm;
         }
